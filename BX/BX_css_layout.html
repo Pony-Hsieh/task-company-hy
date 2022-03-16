@@ -14,7 +14,6 @@
     <h1>BX CSS 排版 整理</h1>
 
     <h3 class="task-title">BX 2022/2 活躍客戶 落地頁</h3>
-
     <div class="lp_v202202hykh">
         <div class="section2">
             <h4 class="section2-title">
@@ -48,17 +47,28 @@
                     <img src="./images/lp_v202202hykh/section2-card5.png">
                 </div>
             </div>
-            <button type="button" class="understand"></button>
-            <!-- 未來可以將 "彈出視窗時，避免下方一併滾動" 的功能整理進來 -->
+            <button type="button" id="lp_v202202hykh-btn-understand" class="understand"></button>
+        </div>
+        <div class="pop-up-wrapper">
+            <div class="pop-up">
+                <div class="close"></div>
+                <div class="title">溫馨提示</div>
+                <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, voluptas.
+                </div>
+                <div class="button-wrapper">
+                    <button type="button" id="lp_v202202hykh-pop-sign-up" class="sign-up">前往 GitHub</button>
+                    <button type="button" id="lp_v202202hykh-pop-cs" class="cs">前往 Google</button>
+                </div>
+                <div class="background"></div>
+            </div>
         </div>
     </div>
-
 
     <!-- jQuery cdn -->
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
         integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
-    <!-- 自適應換算比例寫在這 -->
+    <!-- 自適應換算比例 -->
     <script>
         (function (doc, win) {
             const docEl = doc.documentElement;
@@ -88,6 +98,36 @@
             /* 注册翻转事件 */
             win.addEventListener(resizeEvt, recalc, false);
         })(document, window);
+    </script>
+
+    <!-- 其他 JS -->
+    <script>
+        /* 顯示蓋版彈出訊息 */
+        $("#lp_v202202hykh-btn-understand").click(function (e) {
+            e.preventDefault();
+            window._scrollTopHeight = $(document).scrollTop(); // 目前頁面滾動了多少距離
+            $("body").css("position", "fixed");
+            $("body").css("top", `${window._scrollTopHeight * (-1)}px`);
+            $(".lp_v202202hykh .pop-up-wrapper").css("display", "flex");
+        });
+
+        /* 關閉蓋版彈出訊息 */
+        $(".lp_v202202hykh .pop-up-wrapper .close").click(function (e) {
+            e.preventDefault();
+            $("body").css("position", "static");
+            $(document).scrollTop(window._scrollTopHeight);
+            $(".lp_v202202hykh .pop-up-wrapper").hide();
+        });
+
+        $("#lp_v202202hykh-pop-sign-up").click(function (e) {
+            e.preventDefault();
+            window.open("https://github.com/Pony-Hsieh");
+        });
+
+        $("#lp_v202202hykh-pop-cs").click(function (e) {
+            e.preventDefault();
+            window.open("https://www.google.com/");
+        });
     </script>
 </body>
 
