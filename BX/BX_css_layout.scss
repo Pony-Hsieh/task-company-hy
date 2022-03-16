@@ -1,0 +1,97 @@
+/* BX 2022/2 活躍客戶 落地頁 */
+.lp_v202202hykh {
+    user-select: none;
+    .section2 {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -0.06rem;
+        width: 100%;
+        height: 10.78rem;
+        background: url(./images/lp_v202202hykh/section2-bg.jpg) no-repeat 0 0/100%;
+        .section2-title {
+            margin-top: 0.8rem;
+            width: 2.9rem;
+            height: 0.98rem;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .card-wrapper {
+            position: absolute;
+            top: 2.1rem;
+            .pc {
+                img {
+                    width: 3.7rem;
+                    height: 3rem;
+                    &:not(:last-of-type) {
+                        margin-right: 0.4rem;
+                    }
+                    &.arrow {
+                        width: 0.25rem;
+                        height: 0.49rem;
+                    }
+                }
+                > div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .top {
+                    margin-bottom: 0.32rem;
+                }
+            }
+            .m {
+                display: none;
+            }
+        }
+        .understand {
+            position: absolute;
+            bottom: 0.94rem;
+            width: 2.82rem;
+            height: 0.8rem;
+            background-image: url(./images/lp_v202202hykh/section2-understand.svg);
+            background-size: cover;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .lp_v202202hykh {
+        .section2 {
+            height: 20.65rem;
+            background: url(./images/lp_v202202hykh/section2-bg-m.jpg) no-repeat 0 0/100% auto;
+            .section2-title {
+                margin-top: 0.4rem;
+            }
+            .card-wrapper {
+                top: 1.6rem;
+                .m {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    img {
+                        width: 3.7rem;
+                        height: 3rem;
+                        &.arrow {
+                            width: 0.25rem;
+                            height: 0.49rem;
+                        }
+                    }
+                }
+                .pc {
+                    display: none;
+                }
+            }
+            .understand {
+                bottom: 1.02rem;
+            }
+        }
+    }
+}

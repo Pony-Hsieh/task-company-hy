@@ -1,0 +1,14 @@
+<svg width="282" height="80" viewBox="0 0 282 80" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="a">
+            <stop stop-color="#FF4F4F" offset="0%"/>
+            <stop stop-color="#620505" offset="100%"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <rect stroke="#FFB200" stroke-width="4" fill="url(#a)" x="2" y="2" width="278" height="76" rx="38"/>
+        <text font-family="PingFangSC-Medium, PingFang SC" font-size="28" font-weight="400" fill="#FFF">
+                    <tspan x="85" y="50.471">点我了解</tspan>
+                </text>
+    </g>
+</svg>
