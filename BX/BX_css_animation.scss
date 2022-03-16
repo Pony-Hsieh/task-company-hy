@@ -1,0 +1,177 @@
+.lp_v0109xkyl {
+    .banner {
+        position: relative;
+        z-index: 1;
+        height: 7.49rem;
+        background: url(./images/lp_v0109xkyl/banner-bg.png) no-repeat 0 0/100%;
+        .rabbit-circle {
+            position: relative;
+            top: 0.19rem;
+            left: 6.72rem;
+            width: 6.47rem;
+            height: 6.33rem;
+            > img {
+                // 中間的圓圈
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                width: 6.47rem;
+                height: 6.33rem;
+            }
+            .filter {
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 50%;
+                width: 6.47rem;
+                height: 6.33rem;
+                overflow: hidden;
+                img {
+                    // 2 點鐘方向 兔子
+                    &:nth-of-type(1) {
+                        position: absolute;
+                        top: -0.9rem;
+                        left: 5.3rem;
+                        width: 2.03rem;
+                        height: 2.05rem;
+                        // 動畫相關設定
+                        animation-delay: 1.5s;
+                        animation-name: rabbitAppear2;
+                        animation-duration: 2s;
+                        animation-timing-function: ease;
+                        animation-fill-mode: forwards; // 停在動畫最後的樣子
+                    }
+                    // 5 點鐘方向 兔子
+                    &:nth-of-type(2) {
+                        position: absolute;
+                        top: 6.3rem;
+                        left: 4.3rem;
+                        width: 0.99rem;
+                        height: 2.19rem;
+                        animation-delay: 3.5s;
+                        animation-name: rabbitAppear5;
+                        animation-duration: 2s;
+                        animation-timing-function: ease;
+                        animation-fill-mode: forwards;
+                    }
+                    // 9 點鐘方向 兔子
+                    &:nth-of-type(3) {
+                        position: absolute;
+                        top: 2.9rem;
+                        left: -2.65rem;
+                        width: 2.55rem;
+                        height: 2.07rem;
+                        animation-delay: 5.5s;
+                        animation-name: rabbitAppear9;
+                        animation-duration: 2s;
+                        animation-timing-function: ease;
+                        animation-fill-mode: forwards;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .lp_v0109xkyl {
+        .banner {
+            height: 8.4rem;
+            background: url(./images/lp_v0109xkyl/banner-bg-m.png) no-repeat 0 0/100% auto;
+            // 手機版 兔子動畫
+            .rabbit-circle {
+                position: relative;
+                top: 0.34rem;
+                left: 0.85rem;
+                width: 5.8rem;
+                height: 5.674rem;
+                > img {
+                    // 中間的圓圈
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 5.8rem;
+                    height: 5.674rem;
+                }
+                .filter {
+                    width: 5.8rem;
+                    height: 5.674rem;
+                    img {
+                        // 2 點鐘方向 兔子
+                        &:nth-of-type(1) {
+                            position: absolute;
+                            top: -0.9rem;
+                            left: 5.3rem;
+                            // 動畫相關設定
+                            animation-delay: 1.5s;
+                            animation-name: rabbitAppear2-m;
+                            animation-duration: 2s;
+                            animation-timing-function: ease;
+                            animation-fill-mode: forwards; // 停在動畫最後的樣子
+                        }
+                        // 5 點鐘方向 兔子
+                        &:nth-of-type(2) {
+                            position: absolute;
+                            top: 5.6rem;
+                            left: 3.8rem;
+                            animation-delay: 3.5s;
+                            animation-name: rabbitAppear5-m;
+                            animation-duration: 2s;
+                            animation-timing-function: ease;
+                            animation-fill-mode: forwards;
+                        }
+                        // 9 點鐘方向 兔子
+                        &:nth-of-type(3) {
+                            position: absolute;
+                            top: 2.2rem;
+                            left: -2.65rem;
+                            animation-delay: 5.5s;
+                            animation-name: rabbitAppear9-m;
+                            animation-duration: 2s;
+                            animation-timing-function: ease;
+                            animation-fill-mode: forwards;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// PC 版 兔子動畫
+@keyframes rabbitAppear2 {
+    100% {
+        top: 0;
+        left: 3.8rem;
+    }
+}
+@keyframes rabbitAppear5 {
+    100% {
+        top: 4.5rem;
+        left: 4.3rem;
+    }
+}
+@keyframes rabbitAppear9 {
+    100% {
+        top: 1.7rem;
+        left: -0.65rem;
+    }
+}
+// mobile 版 兔子動畫
+@keyframes rabbitAppear2-m {
+    100% {
+        top: -0.1rem;
+        left: 3.4rem;
+    }
+}
+@keyframes rabbitAppear5-m {
+    100% {
+        top: 4rem;
+        left: 3.8rem;
+    }
+}
+@keyframes rabbitAppear9-m {
+    100% {
+        top: 1.2rem;
+        left: -0.55rem;
+    }
+}

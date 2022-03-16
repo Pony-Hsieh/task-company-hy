@@ -1,0 +1,242 @@
+.lp_v0109xkyl .banner {
+  position: relative;
+  z-index: 1;
+  height: 7.49rem;
+  background: url(./images/lp_v0109xkyl/banner-bg.png) no-repeat 0 0/100%;
+}
+
+.lp_v0109xkyl .banner .rabbit-circle {
+  position: relative;
+  top: 0.19rem;
+  left: 6.72rem;
+  width: 6.47rem;
+  height: 6.33rem;
+}
+
+.lp_v0109xkyl .banner .rabbit-circle > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 6.47rem;
+  height: 6.33rem;
+}
+
+.lp_v0109xkyl .banner .rabbit-circle .filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  width: 6.47rem;
+  height: 6.33rem;
+  overflow: hidden;
+}
+
+.lp_v0109xkyl .banner .rabbit-circle .filter img:nth-of-type(1) {
+  position: absolute;
+  top: -0.9rem;
+  left: 5.3rem;
+  width: 2.03rem;
+  height: 2.05rem;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  -webkit-animation-name: rabbitAppear2;
+          animation-name: rabbitAppear2;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.lp_v0109xkyl .banner .rabbit-circle .filter img:nth-of-type(2) {
+  position: absolute;
+  top: 6.3rem;
+  left: 4.3rem;
+  width: 0.99rem;
+  height: 2.19rem;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+  -webkit-animation-name: rabbitAppear5;
+          animation-name: rabbitAppear5;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.lp_v0109xkyl .banner .rabbit-circle .filter img:nth-of-type(3) {
+  position: absolute;
+  top: 2.9rem;
+  left: -2.65rem;
+  width: 2.55rem;
+  height: 2.07rem;
+  -webkit-animation-delay: 5.5s;
+          animation-delay: 5.5s;
+  -webkit-animation-name: rabbitAppear9;
+          animation-name: rabbitAppear9;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@media (max-width: 768px) {
+  .lp_v0109xkyl .banner {
+    height: 8.4rem;
+    background: url(./images/lp_v0109xkyl/banner-bg-m.png) no-repeat 0 0/100% auto;
+  }
+  .lp_v0109xkyl .banner .rabbit-circle {
+    position: relative;
+    top: 0.34rem;
+    left: 0.85rem;
+    width: 5.8rem;
+    height: 5.674rem;
+  }
+  .lp_v0109xkyl .banner .rabbit-circle > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5.8rem;
+    height: 5.674rem;
+  }
+  .lp_v0109xkyl .banner .rabbit-circle .filter {
+    width: 5.8rem;
+    height: 5.674rem;
+  }
+  .lp_v0109xkyl .banner .rabbit-circle .filter img:nth-of-type(1) {
+    position: absolute;
+    top: -0.9rem;
+    left: 5.3rem;
+    -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+    -webkit-animation-name: rabbitAppear2-m;
+            animation-name: rabbitAppear2-m;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
+  .lp_v0109xkyl .banner .rabbit-circle .filter img:nth-of-type(2) {
+    position: absolute;
+    top: 5.6rem;
+    left: 3.8rem;
+    -webkit-animation-delay: 3.5s;
+            animation-delay: 3.5s;
+    -webkit-animation-name: rabbitAppear5-m;
+            animation-name: rabbitAppear5-m;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
+  .lp_v0109xkyl .banner .rabbit-circle .filter img:nth-of-type(3) {
+    position: absolute;
+    top: 2.2rem;
+    left: -2.65rem;
+    -webkit-animation-delay: 5.5s;
+            animation-delay: 5.5s;
+    -webkit-animation-name: rabbitAppear9-m;
+            animation-name: rabbitAppear9-m;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
+}
+
+@-webkit-keyframes rabbitAppear2 {
+  100% {
+    top: 0;
+    left: 3.8rem;
+  }
+}
+
+@keyframes rabbitAppear2 {
+  100% {
+    top: 0;
+    left: 3.8rem;
+  }
+}
+
+@-webkit-keyframes rabbitAppear5 {
+  100% {
+    top: 4.5rem;
+    left: 4.3rem;
+  }
+}
+
+@keyframes rabbitAppear5 {
+  100% {
+    top: 4.5rem;
+    left: 4.3rem;
+  }
+}
+
+@-webkit-keyframes rabbitAppear9 {
+  100% {
+    top: 1.7rem;
+    left: -0.65rem;
+  }
+}
+
+@keyframes rabbitAppear9 {
+  100% {
+    top: 1.7rem;
+    left: -0.65rem;
+  }
+}
+
+@-webkit-keyframes rabbitAppear2-m {
+  100% {
+    top: -0.1rem;
+    left: 3.4rem;
+  }
+}
+
+@keyframes rabbitAppear2-m {
+  100% {
+    top: -0.1rem;
+    left: 3.4rem;
+  }
+}
+
+@-webkit-keyframes rabbitAppear5-m {
+  100% {
+    top: 4rem;
+    left: 3.8rem;
+  }
+}
+
+@keyframes rabbitAppear5-m {
+  100% {
+    top: 4rem;
+    left: 3.8rem;
+  }
+}
+
+@-webkit-keyframes rabbitAppear9-m {
+  100% {
+    top: 1.2rem;
+    left: -0.55rem;
+  }
+}
+
+@keyframes rabbitAppear9-m {
+  100% {
+    top: 1.2rem;
+    left: -0.55rem;
+  }
+}
