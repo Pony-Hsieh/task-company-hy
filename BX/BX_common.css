@@ -1,3 +1,19 @@
+body {
+  margin: 0 auto;
+  max-width: 1920px;
+  width: 100%;
+  font-size: 0;
+  font-family: "PingFang SC", "Hiragino Sans GB", arial, "Microsoft Yahei", sans-serif;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  body {
+    max-width: 768px;
+  }
+}
+
 h1 {
   margin-top: 0.32rem;
   margin-bottom: 0.32rem;
