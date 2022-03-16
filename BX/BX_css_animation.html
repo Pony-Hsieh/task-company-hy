@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BX CSS 動畫 整理</title>
+    <link rel="stylesheet" href="./BX_reset.css">
+    <link rel="stylesheet" href="./BX_css_animation.css">
+</head>
+
+<body>
+    <h1>BX_css_animation</h1>
+
+    <!-- jQuery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+    <!-- 自適應換算比例寫在這 -->
+    <script>
+        (function (doc, win) {
+            const docEl = doc.documentElement;
+            const resizeEvt = "orientationchange" in window ? "orientationchange" : "resize";
+            function recalc() {
+                const clientWidth = docEl.clientWidth; //clientWidth: 获取对象可见内容的宽度，不包括滚动条，不包括边框
+                if (!clientWidth) {
+                    return;
+                }
+                if (window.innerWidth <= 768) {
+                    document.documentElement.style.fontSize = clientWidth / 7.68 + "px";
+                }
+                else if (window.innerWidth >= 1920) {
+                    document.documentElement.style.fontSize = 1920 / 19.2 + "px";
+                }
+                else {
+                    document.documentElement.style.fontSize = clientWidth / 19.2 + "px";
+                }
+            }
+            recalc();
+
+            /* 判断是否支持监听事件 ，不支持则停止 */
+            if (!doc.addEventListener) {
+                return;
+            }
+
+            /* 注册翻转事件 */
+            win.addEventListener(resizeEvt, recalc, false);
+        })(document, window);
+    </script>
+</body>
+
+</html>

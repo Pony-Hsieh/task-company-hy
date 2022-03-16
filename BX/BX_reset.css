@@ -1,0 +1,163 @@
+@charset "UTF-8";
+/* CSS reset */
+/*清除内外边距*/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+fieldset,
+button,
+input,
+textarea,
+th,
+td {
+  /* table elements 表格元素 */
+  margin: 0;
+  padding: 0;
+}
+
+input,
+textarea {
+  border: 0 none;
+  box-shadow: none;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+html {
+  background-color: #fff;
+}
+
+/* 设置默认字体 */
+body,
+button,
+input,
+select,
+textarea {
+  font-size: 12px;
+  font-family: arial, "Microsoft Yahei", sans-serif;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 14px;
+}
+
+address,
+cite,
+dfn,
+em,
+i,
+var {
+  font-style: normal;
+}
+
+/* 斜体扶正 */
+/* 重置列表元素 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 重置文本格式元素 */
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 重置表单元素 */
+legend {
+  color: #000;
+}
+
+/* for ie6 */
+fieldset,
+img {
+  border: none;
+}
+
+/* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 使表单元素在 ie 下能继承字体大小 */
+}
+
+/* 重置表格元素 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/*处理元素点击默认高亮*/
+button,
+input,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+/*清除浮动*/
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+/*公共样式*/
+
+@media (max-width: 768px) {
+  html,
+  body {
+    /* font-size: 50px; */
+  }
+}
