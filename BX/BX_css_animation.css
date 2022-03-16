@@ -1,5 +1,310 @@
 @charset "UTF-8";
+/* BX 2022/3 活躍客戶 落地頁 */
+.lp_v202203hykh {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.lp_v202203hykh .banner {
+  position: relative;
+  z-index: 0;
+  height: 9.2rem;
+  background: url(./images/lp_v202203hykh/banner-bg.jpg) no-repeat 0 0/100%;
+  overflow: hidden;
+}
+
+.lp_v202203hykh .banner .flower {
+  position: absolute;
+  -webkit-animation-name: flower-fade-in;
+          animation-name: flower-fade-in;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.lp_v202203hykh .banner .flower.white-flower-1 {
+  top: 3.6rem;
+  left: -0.06rem;
+  width: 1.05rem;
+  height: 1.07rem;
+}
+
+.lp_v202203hykh .banner .flower.white-flower-2 {
+  top: 2.91rem;
+  left: 3.72rem;
+  width: 1.23rem;
+  height: 1.25rem;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.lp_v202203hykh .banner .flower.white-flower-3 {
+  top: 4.8rem;
+  left: 4.48rem;
+  width: 1.55rem;
+  height: 1.55rem;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+}
+
+.lp_v202203hykh .banner .flower.white-flower-4 {
+  top: -0.25rem;
+  left: 16.42rem;
+  z-index: 4;
+  width: 3.31rem;
+  height: 3.36rem;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.lp_v202203hykh .banner .flower.white-flower-5 {
+  top: 2.14rem;
+  left: 17.7rem;
+  z-index: 5;
+  width: 1.91rem;
+  height: 1.94rem;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.lp_v202203hykh .banner .flower.white-flower-6 {
+  display: none;
+}
+
+.lp_v202203hykh .banner .flower.blue-flower-1 {
+  top: 1.91rem;
+  left: -0.57rem;
+  width: 1.86rem;
+  height: 1.88rem;
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+.lp_v202203hykh .banner .flower.blue-flower-2 {
+  top: -0.36rem;
+  left: 2.24rem;
+  z-index: 5;
+  width: 2.1rem;
+  height: 2.12rem;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.lp_v202203hykh .banner .flower.blue-flower-3 {
+  top: -0.34rem;
+  left: 3.72rem;
+  width: 1.24rem;
+  height: 1.25rem;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.lp_v202203hykh .banner .flower.blue-flower-4 {
+  top: 0.8rem;
+  left: 11.46rem;
+  width: 0.96rem;
+  height: 0.96rem;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.lp_v202203hykh .banner .flower.blue-flower-5 {
+  top: -0.2rem;
+  left: 14.3rem;
+  width: 1.33rem;
+  height: 1.14rem;
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+
+.lp_v202203hykh .banner .flower.blue-flower-6 {
+  top: 3.7rem;
+  left: 18.17rem;
+  z-index: 3;
+  width: 1.09rem;
+  height: 1.1rem;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.lp_v202203hykh .banner .flower.rotate {
+  opacity: 1;
+  -webkit-animation-name: flower-rotate;
+          animation-name: flower-rotate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@media (max-width: 768px) {
+  .lp_v202203hykh .banner {
+    height: 9.74rem;
+    background: url(./images/lp_v202203hykh/banner-bg-m.jpg) no-repeat 0 0/100% auto;
+  }
+  .lp_v202203hykh .banner .flower.white-flower-1 {
+    top: 2.53rem;
+    left: 0.1rem;
+    width: 1.05rem;
+    height: 1.07rem;
+  }
+  .lp_v202203hykh .banner .flower.white-flower-2 {
+    top: 0.5rem;
+    left: 2.77rem;
+    z-index: 0;
+    width: 1.33rem;
+    height: 1.37rem;
+    -webkit-animation-delay: 1.2s;
+            animation-delay: 1.2s;
+  }
+  .lp_v202203hykh .banner .flower.white-flower-3 {
+    top: 5.66rem;
+    left: 0.15rem;
+    width: 1.11rem;
+    height: 1.11rem;
+  }
+  .lp_v202203hykh .banner .flower.white-flower-4 {
+    top: -0.25rem;
+    left: 5.43rem;
+    z-index: 2;
+    width: 2.55rem;
+    height: 2.62rem;
+    -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+  }
+  .lp_v202203hykh .banner .flower.white-flower-5 {
+    top: 1.56rem;
+    left: 6.42rem;
+    z-index: 5;
+    width: 1.41rem;
+    height: 1.45rem;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+  }
+  .lp_v202203hykh .banner .flower.white-flower-6 {
+    display: block;
+    top: 1.87rem;
+    left: 2.87rem;
+    width: 0.71rem;
+    height: 0.73rem;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+  }
+  .lp_v202203hykh .banner .flower.blue-flower-1 {
+    display: none;
+  }
+  .lp_v202203hykh .banner .flower.blue-flower-2 {
+    left: 1.48rem;
+    width: 1.55rem;
+    height: 1.56rem;
+    -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+  }
+  .lp_v202203hykh .banner .flower.blue-flower-3 {
+    top: 0.15rem;
+    left: 2.7rem;
+    z-index: 3;
+    width: 0.78rem;
+    height: 0.79rem;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+  }
+  .lp_v202203hykh .banner .flower.blue-flower-4 {
+    top: 2.8rem;
+    left: 5.16rem;
+    width: 0.69rem;
+    height: 0.69rem;
+  }
+  .lp_v202203hykh .banner .flower.blue-flower-5 {
+    top: 0.94rem;
+    left: 4.96rem;
+    z-index: 5;
+    width: 0.89rem;
+    height: 0.9rem;
+    -webkit-animation-delay: 2.2s;
+            animation-delay: 2.2s;
+  }
+  .lp_v202203hykh .banner .flower.blue-flower-6 {
+    display: none;
+  }
+}
+
+@-webkit-keyframes flower-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes flower-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes flower-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flower-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* BX 2021/9 新客 落地頁 */
+.lp_v0109xkyl {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 .lp_v0109xkyl .banner {
   position: relative;
   z-index: 1;
