@@ -11,7 +11,7 @@
   position: relative;
   z-index: 0;
   height: 9.2rem;
-  background: url(./images/lp_v202203hykh/banner-bg.jpg) no-repeat 0 0/100%;
+  background: url(../images/lp_v202203hykh/banner-bg.jpg) no-repeat 0 0/100%;
   overflow: hidden;
 }
 
@@ -144,7 +144,7 @@
 @media (max-width: 768px) {
   .lp_v202203hykh .banner {
     height: 9.74rem;
-    background: url(./images/lp_v202203hykh/banner-bg-m.jpg) no-repeat 0 0/100% auto;
+    background: url(../images/lp_v202203hykh/banner-bg-m.jpg) no-repeat 0 0/100% auto;
   }
   .lp_v202203hykh .banner .flower.white-flower-1 {
     top: 2.53rem;
@@ -309,7 +309,7 @@
   position: relative;
   z-index: 1;
   height: 7.49rem;
-  background: url(./images/lp_v0109xkyl/banner-bg.png) no-repeat 0 0/100%;
+  background: url(../images/lp_v0109xkyl/banner-bg.png) no-repeat 0 0/100%;
 }
 
 .lp_v0109xkyl .banner .rabbit-circle {
@@ -397,7 +397,7 @@
 @media (max-width: 768px) {
   .lp_v0109xkyl .banner {
     height: 8.4rem;
-    background: url(./images/lp_v0109xkyl/banner-bg-m.png) no-repeat 0 0/100% auto;
+    background: url(../images/lp_v0109xkyl/banner-bg-m.png) no-repeat 0 0/100% auto;
   }
   .lp_v0109xkyl .banner .rabbit-circle {
     position: relative;
