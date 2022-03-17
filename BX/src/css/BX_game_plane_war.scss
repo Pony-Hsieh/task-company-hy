@@ -1,0 +1,1211 @@
+body {
+    &.noYScroll {
+        touch-action: pan-x;
+    }
+}
+
+.pc {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+.banner {
+    position: relative;
+    z-index: 1;
+    height: 636px;
+    background: url(../images/BX_game_plane_war/banner.jpg) no-repeat center;
+    .badge {
+        position: absolute;
+        top: 65.1%;
+        left: calc(50% - (238px / 2));
+        z-index: 3;
+        width: 238px;
+        height: 192px;
+        background: url(../images/BX_game_plane_war/badge.png) no-repeat bottom;
+        cursor: pointer;
+        overflow: hidden;
+        animation-name: badge_flash;
+        animation-timing-function: step-end;
+        animation-iteration-count: infinite;
+        animation-duration: 1.2s; // 與 sway 動畫設定為相同間隔
+        &:active {
+            background-position: top;
+        }
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .banner_animation {
+        position: absolute;
+        cursor: pointer;
+        // 大眼怪
+        &.small {
+            top: 138px;
+            left: 47%;
+            width: 1.4rem;
+            height: 1.2rem;
+            // 動畫相關設定
+            > div {
+                background: url(../images/BX_game_plane_war/banner_alien_small_sprite.png) no-repeat 0 0;
+                background-size: cover;
+                animation-name: sway_small;
+                &.boom {
+                    animation-name: banner_boom_small;
+                }
+            }
+            .frontSight {
+                top: -0.25rem;
+                left: 0.05rem;
+            }
+        }
+        // 外星人
+        &.medium {
+            top: 226px;
+            right: 2.47rem;
+            width: 2.22rem;
+            height: 1.95rem;
+            // 動畫相關設定
+            > div {
+                background: url(../images/BX_game_plane_war/banner_alien_medium_sprite.png) no-repeat 0 0;
+                background-size: cover;
+                animation-name: sway_medium;
+                &.boom {
+                    animation-name: banner_boom_medium;
+                }
+            }
+            .frontSight {
+                top: -0.15rem;
+                left: 0.35rem;
+            }
+        }
+        // 死神
+        &.large {
+            left: 2.37rem;
+            top: 343px;
+            width: 2.7rem;
+            height: 2.82rem;
+            // 動畫相關設定
+            > div {
+                background: url(../images/BX_game_plane_war/banner_alien_large_sprite.png) no-repeat 0 0;
+                background-size: cover;
+                animation-name: sway_large;
+                &.boom {
+                    animation-name: banner_boom_large;
+                }
+            }
+            .frontSight {
+                top: 0.35rem;
+                left: 0.85rem;
+            }
+        }
+        > div {
+            width: 100%;
+            height: 100%;
+            animation-duration: 1.2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: step-end;
+            &.boom {
+                animation-iteration-count: 1;
+                animation-duration: 1s;
+                animation-fill-mode: forwards; // 讓畫面定格在最後
+            }
+        }
+        .frontSight {
+            position: absolute;
+            width: 1.36rem;
+            height: 1.36rem;
+            &.boom {
+                display: none;
+            }
+        }
+    }
+}
+
+.section1 {
+    height: 1056px;
+    background: url(../images/BX_game_plane_war/section1.jpg) no-repeat center;
+    position: relative;
+    z-index: 0;
+    &.gameover {
+        background-image: url(../images/BX_game_plane_war/gameover_bg.jpg);
+    }
+    .btn {
+        position: absolute;
+        top: 44%;
+        left: calc(50% - 80px);
+        z-index: 50;
+        width: 146px;
+        height: 120px;
+        cursor: pointer;
+        // 預設都不顯示 // 加上 .dp-block 即可顯示
+        &.dp-block {
+            display: block;
+        }
+    }
+    // 登入 // 不能放在 vue 內，不然會吃不到相關的 css、JS 設定，進而導致操控失敗
+    .activity-btn1 {
+        top: 47%;
+        z-index: 51;
+        // 須登入才可開始遊戲
+        // display: block;
+        // 不須登入即可開始遊戲 // 本機遊戲
+        display: none;
+        background: url(../images/BX_game_plane_war/icon_start.png) no-repeat 0% / cover;
+        background-position: 0 0;
+    }
+    // 開始遊戲 // 由 hd_common.js $(".btn-start").show() 控制
+    .btn-start {
+        // 須登入才可開始遊戲
+        // display: none;
+        // 不須登入即可開始遊戲 // 本機遊戲
+        display: block;
+        background: url(../images/BX_game_plane_war/icon_start.png) no-repeat 0% / cover;
+        background-position: 0% 33%;
+    }
+    // 再來一次
+    .btn-again {
+        display: none;
+        background: url(../images/BX_game_plane_war/icon_start.png) no-repeat 0% / cover;
+        background-position: 0% 66.5%;
+    }
+    // 聯繫客服
+    // .btn-service {
+    //     top: 74%;
+    //     display: none;
+    //     background: url(../images/BX_game_plane_war/btn-service.png) no-repeat 0 0 / 100%;
+    // }
+    .game-info {
+        position: absolute;
+        top: 0;
+        left: calc(50% - (640px) / 2); // 50% 減去 元素寬度的一半
+        width: 640px;
+        height: 200px;
+    }
+}
+
+.section2 {
+    position: relative;
+    height: 1100px;
+    background-color: #040205;
+    .rule-info {
+        position: absolute;
+        top: 0;
+        left: calc(50% - 300px);
+        width: 630px;
+        color: #fff;
+        font-size: 26px;
+        line-height: 42px;
+        h3 {
+            margin-top: 0.6rem;
+            font-size: 36px;
+            color: #fff;
+        }
+        li {
+            list-style-type: decimal;
+            list-style-position: outside;
+        }
+        table {
+            width: 100%;
+            font-weight: 600;
+            text-align: center;
+            border: none;
+            border-collapse: separate;
+            border-spacing: 0;
+            td {
+                padding: 1px;
+                background-color: #d44785;
+                color: #fff;
+            }
+            tr:nth-child(even) {
+                // even 是偶數
+                td {
+                    border: none;
+                    border-bottom: 4px solid #040205;
+                    background-color: #d8d8d8;
+                }
+            }
+            tr:nth-child(1) {
+                td {
+                    height: 0.84rem;
+                    border: 2px solid #d44785;
+                    &:nth-child(1),
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                        div {
+                            border-right: 1px solid #fff;
+                        }
+                    }
+                }
+            }
+            tr:nth-child(2) {
+                td {
+                    border-top: 4px solid #040205;
+                    &:nth-child(1) {
+                        color: #141818;
+                    }
+                }
+            }
+            tr:nth-child(3) {
+                td {
+                    border: none;
+                    border-bottom: 4px solid #040205;
+                    background-color: #efefef;
+                    &:nth-child(1) {
+                        color: #141818;
+                    }
+                }
+            }
+            tr:nth-child(4) {
+                td {
+                    &:nth-child(1) {
+                        color: #141818;
+                    }
+                }
+            }
+            tr:nth-child(5) {
+                td {
+                    border-bottom: 2px solid #d44785;
+                    font-weight: normal;
+                }
+            }
+            tr:not(:first-child) {
+                td {
+                    height: 0.7rem;
+                    &:not(:first-child) {
+                        color: #626464;
+                    }
+                }
+            }
+            .note {
+                background-color: #040205;
+                color: #d44785;
+                border: none;
+            }
+        }
+    }
+}
+
+// 報名資訊彈出視窗
+.popMsg {
+    position: absolute;
+    top: 37%;
+    left: calc(50% - 250px);
+    z-index: 1;
+    margin: 0 auto;
+    width: 476px;
+    height: 286px;
+    background: url(../images/BX_game_plane_war/msg_box.png) no-repeat 0 0/100%;
+    // 預設不顯示 // 爆炸的時候再顯示
+    display: none;
+    &.dp-block {
+        display: block;
+    }
+    .title {
+        margin-top: 15px;
+        font-size: 32px;
+        color: #ffffff;
+        text-align: center;
+    }
+    p {
+        font-size: 32px;
+        letter-spacing: 0.05px;
+        text-align: center;
+        color: #424a4a;
+    }
+    .msgContent {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        margin-top: 20px;
+        height: 200px;
+        text-align: center;
+        font-size: 30px;
+        color: #424a4a;
+        .msgInfo {
+            margin: 1px auto;
+            width: 360px;
+            text-align: center;
+        }
+    }
+    .fontRed {
+        color: #b51616;
+    }
+    .fontBold {
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 768px) {
+    .pc {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+    .banner {
+        background: url(../images/BX_game_plane_war/banner_m.jpg) no-repeat 0/100%;
+        height: 13.3rem;
+        .game-info {
+            width: 6.5rem;
+            height: 4.1rem;
+            position: absolute;
+            top: 64.2%;
+            left: calc(50% - (6.49rem) / 2); // 50% 減去 元素寬度的一半
+        }
+        .badge {
+            width: 2.38rem;
+            height: 1.92rem;
+            background: url(../images/BX_game_plane_war/badge.png) no-repeat bottom/100%;
+            top: 34.9%;
+            left: calc(50% - (2.38rem) / 2); // 50% 減去 元素寬度的一半
+            &:active {
+                background-position: top;
+            }
+        }
+        .banner_animation {
+            // 大眼怪
+            &.small {
+                width: 1rem;
+                height: 0.86rem;
+                top: 2.1rem;
+                left: 3.3rem;
+                // 動畫相關設定
+                > div {
+                    &.boom {
+                        animation-name: banner_boom_small_m;
+                    }
+                }
+                .frontSight {
+                    top: -0.25rem;
+                    left: 0.05rem;
+                }
+            }
+            // 外星人
+            &.medium {
+                width: 1.76rem;
+                height: 1.54rem;
+                top: 4.24rem;
+                right: 0.76rem;
+                // 動畫相關設定
+                > div {
+                    &.boom {
+                        animation-name: banner_boom_medium_m;
+                    }
+                }
+                .frontSight {
+                    top: -0.15rem;
+                    left: 0.35rem;
+                }
+            }
+            // 死神
+            &.large {
+                width: 1.66rem;
+                height: 1.63rem;
+                top: 5.49rem;
+                left: 0.63rem;
+                // 動畫相關設定
+                > div {
+                    &.boom {
+                        animation-name: banner_boom_large_m;
+                    }
+                }
+                .frontSight {
+                    top: 0.05rem;
+                    left: 0.35rem;
+                }
+            }
+            .frontSight {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+    }
+    .section1 {
+        position: relative;
+        margin-top: -0.45rem;
+        margin-bottom: -0.4rem;
+        height: 17.4rem;
+        background: url(../images/BX_game_plane_war/section1_m.jpg) no-repeat 0/100%;
+        &.gameover {
+            background-image: url(../images/BX_game_plane_war/gameover_bg_m.jpg);
+        }
+        .btn {
+            position: absolute;
+            top: 28%;
+            left: calc(50vw - (2.92rem / 2)); // 一半裝置寬度 - 一半元素寬度 // 水平置中效果
+            width: 2.92rem;
+            height: 2.41rem;
+        }
+        // .btn-service {
+        //     top: 60%;
+        // }
+    }
+    .section2 {
+        height: 11rem;
+        margin-top: -1px;
+        .rule-info {
+            position: absolute;
+            left: calc(50% - 3rem);
+            top: 0%;
+            margin-top: 1rem;
+            width: 6.3rem;
+            color: #fff;
+            font-size: 0.26rem;
+            line-height: 0.42rem;
+            h3 {
+                margin-top: 0;
+                font-size: 0.36rem;
+                color: #fff;
+            }
+        }
+    }
+    .popMsg {
+        position: absolute;
+        left: calc(50vw - (6.2rem / 2));
+        top: calc(50vh - 1.35rem);
+        width: 6.2rem;
+        height: 3.7rem;
+        .title {
+            margin-top: 0.15rem;
+            font-size: 0.48rem;
+            color: #fff;
+            text-align: center;
+        }
+        .msgContent {
+            margin-top: 0.1rem;
+            height: 2.8rem;
+            text-align: center;
+            font-size: 0.6rem;
+            color: #424a4a;
+            line-height: 0.6rem;
+            letter-spacing: 0.03rem;
+            .msgInfo {
+                width: 5.3rem;
+                text-align: center;
+                line-height: 0.5rem;
+                letter-spacing: 0.02rem;
+                p {
+                    font-size: 0.48rem;
+                    line-height: 1.38;
+                    letter-spacing: 0.07px;
+                }
+            }
+        }
+        // .fontRed {
+        //     color: #b51616;
+        // }
+        // .fontBold {
+        //     font-weight: 600;
+        // }
+    }
+}
+
+/* 遊戲相關操控 */
+// 遊戲相關區域
+.gameArea {
+    position: relative;
+    top: 24.4%;
+    left: calc(50% - 400.5px);
+    width: 801px;
+    height: 540px;
+    background: url(../images/BX_game_plane_war/gameArea_bg.jpg) 0 0;
+    user-select: none; // 避免被使用者長壓選取
+    &.playing {
+        animation: bg-rolling 5s linear infinite; // 先關掉，不然好干擾 // 要上線、測試的時候，記得把這個註解打開
+    }
+    &.pause {
+        background: none;
+    }
+    &.gameover {
+        background: none;
+    }
+}
+
+// 闖關失敗
+.fail {
+    position: absolute;
+    left: calc(50% - (533px / 2));
+    top: calc(50% - (194px / 2));
+    display: none; // 預設不顯示 // 加上 .dp-block 即可顯示
+    width: 533px;
+    height: 194px;
+    background: url(../images/BX_game_plane_war/group.png) no-repeat -1px -1740px;
+    &.dp-block {
+        display: block;
+    }
+}
+
+// 遊戲操作區域
+.gameOperationArea {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.section1-animation {
+    position: absolute;
+    top: 30.4%;
+    background: url(../images/BX_game_plane_war/group.png) no-repeat;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+}
+
+.animation-left {
+    left: calc(50vw - (1334px / 2));
+    // 1334px 這個數字還不知道怎麼來的XD，不過看起來畫面是正確的XDDD，而且也可以隨著畫面縮小維持置中
+    width: 202px;
+    height: 466px;
+    animation-name: section1-left;
+}
+
+.animation-right {
+    left: calc(50vw + (914px / 2));
+    // 914px 這個數字還不知道怎麼來的XD，不過看起來畫面是正確的XDDD，而且也可以隨著畫面縮小維持置中
+    width: 192px;
+    height: 482px;
+    animation-name: section1-right;
+}
+
+.myPlane {
+    position: absolute;
+    display: none;
+    width: 70px;
+    height: 116px;
+    background: url(../images/BX_game_plane_war/group.png) no-repeat -40px -86px;
+    user-select: none; // 避免被使用者長壓選取
+    &.playing {
+        display: block;
+    }
+    &.boom {
+        animation-name: boom-myPlane;
+        animation-duration: 0.8s;
+        animation-timing-function: step-end;
+        animation-fill-mode: forwards;
+    }
+}
+
+.bullet {
+    position: absolute;
+    z-index: 2;
+    width: 41px;
+    height: 27px;
+    background: url(../images/BX_game_plane_war/group.png) no-repeat -680px -24px;
+}
+
+.enemy {
+    position: absolute;
+    z-index: 1;
+    background: url(../images/BX_game_plane_war/group.png) no-repeat;
+    &.boom {
+        animation-duration: 0.8s;
+        animation-timing-function: step-end;
+        animation-fill-mode: forwards;
+    }
+}
+
+.enemy-small {
+    width: 40px;
+    height: 30px;
+    background-position: 0 -238px;
+    &.boom {
+        animation-name: boom-small;
+    }
+}
+
+.enemy-medium {
+    width: 80px;
+    height: 68px;
+    background-position: 0 -292px;
+    &.hitted {
+        background-position: -83px -292px;
+    }
+    &.boom {
+        animation-name: boom-medium;
+    }
+}
+
+.enemy-large {
+    width: 146px;
+    height: 145px;
+    background-position: -4px -382px;
+    &.hitted {
+        background-position: -158px -382px;
+    }
+    &.boom {
+        animation-name: boom-large;
+    }
+}
+
+// 數字樣式
+.pointArea {
+    position: absolute;
+    top: -9%;
+    left: calc(50% - (116px / 2));
+    width: 116px;
+    height: 100px;
+    &.twinkle {
+        animation-name: twinkle;
+        animation-duration: 0.5s; // 實測後滿剛好的間隔
+        animation-iteration-count: infinite;
+        animation-timing-function: step-end;
+    }
+    span {
+        display: inline-block;
+        margin-left: 5px;
+        width: 24px;
+        height: 40px;
+        background-image: url(../images/BX_game_plane_war/group.png);
+        background-position: 0 -10px; // 預設為 0000
+    }
+    .zero {
+        background-position: 0 -10px;
+        &.twinkle {
+            background-position: -279px -10px;
+        }
+    }
+    .one {
+        background-position: -28px -10px;
+        &.twinkle {
+            background-position: -307px -10px;
+        }
+    }
+    .two {
+        background-position: -56px -10px;
+        &.twinkle {
+            background-position: -335px -10px;
+        }
+    }
+    .three {
+        background-position: -84px -10px;
+        &.twinkle {
+            background-position: -363px -10px;
+        }
+    }
+    .four {
+        background-position: -112px -10px;
+        &.twinkle {
+            background-position: -392px -10px;
+        }
+    }
+    .five {
+        background-position: -140px -10px;
+        &.twinkle {
+            background-position: -420px -10px;
+        }
+    }
+    .six {
+        background-position: -168px -10px;
+        &.twinkle {
+            background-position: -447px -10px;
+        }
+    }
+    .seven {
+        background-position: -196px -10px;
+        &.twinkle {
+            background-position: -475px -10px;
+        }
+    }
+    .eight {
+        background-position: -224px -10px;
+        &.twinkle {
+            background-position: -503px -10px;
+        }
+    }
+    .nine {
+        background-position: -252px -10px;
+        &.twinkle {
+            background-position: -532px -10px;
+        }
+    }
+}
+
+// 要預先載入的內容 // 只是為了先載入而已，並沒有要真的顯示
+#preloader {
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    .preloader_1 {
+        background: url(../images/BX_game_plane_war/gameover_bg.jpg);
+    }
+    .preloader_2 {
+        background: url(../images/BX_game_plane_war/gameover_bg_m.jpg);
+    }
+    .preloader_3 {
+        background: url(../images/BX_game_plane_war/msg_box.png);
+    }
+}
+
+@media (max-width: 768px) {
+    .gameArea {
+        top: 14.1%;
+        left: 0;
+    }
+    .pointArea {
+        top: -0.9rem;
+        left: calc(50vw - 116px / 2);
+        background: none;
+    }
+    .fail {
+        top: calc(50vh - 140px);
+        left: calc(50vw - (320px / 2));
+        width: 320px;
+        height: 115px;
+        background: url(../images/BX_game_plane_war/group.png) no-repeat 0 -1955px;
+    }
+}
+
+// banner 大眼怪 搖晃
+@keyframes sway_small {
+    0% {
+        transform: rotate(13deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(13deg);
+    }
+}
+
+// banner 外星人 搖晃
+@keyframes sway_medium {
+    0% {
+        transform: rotate(-13deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-13deg);
+    }
+}
+
+// banner 死神 搖晃
+@keyframes sway_large {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(13deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+// banner 大眼怪 爆炸
+@keyframes banner_boom_small {
+    0% {
+        background-position: -1.44rem 0;
+        background-size: cover;
+    }
+    17% {
+        background-position: -2.84rem 0;
+        background-size: cover;
+    }
+    33% {
+        background-position: -4.34rem 0;
+        background-size: cover;
+    }
+    50% {
+        background-position: -5.74rem 0;
+        background-size: cover;
+    }
+    67% {
+        background-position: -7.14rem 0;
+        background-size: cover;
+    }
+    83% {
+        background-position: -8.64rem 0;
+        background-size: cover;
+    }
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+// banner 大眼怪 爆炸 手機版
+@keyframes banner_boom_small_m {
+    0% {
+        background-position: -1rem 0;
+        background-size: cover;
+    }
+    17% {
+        background-position: -2.1rem 0;
+        background-size: cover;
+    }
+    33% {
+        background-position: -3.1rem 0;
+        background-size: cover;
+    }
+    50% {
+        background-position: -4.1rem 0;
+        background-size: cover;
+    }
+    67% {
+        background-position: -5.3rem 0;
+        background-size: cover;
+    }
+    83% {
+        background-position: -6.2rem 0;
+        background-size: cover;
+    }
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+// banner 外星人 爆炸
+@keyframes banner_boom_medium {
+    0% {
+        background-position: -2.3rem 0;
+        background-size: cover;
+    }
+    17% {
+        background-position: -4.5rem 0;
+        background-size: cover;
+    }
+    33% {
+        background-position: -6.8rem 0;
+        background-size: cover;
+    }
+    50% {
+        background-position: -9rem 0;
+        background-size: cover;
+    }
+    67% {
+        background-position: -11.3rem 0;
+        background-size: cover;
+    }
+    83% {
+        background-position: -13.6rem 0;
+        background-size: cover;
+    }
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+// banner 外星人 爆炸
+@keyframes banner_boom_medium_m {
+    0% {
+        background-position: -1.8rem 0;
+        background-size: cover;
+    }
+    17% {
+        background-position: -3.6rem 0;
+        background-size: cover;
+    }
+    33% {
+        background-position: -5.4rem 0;
+        background-size: cover;
+    }
+    50% {
+        background-position: -7.2rem 0;
+        background-size: cover;
+    }
+    67% {
+        background-position: -9rem 0;
+        background-size: cover;
+    }
+    83% {
+        background-position: -10.8rem 0;
+        background-size: cover;
+    }
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+// banner 死神 爆炸
+@keyframes banner_boom_large {
+    0% {
+        background-position: -2.78rem 0;
+        background-size: cover;
+    }
+    20% {
+        background-position: -5.48rem 0;
+        background-size: cover;
+    }
+    40% {
+        background-position: -8.28rem 0;
+        background-size: cover;
+    }
+    60% {
+        background-position: -10.88rem -9px;
+        background-size: cover;
+    }
+    80% {
+        background-position: -13.88rem -9px;
+        background-size: cover;
+    }
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+// banner 死神 爆炸
+@keyframes banner_boom_large_m {
+    0% {
+        background-position: -1.58rem 0;
+        background-size: cover;
+    }
+    20% {
+        background-position: -3.18rem 0;
+        background-size: cover;
+    }
+    40% {
+        background-position: -4.7rem 0;
+        background-size: cover;
+    }
+    60% {
+        background-position: -6.3rem -9px;
+        background-size: cover;
+    }
+    80% {
+        background-position: -8.1rem -9px;
+        background-size: cover;
+    }
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+// 遊戲通關入口 閃爍
+@keyframes badge_flash {
+    0% {
+        background-position: top;
+    }
+    50% {
+        background-position: bottom;
+    }
+    100% {
+        background-position: top;
+    }
+}
+
+// 遊戲區域背景無限滾動
+@keyframes bg-rolling {
+    100% {
+        background-position-y: -3200px;
+        /* 因為是垂直無限滾動，因此改變 background-position-y */
+        /* 抓好起始、結束的端點即可 */
+    }
+}
+
+// 遊戲左側固定爆炸動畫
+@keyframes section1-left {
+    0% {
+        background-position: 0 -750px;
+    }
+    14% {
+        background-position: -206px -750px;
+    }
+    29% {
+        background-position: -411px -750px;
+    }
+    43% {
+        background-position: -618px -750px;
+    }
+    57% {
+        background-position: -824px -750px;
+    }
+    71% {
+        background-position: -1030px -750px;
+    }
+    85% {
+        background-position: -1236px -750px;
+    }
+    100% {
+        background-position: -1442px -750px;
+    }
+}
+
+// 遊戲右側固定爆炸動畫
+@keyframes section1-right {
+    0% {
+        background-position: 0 -1236px;
+    }
+    14% {
+        background-position: -196px -1236px;
+    }
+    29% {
+        background-position: -392px -1236px;
+    }
+    43% {
+        background-position: -588px -1236px;
+    }
+    57% {
+        background-position: -784px -1236px;
+    }
+    71% {
+        background-position: -980px -1236px;
+    }
+    85% {
+        background-position: -1176px -1236px;
+    }
+    100% {
+        background-position: -1372px -1236px;
+    }
+}
+
+// 己方飛機爆炸
+@keyframes boom-myPlane {
+    0% {
+        width: 96px;
+        height: 130px;
+        background-position: -335px -86px;
+    }
+    25% {
+        width: 100px;
+        height: 130px;
+        background-position: -641px -88px;
+    }
+    50% {
+        width: 114px;
+        height: 116px;
+        background-position: -788px -88px;
+    }
+    75% {
+        width: 60px;
+        height: 68px;
+        background-position: -969px -132px;
+    }
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+// 小敵機爆炸
+@keyframes boom-small {
+    0% {
+        width: 40px;
+        height: 34px;
+        background-position: -44px -238px;
+    }
+    20% {
+        width: 40px;
+        height: 35px;
+        background-position: -88px -238px;
+    }
+    40% {
+        width: 40px;
+        height: 33px;
+        background-position: -132px -238px;
+    }
+    60% {
+        width: 34px;
+        height: 30px;
+        background-position: -179px -240px;
+    }
+    80% {
+        width: 34px;
+        height: 26px;
+        background-position: -223px -242px;
+    }
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+// 中敵機爆炸
+@keyframes boom-medium {
+    0% {
+        width: 81px;
+        height: 70px;
+        background-position: -167px -292px;
+    }
+    17% {
+        width: 80px;
+        height: 70px;
+        background-position: -252px -292px;
+    }
+    33% {
+        width: 80px;
+        height: 70px;
+        background-position: -336px -292px;
+    }
+    50% {
+        width: 80px;
+        height: 70px;
+        background-position: -420px -292px;
+    }
+    67% {
+        width: 74px;
+        height: 59px;
+        background-position: -507px -298px;
+    }
+    83% {
+        width: 46px;
+        height: 36px;
+        background-position: -605px -309px;
+    }
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+// 大敵機爆炸
+@keyframes boom-large {
+    0% {
+        width: 148px;
+        height: 164px;
+        background-position: -2px -558px;
+    }
+    20% {
+        width: 148px;
+        height: 164px;
+        background-position: -156px -558px;
+    }
+    40% {
+        width: 150px;
+        height: 150px;
+        background-position: -308px -568px;
+    }
+    60% {
+        width: 97px;
+        height: 84px;
+        background-position: -493px -616px;
+    }
+    80% {
+        width: 80px;
+        height: 64px;
+        background-position: -646px -630px;
+    }
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+// 分數閃爍
+@keyframes twinkle {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+}

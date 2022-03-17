@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BX 小遊戲 飛機大戰</title>
+    <link rel="stylesheet" href="../src/common/css/BX_reset.css">
+    <link rel="stylesheet" href="../src/common/css/BX_common.css">
+    <link rel="stylesheet" href="../src/css/BX_game_plane_war.css">
+</head>
+
+<body>
+    <h1>BX 小遊戲 飛機大戰</h1>
+    <div class="wrapper">
+        <div class="banner">
+            <img class="game-info mobile" src="../src/images/BX_game_plane_war/game-info-m.png">
+            <!-- "遊戲通關入口" -->
+            <div class="badge">
+                <a href="#"></a>
+            </div>
+            <!-- 三隻可被點擊的目標 -->
+            <!-- 大眼怪 -->
+            <div id="banner_enemy_small" class="banner_animation small">
+                <div></div>
+                <img class="frontSight" src="../src/images/BX_game_plane_war/frontSight.png" />
+            </div>
+            <!-- 外星人 -->
+            <div id="banner_enemy_medium" class="banner_animation medium">
+                <div></div>
+                <img class="frontSight" src="../src/images/BX_game_plane_war/frontSight.png" />
+            </div>
+            <!-- 死神 -->
+            <div id="banner_enemy_large" class="banner_animation large">
+                <div></div>
+                <img class="frontSight" src="../src/images/BX_game_plane_war/frontSight.png" />
+            </div>
+        </div>
+        <div id="section1" class="section1">
+            <!-- 遊戲規則 -->
+            <img id="game-info" class="game-info pc" src="../src/images/BX_game_plane_war/game-info.png" />
+            <!-- 公版彈窗 -->
+            <div class="PopupBox" id="gameSuccessBox">
+                <div class="popMsg">
+                    <div class="title">报名失败</div>
+                    <div class="msgContent">
+                        <div class="msgInfo">
+                            <p>恭喜获得<span class="fontRed fontBold total"></span>分<br>
+                                <span class="msgText">分数未达门槛，报名失败</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- "登入帳號" -->
+            <!-- 不能放到 vue 裡面，不然會吃不到相關的 css、JS 設定，進而導致操控失敗 -->
+            <div class="btn activity-btn1"></div>
+            <div class="section1-animation animation-left"></div>
+            <div class="section1-animation animation-right"></div>
+            <!-- 遊戲區域 -->
+            <div id="gameArea" class="gameArea" :class="{
+                playing: playStatus === 'playing',
+                pause: playStatus === 'pause',
+                gameover: playStatus === 'gameover',
+            }">
+                <!-- 開始遊戲 -->
+                <div class="btn btn-start" :class="{'dp-block': btnStatus.start === true}" @click="startGame"></div>
+                <!-- 再來一次 -->
+                <div class="btn btn-again" :class="{'dp-block': btnStatus.again === true}" @click="again"></div>
+                <!-- 闖關失敗 -->
+                <div class="fail" :class="{'dp-block': playStatus === 'gameover'}"></div>
+                <!-- 遊戲操作區域 -->
+                <div class="gameOperationArea">
+                    <!-- 己方飛機、砲塔 -->
+                    <div id="id_my_plane" class="myPlane" :class="{
+                        playing: playStatus === 'playing',
+                        boom: myPlane.boom === true,
+                    }" :style="{'transform': `translate(${myPlane.translateX}px, ${myPlane.translateY}px)`}">
+                    </div>
+                    <!-- 子彈 -->
+                    <div>
+                        <!-- 外面那層 div 其實不包也沒關係，不過加了的話，開發、debug 的時候在 chrome devTool 上會比較容易閱讀 -->
+                        <div v-for="bullet of bulletList" class="bullet"
+                            :style="{'transform': `translate(${bullet.translateX}px, ${bullet.translateY}px)`}"
+                            :key="bullet.bulletId">
+                        </div>
+                    </div>
+                    <!-- 敵機 -->
+                    <div>
+                        <!-- 外面那層 div 其實不包也沒關係，不過加了的話，開發、debug 的時候在 chrome devTool 上會比較容易閱讀 -->
+                        <div v-for="enemy of enemyList" class="enemy" :class="{ 
+                            'enemy-small': enemy.enemyType === 'small',
+                            'enemy-medium': enemy.enemyType === 'medium',
+                            'enemy-large': enemy.enemyType === 'large',
+                            hitted: enemy.hitted === true,
+                            boom: enemy.boom === true,
+                        }" :key="enemy.enemyId"
+                            :style="{'transform': `translate(${enemy.translateX}px, ${enemy.translateY}px)`}">
+                        </div>
+                    </div>
+                </div>
+                <!-- 分數顯示 -->
+                <div class="pointArea" :class="{twinkle: pointTwinkle === true}" v-cloak>
+                    <!-- pointDigit_1 為物件，物件內值為 true 的屬性會在相對應的 span 加入名為屬性名稱的 class  -->
+                    <span :class="pointDigit_1"></span>
+                    <span :class="pointDigit_2"></span>
+                    <span :class="pointDigit_3"></span>
+                    <span :class="pointDigit_4"></span>
+                </div>
+            </div>
+        </div>
+        <div class="section2">
+            <div class="rule-info">
+                <div class="title">
+                    <h3>奖励规则：</h3><br>
+                </div>
+                <ul>
+                    <li>奖励规则：从进入组件开始，完成该关指定产品，交易满足手即可获得后赠；请参照表格</li>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div>累积积分</div>
+                                </td>
+                                <td>
+                                    <div>参加产品</div>
+                                </td>
+                                <td>
+                                    <div>每手返还</div>
+                                </td>
+                                <td>
+                                    <div>奖励上限</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>100以上</td>
+                                <td>黄金</td>
+                                <td>US$1</td>
+                                <td>US$100</td>
+                            </tr>
+                            <tr>
+                                <td>200以上</td>
+                                <td>指数</td>
+                                <td>US$2</td>
+                                <td>US$200</td>
+                            </tr>
+                            <tr>
+                                <td>300以上</td>
+                                <td>原油</td>
+                                <td>US$3</td>
+                                <td>US$300</td>
+                                <br>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="note">* 累积600积分以上，并交易0.01手可再获得3美元</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                </ul>
+                <ul>
+                    <h3>注意事项：</h3>
+                    <br>
+                    <li>本公司员工不适合此活动。</li>
+                    <li>本活动可与其他活动一同参与。</li>
+                    <li>本公司保留随时修订、暂停、终止本活动及任何相关规则条款之权利及其解释权。</li>
+                </ul>
+            </div>
+        </div>
+        <div id="preloader">
+            <div class="preloader_1"></div>
+            <div class="preloader_2"></div>
+            <div class="preloader_3"></div>
+        </div>
+    </div>
+
+    <!-- jQuery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <!-- Vue 2 部屬版本 cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <!-- 自適應換算比例 -->
+    <script>
+        (function (doc, win) {
+            const docEl = doc.documentElement;
+            const resizeEvt = "orientationchange" in window ? "orientationchange" : "resize";
+            function recalc() {
+                const clientWidth = docEl.clientWidth; //clientWidth: 获取对象可见内容的宽度，不包括滚动条，不包括边框
+                if (!clientWidth) {
+                    return;
+                }
+                if (window.innerWidth <= 768) {
+                    document.documentElement.style.fontSize = clientWidth / 7.68 + "px";
+                }
+                else if (window.innerWidth >= 1920) {
+                    document.documentElement.style.fontSize = 1920 / 19.2 + "px";
+                }
+                else {
+                    document.documentElement.style.fontSize = clientWidth / 19.2 + "px";
+                }
+            }
+            recalc();
+
+            /* 判断是否支持监听事件 ，不支持则停止 */
+            if (!doc.addEventListener) {
+                return;
+            }
+
+            /* 注册翻转事件 */
+            win.addEventListener(resizeEvt, recalc, false);
+        })(document, window);
+    </script>
+    <!-- 小遊戲的邏輯寫在 index.js 裡面 -->
+    <script src="../src/js/BX_game_plane_war/index.js"></script>
+</body>
+
+</html>

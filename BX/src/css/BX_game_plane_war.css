@@ -1,0 +1,1799 @@
+@charset "UTF-8";
+body.noYScroll {
+  -ms-touch-action: pan-x;
+      touch-action: pan-x;
+}
+
+.pc {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+.banner {
+  position: relative;
+  z-index: 1;
+  height: 636px;
+  background: url(../images/BX_game_plane_war/banner.jpg) no-repeat center;
+}
+
+.banner .badge {
+  position: absolute;
+  top: 65.1%;
+  left: -webkit-calc(50% - (238px / 2));
+  left: calc(50% - (238px / 2));
+  z-index: 3;
+  width: 238px;
+  height: 192px;
+  background: url(../images/BX_game_plane_war/badge.png) no-repeat bottom;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-animation-name: badge_flash;
+          animation-name: badge_flash;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+}
+
+.banner .badge:active {
+  background-position: top;
+}
+
+.banner .badge a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.banner .banner_animation {
+  position: absolute;
+  cursor: pointer;
+}
+
+.banner .banner_animation.small {
+  top: 138px;
+  left: 47%;
+  width: 1.4rem;
+  height: 1.2rem;
+}
+
+.banner .banner_animation.small > div {
+  background: url(../images/BX_game_plane_war/banner_alien_small_sprite.png) no-repeat 0 0;
+  -webkit-background-size: cover;
+          background-size: cover;
+  -webkit-animation-name: sway_small;
+          animation-name: sway_small;
+}
+
+.banner .banner_animation.small > div.boom {
+  -webkit-animation-name: banner_boom_small;
+          animation-name: banner_boom_small;
+}
+
+.banner .banner_animation.small .frontSight {
+  top: -0.25rem;
+  left: 0.05rem;
+}
+
+.banner .banner_animation.medium {
+  top: 226px;
+  right: 2.47rem;
+  width: 2.22rem;
+  height: 1.95rem;
+}
+
+.banner .banner_animation.medium > div {
+  background: url(../images/BX_game_plane_war/banner_alien_medium_sprite.png) no-repeat 0 0;
+  -webkit-background-size: cover;
+          background-size: cover;
+  -webkit-animation-name: sway_medium;
+          animation-name: sway_medium;
+}
+
+.banner .banner_animation.medium > div.boom {
+  -webkit-animation-name: banner_boom_medium;
+          animation-name: banner_boom_medium;
+}
+
+.banner .banner_animation.medium .frontSight {
+  top: -0.15rem;
+  left: 0.35rem;
+}
+
+.banner .banner_animation.large {
+  left: 2.37rem;
+  top: 343px;
+  width: 2.7rem;
+  height: 2.82rem;
+}
+
+.banner .banner_animation.large > div {
+  background: url(../images/BX_game_plane_war/banner_alien_large_sprite.png) no-repeat 0 0;
+  -webkit-background-size: cover;
+          background-size: cover;
+  -webkit-animation-name: sway_large;
+          animation-name: sway_large;
+}
+
+.banner .banner_animation.large > div.boom {
+  -webkit-animation-name: banner_boom_large;
+          animation-name: banner_boom_large;
+}
+
+.banner .banner_animation.large .frontSight {
+  top: 0.35rem;
+  left: 0.85rem;
+}
+
+.banner .banner_animation > div {
+  width: 100%;
+  height: 100%;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+}
+
+.banner .banner_animation > div.boom {
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.banner .banner_animation .frontSight {
+  position: absolute;
+  width: 1.36rem;
+  height: 1.36rem;
+}
+
+.banner .banner_animation .frontSight.boom {
+  display: none;
+}
+
+.section1 {
+  height: 1056px;
+  background: url(../images/BX_game_plane_war/section1.jpg) no-repeat center;
+  position: relative;
+  z-index: 0;
+}
+
+.section1.gameover {
+  background-image: url(../images/BX_game_plane_war/gameover_bg.jpg);
+}
+
+.section1 .btn {
+  position: absolute;
+  top: 44%;
+  left: -webkit-calc(50% - 80px);
+  left: calc(50% - 80px);
+  z-index: 50;
+  width: 146px;
+  height: 120px;
+  cursor: pointer;
+}
+
+.section1 .btn.dp-block {
+  display: block;
+}
+
+.section1 .activity-btn1 {
+  top: 47%;
+  z-index: 51;
+  display: none;
+  background: url(../images/BX_game_plane_war/icon_start.png) no-repeat 0%/cover;
+  background-position: 0 0;
+}
+
+.section1 .btn-start {
+  display: block;
+  background: url(../images/BX_game_plane_war/icon_start.png) no-repeat 0%/cover;
+  background-position: 0% 33%;
+}
+
+.section1 .btn-again {
+  display: none;
+  background: url(../images/BX_game_plane_war/icon_start.png) no-repeat 0%/cover;
+  background-position: 0% 66.5%;
+}
+
+.section1 .game-info {
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - (640px) / 2);
+  left: calc(50% - (640px) / 2);
+  width: 640px;
+  height: 200px;
+}
+
+.section2 {
+  position: relative;
+  height: 1100px;
+  background-color: #040205;
+}
+
+.section2 .rule-info {
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 300px);
+  left: calc(50% - 300px);
+  width: 630px;
+  color: #fff;
+  font-size: 26px;
+  line-height: 42px;
+}
+
+.section2 .rule-info h3 {
+  margin-top: 0.6rem;
+  font-size: 36px;
+  color: #fff;
+}
+
+.section2 .rule-info li {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
+.section2 .rule-info table {
+  width: 100%;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.section2 .rule-info table td {
+  padding: 1px;
+  background-color: #d44785;
+  color: #fff;
+}
+
+.section2 .rule-info table tr:nth-child(even) td {
+  border: none;
+  border-bottom: 4px solid #040205;
+  background-color: #d8d8d8;
+}
+
+.section2 .rule-info table tr:nth-child(1) td {
+  height: 0.84rem;
+  border: 2px solid #d44785;
+}
+
+.section2 .rule-info table tr:nth-child(1) td:nth-child(1) div, .section2 .rule-info table tr:nth-child(1) td:nth-child(2) div, .section2 .rule-info table tr:nth-child(1) td:nth-child(3) div {
+  border-right: 1px solid #fff;
+}
+
+.section2 .rule-info table tr:nth-child(2) td {
+  border-top: 4px solid #040205;
+}
+
+.section2 .rule-info table tr:nth-child(2) td:nth-child(1) {
+  color: #141818;
+}
+
+.section2 .rule-info table tr:nth-child(3) td {
+  border: none;
+  border-bottom: 4px solid #040205;
+  background-color: #efefef;
+}
+
+.section2 .rule-info table tr:nth-child(3) td:nth-child(1) {
+  color: #141818;
+}
+
+.section2 .rule-info table tr:nth-child(4) td:nth-child(1) {
+  color: #141818;
+}
+
+.section2 .rule-info table tr:nth-child(5) td {
+  border-bottom: 2px solid #d44785;
+  font-weight: normal;
+}
+
+.section2 .rule-info table tr:not(:first-child) td {
+  height: 0.7rem;
+}
+
+.section2 .rule-info table tr:not(:first-child) td:not(:first-child) {
+  color: #626464;
+}
+
+.section2 .rule-info table .note {
+  background-color: #040205;
+  color: #d44785;
+  border: none;
+}
+
+.popMsg {
+  position: absolute;
+  top: 37%;
+  left: -webkit-calc(50% - 250px);
+  left: calc(50% - 250px);
+  z-index: 1;
+  margin: 0 auto;
+  width: 476px;
+  height: 286px;
+  background: url(../images/BX_game_plane_war/msg_box.png) no-repeat 0 0/100%;
+  display: none;
+}
+
+.popMsg.dp-block {
+  display: block;
+}
+
+.popMsg .title {
+  margin-top: 15px;
+  font-size: 32px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.popMsg p {
+  font-size: 32px;
+  letter-spacing: 0.05px;
+  text-align: center;
+  color: #424a4a;
+}
+
+.popMsg .msgContent {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  margin-top: 20px;
+  height: 200px;
+  text-align: center;
+  font-size: 30px;
+  color: #424a4a;
+}
+
+.popMsg .msgContent .msgInfo {
+  margin: 1px auto;
+  width: 360px;
+  text-align: center;
+}
+
+.popMsg .fontRed {
+  color: #b51616;
+}
+
+.popMsg .fontBold {
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .banner {
+    background: url(../images/BX_game_plane_war/banner_m.jpg) no-repeat 0/100%;
+    height: 13.3rem;
+  }
+  .banner .game-info {
+    width: 6.5rem;
+    height: 4.1rem;
+    position: absolute;
+    top: 64.2%;
+    left: -webkit-calc(50% - (6.49rem) / 2);
+    left: calc(50% - (6.49rem) / 2);
+  }
+  .banner .badge {
+    width: 2.38rem;
+    height: 1.92rem;
+    background: url(../images/BX_game_plane_war/badge.png) no-repeat bottom/100%;
+    top: 34.9%;
+    left: -webkit-calc(50% - (2.38rem) / 2);
+    left: calc(50% - (2.38rem) / 2);
+  }
+  .banner .badge:active {
+    background-position: top;
+  }
+  .banner .banner_animation.small {
+    width: 1rem;
+    height: 0.86rem;
+    top: 2.1rem;
+    left: 3.3rem;
+  }
+  .banner .banner_animation.small > div.boom {
+    -webkit-animation-name: banner_boom_small_m;
+            animation-name: banner_boom_small_m;
+  }
+  .banner .banner_animation.small .frontSight {
+    top: -0.25rem;
+    left: 0.05rem;
+  }
+  .banner .banner_animation.medium {
+    width: 1.76rem;
+    height: 1.54rem;
+    top: 4.24rem;
+    right: 0.76rem;
+  }
+  .banner .banner_animation.medium > div.boom {
+    -webkit-animation-name: banner_boom_medium_m;
+            animation-name: banner_boom_medium_m;
+  }
+  .banner .banner_animation.medium .frontSight {
+    top: -0.15rem;
+    left: 0.35rem;
+  }
+  .banner .banner_animation.large {
+    width: 1.66rem;
+    height: 1.63rem;
+    top: 5.49rem;
+    left: 0.63rem;
+  }
+  .banner .banner_animation.large > div.boom {
+    -webkit-animation-name: banner_boom_large_m;
+            animation-name: banner_boom_large_m;
+  }
+  .banner .banner_animation.large .frontSight {
+    top: 0.05rem;
+    left: 0.35rem;
+  }
+  .banner .banner_animation .frontSight {
+    width: 1rem;
+    height: 1rem;
+  }
+  .section1 {
+    position: relative;
+    margin-top: -0.45rem;
+    margin-bottom: -0.4rem;
+    height: 17.4rem;
+    background: url(../images/BX_game_plane_war/section1_m.jpg) no-repeat 0/100%;
+  }
+  .section1.gameover {
+    background-image: url(../images/BX_game_plane_war/gameover_bg_m.jpg);
+  }
+  .section1 .btn {
+    position: absolute;
+    top: 28%;
+    left: -webkit-calc(50vw - (2.92rem / 2));
+    left: calc(50vw - (2.92rem / 2));
+    width: 2.92rem;
+    height: 2.41rem;
+  }
+  .section2 {
+    height: 11rem;
+    margin-top: -1px;
+  }
+  .section2 .rule-info {
+    position: absolute;
+    left: -webkit-calc(50% - 3rem);
+    left: calc(50% - 3rem);
+    top: 0%;
+    margin-top: 1rem;
+    width: 6.3rem;
+    color: #fff;
+    font-size: 0.26rem;
+    line-height: 0.42rem;
+  }
+  .section2 .rule-info h3 {
+    margin-top: 0;
+    font-size: 0.36rem;
+    color: #fff;
+  }
+  .popMsg {
+    position: absolute;
+    left: -webkit-calc(50vw - (6.2rem / 2));
+    left: calc(50vw - (6.2rem / 2));
+    top: -webkit-calc(50vh - 1.35rem);
+    top: calc(50vh - 1.35rem);
+    width: 6.2rem;
+    height: 3.7rem;
+  }
+  .popMsg .title {
+    margin-top: 0.15rem;
+    font-size: 0.48rem;
+    color: #fff;
+    text-align: center;
+  }
+  .popMsg .msgContent {
+    margin-top: 0.1rem;
+    height: 2.8rem;
+    text-align: center;
+    font-size: 0.6rem;
+    color: #424a4a;
+    line-height: 0.6rem;
+    letter-spacing: 0.03rem;
+  }
+  .popMsg .msgContent .msgInfo {
+    width: 5.3rem;
+    text-align: center;
+    line-height: 0.5rem;
+    letter-spacing: 0.02rem;
+  }
+  .popMsg .msgContent .msgInfo p {
+    font-size: 0.48rem;
+    line-height: 1.38;
+    letter-spacing: 0.07px;
+  }
+}
+
+/* 遊戲相關操控 */
+.gameArea {
+  position: relative;
+  top: 24.4%;
+  left: -webkit-calc(50% - 400.5px);
+  left: calc(50% - 400.5px);
+  width: 801px;
+  height: 540px;
+  background: url(../images/BX_game_plane_war/gameArea_bg.jpg) 0 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.gameArea.playing {
+  -webkit-animation: bg-rolling 5s linear infinite;
+          animation: bg-rolling 5s linear infinite;
+}
+
+.gameArea.pause {
+  background: none;
+}
+
+.gameArea.gameover {
+  background: none;
+}
+
+.fail {
+  position: absolute;
+  left: -webkit-calc(50% - (533px / 2));
+  left: calc(50% - (533px / 2));
+  top: -webkit-calc(50% - (194px / 2));
+  top: calc(50% - (194px / 2));
+  display: none;
+  width: 533px;
+  height: 194px;
+  background: url(../images/BX_game_plane_war/group.png) no-repeat -1px -1740px;
+}
+
+.fail.dp-block {
+  display: block;
+}
+
+.gameOperationArea {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.section1-animation {
+  position: absolute;
+  top: 30.4%;
+  background: url(../images/BX_game_plane_war/group.png) no-repeat;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.animation-left {
+  left: -webkit-calc(50vw - (1334px / 2));
+  left: calc(50vw - (1334px / 2));
+  width: 202px;
+  height: 466px;
+  -webkit-animation-name: section1-left;
+          animation-name: section1-left;
+}
+
+.animation-right {
+  left: -webkit-calc(50vw + (914px / 2));
+  left: calc(50vw + (914px / 2));
+  width: 192px;
+  height: 482px;
+  -webkit-animation-name: section1-right;
+          animation-name: section1-right;
+}
+
+.myPlane {
+  position: absolute;
+  display: none;
+  width: 70px;
+  height: 116px;
+  background: url(../images/BX_game_plane_war/group.png) no-repeat -40px -86px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.myPlane.playing {
+  display: block;
+}
+
+.myPlane.boom {
+  -webkit-animation-name: boom-myPlane;
+          animation-name: boom-myPlane;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.bullet {
+  position: absolute;
+  z-index: 2;
+  width: 41px;
+  height: 27px;
+  background: url(../images/BX_game_plane_war/group.png) no-repeat -680px -24px;
+}
+
+.enemy {
+  position: absolute;
+  z-index: 1;
+  background: url(../images/BX_game_plane_war/group.png) no-repeat;
+}
+
+.enemy.boom {
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.enemy-small {
+  width: 40px;
+  height: 30px;
+  background-position: 0 -238px;
+}
+
+.enemy-small.boom {
+  -webkit-animation-name: boom-small;
+          animation-name: boom-small;
+}
+
+.enemy-medium {
+  width: 80px;
+  height: 68px;
+  background-position: 0 -292px;
+}
+
+.enemy-medium.hitted {
+  background-position: -83px -292px;
+}
+
+.enemy-medium.boom {
+  -webkit-animation-name: boom-medium;
+          animation-name: boom-medium;
+}
+
+.enemy-large {
+  width: 146px;
+  height: 145px;
+  background-position: -4px -382px;
+}
+
+.enemy-large.hitted {
+  background-position: -158px -382px;
+}
+
+.enemy-large.boom {
+  -webkit-animation-name: boom-large;
+          animation-name: boom-large;
+}
+
+.pointArea {
+  position: absolute;
+  top: -9%;
+  left: -webkit-calc(50% - (116px / 2));
+  left: calc(50% - (116px / 2));
+  width: 116px;
+  height: 100px;
+}
+
+.pointArea.twinkle {
+  -webkit-animation-name: twinkle;
+          animation-name: twinkle;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+}
+
+.pointArea span {
+  display: inline-block;
+  margin-left: 5px;
+  width: 24px;
+  height: 40px;
+  background-image: url(../images/BX_game_plane_war/group.png);
+  background-position: 0 -10px;
+}
+
+.pointArea .zero {
+  background-position: 0 -10px;
+}
+
+.pointArea .zero.twinkle {
+  background-position: -279px -10px;
+}
+
+.pointArea .one {
+  background-position: -28px -10px;
+}
+
+.pointArea .one.twinkle {
+  background-position: -307px -10px;
+}
+
+.pointArea .two {
+  background-position: -56px -10px;
+}
+
+.pointArea .two.twinkle {
+  background-position: -335px -10px;
+}
+
+.pointArea .three {
+  background-position: -84px -10px;
+}
+
+.pointArea .three.twinkle {
+  background-position: -363px -10px;
+}
+
+.pointArea .four {
+  background-position: -112px -10px;
+}
+
+.pointArea .four.twinkle {
+  background-position: -392px -10px;
+}
+
+.pointArea .five {
+  background-position: -140px -10px;
+}
+
+.pointArea .five.twinkle {
+  background-position: -420px -10px;
+}
+
+.pointArea .six {
+  background-position: -168px -10px;
+}
+
+.pointArea .six.twinkle {
+  background-position: -447px -10px;
+}
+
+.pointArea .seven {
+  background-position: -196px -10px;
+}
+
+.pointArea .seven.twinkle {
+  background-position: -475px -10px;
+}
+
+.pointArea .eight {
+  background-position: -224px -10px;
+}
+
+.pointArea .eight.twinkle {
+  background-position: -503px -10px;
+}
+
+.pointArea .nine {
+  background-position: -252px -10px;
+}
+
+.pointArea .nine.twinkle {
+  background-position: -532px -10px;
+}
+
+#preloader {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+}
+
+#preloader .preloader_1 {
+  background: url(../images/BX_game_plane_war/gameover_bg.jpg);
+}
+
+#preloader .preloader_2 {
+  background: url(../images/BX_game_plane_war/gameover_bg_m.jpg);
+}
+
+#preloader .preloader_3 {
+  background: url(../images/BX_game_plane_war/msg_box.png);
+}
+
+@media (max-width: 768px) {
+  .gameArea {
+    top: 14.1%;
+    left: 0;
+  }
+  .pointArea {
+    top: -0.9rem;
+    left: -webkit-calc(50vw - 116px / 2);
+    left: calc(50vw - 116px / 2);
+    background: none;
+  }
+  .fail {
+    top: -webkit-calc(50vh - 140px);
+    top: calc(50vh - 140px);
+    left: -webkit-calc(50vw - (320px / 2));
+    left: calc(50vw - (320px / 2));
+    width: 320px;
+    height: 115px;
+    background: url(../images/BX_game_plane_war/group.png) no-repeat 0 -1955px;
+  }
+}
+
+@-webkit-keyframes sway_small {
+  0% {
+    -webkit-transform: rotate(13deg);
+            transform: rotate(13deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(13deg);
+            transform: rotate(13deg);
+  }
+}
+
+@keyframes sway_small {
+  0% {
+    -webkit-transform: rotate(13deg);
+            transform: rotate(13deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(13deg);
+            transform: rotate(13deg);
+  }
+}
+
+@-webkit-keyframes sway_medium {
+  0% {
+    -webkit-transform: rotate(-13deg);
+            transform: rotate(-13deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-13deg);
+            transform: rotate(-13deg);
+  }
+}
+
+@keyframes sway_medium {
+  0% {
+    -webkit-transform: rotate(-13deg);
+            transform: rotate(-13deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-13deg);
+            transform: rotate(-13deg);
+  }
+}
+
+@-webkit-keyframes sway_large {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(13deg);
+            transform: rotate(13deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes sway_large {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(13deg);
+            transform: rotate(13deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes banner_boom_small {
+  0% {
+    background-position: -1.44rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  17% {
+    background-position: -2.84rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  33% {
+    background-position: -4.34rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  50% {
+    background-position: -5.74rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  67% {
+    background-position: -7.14rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  83% {
+    background-position: -8.64rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes banner_boom_small {
+  0% {
+    background-position: -1.44rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  17% {
+    background-position: -2.84rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  33% {
+    background-position: -4.34rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  50% {
+    background-position: -5.74rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  67% {
+    background-position: -7.14rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  83% {
+    background-position: -8.64rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes banner_boom_small_m {
+  0% {
+    background-position: -1rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  17% {
+    background-position: -2.1rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  33% {
+    background-position: -3.1rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  50% {
+    background-position: -4.1rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  67% {
+    background-position: -5.3rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  83% {
+    background-position: -6.2rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes banner_boom_small_m {
+  0% {
+    background-position: -1rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  17% {
+    background-position: -2.1rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  33% {
+    background-position: -3.1rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  50% {
+    background-position: -4.1rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  67% {
+    background-position: -5.3rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  83% {
+    background-position: -6.2rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes banner_boom_medium {
+  0% {
+    background-position: -2.3rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  17% {
+    background-position: -4.5rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  33% {
+    background-position: -6.8rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  50% {
+    background-position: -9rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  67% {
+    background-position: -11.3rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  83% {
+    background-position: -13.6rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes banner_boom_medium {
+  0% {
+    background-position: -2.3rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  17% {
+    background-position: -4.5rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  33% {
+    background-position: -6.8rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  50% {
+    background-position: -9rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  67% {
+    background-position: -11.3rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  83% {
+    background-position: -13.6rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes banner_boom_medium_m {
+  0% {
+    background-position: -1.8rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  17% {
+    background-position: -3.6rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  33% {
+    background-position: -5.4rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  50% {
+    background-position: -7.2rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  67% {
+    background-position: -9rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  83% {
+    background-position: -10.8rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes banner_boom_medium_m {
+  0% {
+    background-position: -1.8rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  17% {
+    background-position: -3.6rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  33% {
+    background-position: -5.4rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  50% {
+    background-position: -7.2rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  67% {
+    background-position: -9rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  83% {
+    background-position: -10.8rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes banner_boom_large {
+  0% {
+    background-position: -2.78rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  20% {
+    background-position: -5.48rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  40% {
+    background-position: -8.28rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  60% {
+    background-position: -10.88rem -9px;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  80% {
+    background-position: -13.88rem -9px;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes banner_boom_large {
+  0% {
+    background-position: -2.78rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  20% {
+    background-position: -5.48rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  40% {
+    background-position: -8.28rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  60% {
+    background-position: -10.88rem -9px;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  80% {
+    background-position: -13.88rem -9px;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes banner_boom_large_m {
+  0% {
+    background-position: -1.58rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  20% {
+    background-position: -3.18rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  40% {
+    background-position: -4.7rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  60% {
+    background-position: -6.3rem -9px;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  80% {
+    background-position: -8.1rem -9px;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes banner_boom_large_m {
+  0% {
+    background-position: -1.58rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  20% {
+    background-position: -3.18rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  40% {
+    background-position: -4.7rem 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  60% {
+    background-position: -6.3rem -9px;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  80% {
+    background-position: -8.1rem -9px;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes badge_flash {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}
+
+@keyframes badge_flash {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}
+
+@-webkit-keyframes bg-rolling {
+  100% {
+    background-position-y: -3200px;
+    /* 因為是垂直無限滾動，因此改變 background-position-y */
+    /* 抓好起始、結束的端點即可 */
+  }
+}
+
+@keyframes bg-rolling {
+  100% {
+    background-position-y: -3200px;
+    /* 因為是垂直無限滾動，因此改變 background-position-y */
+    /* 抓好起始、結束的端點即可 */
+  }
+}
+
+@-webkit-keyframes section1-left {
+  0% {
+    background-position: 0 -750px;
+  }
+  14% {
+    background-position: -206px -750px;
+  }
+  29% {
+    background-position: -411px -750px;
+  }
+  43% {
+    background-position: -618px -750px;
+  }
+  57% {
+    background-position: -824px -750px;
+  }
+  71% {
+    background-position: -1030px -750px;
+  }
+  85% {
+    background-position: -1236px -750px;
+  }
+  100% {
+    background-position: -1442px -750px;
+  }
+}
+
+@keyframes section1-left {
+  0% {
+    background-position: 0 -750px;
+  }
+  14% {
+    background-position: -206px -750px;
+  }
+  29% {
+    background-position: -411px -750px;
+  }
+  43% {
+    background-position: -618px -750px;
+  }
+  57% {
+    background-position: -824px -750px;
+  }
+  71% {
+    background-position: -1030px -750px;
+  }
+  85% {
+    background-position: -1236px -750px;
+  }
+  100% {
+    background-position: -1442px -750px;
+  }
+}
+
+@-webkit-keyframes section1-right {
+  0% {
+    background-position: 0 -1236px;
+  }
+  14% {
+    background-position: -196px -1236px;
+  }
+  29% {
+    background-position: -392px -1236px;
+  }
+  43% {
+    background-position: -588px -1236px;
+  }
+  57% {
+    background-position: -784px -1236px;
+  }
+  71% {
+    background-position: -980px -1236px;
+  }
+  85% {
+    background-position: -1176px -1236px;
+  }
+  100% {
+    background-position: -1372px -1236px;
+  }
+}
+
+@keyframes section1-right {
+  0% {
+    background-position: 0 -1236px;
+  }
+  14% {
+    background-position: -196px -1236px;
+  }
+  29% {
+    background-position: -392px -1236px;
+  }
+  43% {
+    background-position: -588px -1236px;
+  }
+  57% {
+    background-position: -784px -1236px;
+  }
+  71% {
+    background-position: -980px -1236px;
+  }
+  85% {
+    background-position: -1176px -1236px;
+  }
+  100% {
+    background-position: -1372px -1236px;
+  }
+}
+
+@-webkit-keyframes boom-myPlane {
+  0% {
+    width: 96px;
+    height: 130px;
+    background-position: -335px -86px;
+  }
+  25% {
+    width: 100px;
+    height: 130px;
+    background-position: -641px -88px;
+  }
+  50% {
+    width: 114px;
+    height: 116px;
+    background-position: -788px -88px;
+  }
+  75% {
+    width: 60px;
+    height: 68px;
+    background-position: -969px -132px;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes boom-myPlane {
+  0% {
+    width: 96px;
+    height: 130px;
+    background-position: -335px -86px;
+  }
+  25% {
+    width: 100px;
+    height: 130px;
+    background-position: -641px -88px;
+  }
+  50% {
+    width: 114px;
+    height: 116px;
+    background-position: -788px -88px;
+  }
+  75% {
+    width: 60px;
+    height: 68px;
+    background-position: -969px -132px;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes boom-small {
+  0% {
+    width: 40px;
+    height: 34px;
+    background-position: -44px -238px;
+  }
+  20% {
+    width: 40px;
+    height: 35px;
+    background-position: -88px -238px;
+  }
+  40% {
+    width: 40px;
+    height: 33px;
+    background-position: -132px -238px;
+  }
+  60% {
+    width: 34px;
+    height: 30px;
+    background-position: -179px -240px;
+  }
+  80% {
+    width: 34px;
+    height: 26px;
+    background-position: -223px -242px;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes boom-small {
+  0% {
+    width: 40px;
+    height: 34px;
+    background-position: -44px -238px;
+  }
+  20% {
+    width: 40px;
+    height: 35px;
+    background-position: -88px -238px;
+  }
+  40% {
+    width: 40px;
+    height: 33px;
+    background-position: -132px -238px;
+  }
+  60% {
+    width: 34px;
+    height: 30px;
+    background-position: -179px -240px;
+  }
+  80% {
+    width: 34px;
+    height: 26px;
+    background-position: -223px -242px;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes boom-medium {
+  0% {
+    width: 81px;
+    height: 70px;
+    background-position: -167px -292px;
+  }
+  17% {
+    width: 80px;
+    height: 70px;
+    background-position: -252px -292px;
+  }
+  33% {
+    width: 80px;
+    height: 70px;
+    background-position: -336px -292px;
+  }
+  50% {
+    width: 80px;
+    height: 70px;
+    background-position: -420px -292px;
+  }
+  67% {
+    width: 74px;
+    height: 59px;
+    background-position: -507px -298px;
+  }
+  83% {
+    width: 46px;
+    height: 36px;
+    background-position: -605px -309px;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes boom-medium {
+  0% {
+    width: 81px;
+    height: 70px;
+    background-position: -167px -292px;
+  }
+  17% {
+    width: 80px;
+    height: 70px;
+    background-position: -252px -292px;
+  }
+  33% {
+    width: 80px;
+    height: 70px;
+    background-position: -336px -292px;
+  }
+  50% {
+    width: 80px;
+    height: 70px;
+    background-position: -420px -292px;
+  }
+  67% {
+    width: 74px;
+    height: 59px;
+    background-position: -507px -298px;
+  }
+  83% {
+    width: 46px;
+    height: 36px;
+    background-position: -605px -309px;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes boom-large {
+  0% {
+    width: 148px;
+    height: 164px;
+    background-position: -2px -558px;
+  }
+  20% {
+    width: 148px;
+    height: 164px;
+    background-position: -156px -558px;
+  }
+  40% {
+    width: 150px;
+    height: 150px;
+    background-position: -308px -568px;
+  }
+  60% {
+    width: 97px;
+    height: 84px;
+    background-position: -493px -616px;
+  }
+  80% {
+    width: 80px;
+    height: 64px;
+    background-position: -646px -630px;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes boom-large {
+  0% {
+    width: 148px;
+    height: 164px;
+    background-position: -2px -558px;
+  }
+  20% {
+    width: 148px;
+    height: 164px;
+    background-position: -156px -558px;
+  }
+  40% {
+    width: 150px;
+    height: 150px;
+    background-position: -308px -568px;
+  }
+  60% {
+    width: 97px;
+    height: 84px;
+    background-position: -493px -616px;
+  }
+  80% {
+    width: 80px;
+    height: 64px;
+    background-position: -646px -630px;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes twinkle {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+}
