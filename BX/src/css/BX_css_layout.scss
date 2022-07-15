@@ -1,3 +1,343 @@
+%background-center {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* 2022 7~9 好友推薦 */
+.section3 {
+    padding-top: 0.9rem;
+    height: 7.2rem;
+    background: url(../images/lp_40000hydg/section3.jpg) no-repeat 0 0/100% auto;
+    .title {
+        margin: 0 auto;
+        width: 4.21rem;
+        height: 0.55rem;
+        background-image: url(../images/lp_40000hydg/section3-title.png);
+        @extend %background-center;
+    }
+    .subtitle {
+        margin-top: 0.2rem;
+        font-size: 0.32rem;
+        font-weight: 500;
+        text-align: center;
+        color: #177686;
+        user-select: none;
+    }
+    .reward-calc-wrapper {
+        position: relative;
+        z-index: 9;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        margin-top: 0.5rem;
+        width: 13rem;
+        font-size: 0.3rem;
+        user-select: none;
+        .title-people {
+            position: absolute;
+            top: 0;
+            left: -1.27rem;
+            z-index: 9;
+            width: 1.27rem;
+            height: 0.43rem;
+            background-image: url(../images/lp_40000hydg/section3-title-people.png);
+            @extend %background-center;
+        }
+        .title-amount {
+            position: absolute;
+            top: 2.53rem;
+            left: -1.27rem;
+            z-index: 9;
+            width: 1.27rem;
+            height: 0.43rem;
+            background-image: url(../images/lp_40000hydg/section3-title-reward.png);
+            @extend %background-center;
+        }
+        .background-color-area {
+            position: absolute;
+            top: 1.4rem;
+            left: -1.5rem;
+            z-index: 0;
+            width: 14.7rem;
+            height: 2.8rem;
+            border-radius: 0.1rem;
+            background-color: #fff;
+        }
+        .condition {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 1.1rem;
+            height: 3rem;
+            opacity: 0.5;
+            cursor: pointer;
+            &.act {
+                opacity: 1;
+            }
+            &.drag-controller {
+                position: absolute;
+                z-index: 99;
+                .people,
+                .icon,
+                .amount {
+                    opacity: 0; // 永遠都只顯示拖曳用圓點；其他元素(.people, .icon, .amount)是用於定位圓點高度用，這樣就不需要再單獨調整拖曳用圓點的位置
+                }
+            }
+            &.condition-1 {
+                .dot-and-bar {
+                    .bar {
+                        opacity: 0; // 第一個區塊隱藏 bar
+                    }
+                }
+            }
+            &.condition-10 {
+                position: relative;
+                .section3-tip {
+                    position: absolute;
+                    top: 3.2rem; // 此為 magic number，須手動調整至合適距離
+                    left: calc(50% - 3.2rem / 2);
+                    width: 3.2rem;
+                    height: 1.46rem;
+                    background-image: url(../images/lp_40000hydg/section3-tip.png);
+                    @extend %background-center;
+                }
+            }
+            .people {
+                font-size: 0.3rem;
+                font-weight: 600;
+                line-height: 1.67;
+                text-align: center;
+                color: #c4984f;
+            }
+            .icon {
+                z-index: 1;
+                margin-top: 0.24rem;
+                width: 0.84rem;
+                height: 0.92rem;
+                background-image: url(../images/lp_40000hydg/condition-icon.png);
+                @extend %background-center;
+            }
+            .dot-and-bar {
+                position: relative;
+                display: flex;
+                align-items: center;
+                margin-top: 0.18rem;
+                margin-left: -1.1rem;
+                height: 0.25rem;
+                .dot {
+                    width: 0.25rem;
+                    height: 0.25rem;
+                    background-color: #177686;
+                    border-radius: 50%;
+                }
+                .bar {
+                    width: 1.08rem;
+                    height: 0.04rem;
+                    background-color: #177686;
+                }
+            }
+            .amount {
+                margin-top: 0.36rem;
+                font-size: 0.3rem;
+                font-weight: 600;
+                line-height: 1;
+                text-align: center;
+                color: #177686;
+                z-index: 9;
+                span {
+                    font-size: 0.5rem;
+                }
+            }
+        }
+    }
+    .reward-calc-wrapper-m {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    %background-center-m {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .section3 {
+        padding-top: 0.73rem;
+        height: 14.6rem;
+        background-image: none;
+        background-color: #ecdfcc;
+        .reward-calc-wrapper {
+            display: none;
+        }
+        .reward-calc-wrapper-m {
+            position: relative;
+            display: block;
+            margin-top: 0.8rem;
+            .background-color-area {
+                position: absolute;
+                top: -0.5rem;
+                left: calc(50% - 6rem / 2);
+                width: 6rem;
+                height: 10.8rem;
+                border-radius: 0.1rem;
+                background-color: #fbeedb;
+            }
+            .draggable-area {
+                position: absolute;
+                top: 0;
+                left: calc(50% - 0.3rem / 2);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 0.3rem;
+                height: 9.3rem;
+                .dot-draggable {
+                    position: absolute;
+                    top: 0rem;
+                    left: 0;
+                    z-index: 99;
+                    width: 0.3rem;
+                    height: 0.3rem;
+                    border-radius: 50%;
+                    background-image: url(../images/lp_40000hydg/dot.png);
+                    @extend %background-center-m;
+                }
+                .dot-and-bar {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 0.3rem;
+                    height: 1rem;
+                    opacity: 0.2;
+                    &.dot-and-bar-1 {
+                        height: 0.3rem;
+                        .bar {
+                            display: none;
+                        }
+                    }
+                    &.act {
+                        opacity: 1;
+                    }
+                    .bar {
+                        width: 0.04rem;
+                        height: 0.7rem;
+                        background-color: #c6994f;
+                    }
+                    .dot {
+                        width: 0.3rem;
+                        height: 0.3rem;
+                        border-radius: 50%;
+                        background-color: transparent;
+                        background-image: url(../images/lp_40000hydg/dot.png);
+                        @extend %background-center-m;
+                    }
+                }
+            }
+            .condition {
+                position: absolute;
+                left: calc(50% - 2.3rem / 2);
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                margin-left: calc(2.3rem / 2 + 0.3rem * 2 / 3); // 0.3rem * 2 / 3 為 magic number
+                width: 2.3rem;
+                height: 1rem;
+                opacity: 0.5;
+                &.act {
+                    opacity: 1;
+                    .icon {
+                        background-image: url(../images/lp_40000hydg/condition-icon.png);
+                    }
+                }
+                &.condition-2,
+                &.condition-4,
+                &.condition-6,
+                &.condition-8,
+                &.condition-10 {
+                    flex-direction: row-reverse;
+                    margin-left: calc(-2.3rem / 2 - 0.3rem * 2 / 3); // 0.3rem * 2 / 3 為 magic number
+                    .arrow {
+                        transform: scaleX(-1);
+                    }
+                }
+                &.condition-1 {
+                    top: calc(-0.35rem + 1rem * (1 - 1)); // 0.35rem 為 magic number
+                }
+                &.condition-2 {
+                    top: calc(-0.35rem + 1rem * (2 - 1));
+                }
+                &.condition-3 {
+                    top: calc(-0.35rem + 1rem * (3 - 1));
+                }
+                &.condition-4 {
+                    top: calc(-0.35rem + 1rem * (4 - 1));
+                }
+                &.condition-5 {
+                    top: calc(-0.35rem + 1rem * (5 - 1));
+                }
+                &.condition-6 {
+                    top: calc(-0.35rem + 1rem * (6 - 1));
+                }
+                &.condition-7 {
+                    top: calc(-0.35rem + 1rem * (7 - 1));
+                }
+                &.condition-8 {
+                    top: calc(-0.35rem + 1rem * (8 - 1));
+                }
+                &.condition-9 {
+                    top: calc(-0.35rem + 1rem * (9 - 1));
+                }
+                &.condition-10 {
+                    position: relative;
+                    top: calc(-0.35rem + 1rem * (10 - 1));
+                    .section3-tip {
+                        position: absolute;
+                        top: 1.2rem; // 此為 magic number，須手動調整至合適距離
+                        left: calc(50% - 3.2rem / 2);
+                        width: 3.2rem;
+                        height: 1.46rem;
+                        background-image: url(../images/lp_40000hydg/section3-tip.png);
+                        @extend %background-center-m;
+                    }
+                }
+                .arrow {
+                    margin-bottom: 0.35rem;
+                    width: 0.17rem;
+                    height: 0.3rem;
+                    background-image: url(../images/lp_40000hydg/arrow-right.png);
+                    @extend %background-center-m;
+                }
+                .icon {
+                    width: 0.84rem;
+                    height: 0.92rem;
+                    background-image: url(../images/lp_40000hydg/condition-icon-silhouette.png);
+                    @extend %background-center-m;
+                }
+                .people-and-amount {
+                    .people {
+                        font-size: 30px;
+                        font-size: 0.3rem;
+                        text-align: center;
+                        color: #af9364;
+                        line-height: 1;
+                    }
+                    .amount {
+                        font-size: 0.3rem;
+                        font-weight: 500;
+                        text-align: center;
+                        color: #177686;
+                        line-height: 1;
+                        span {
+                            font-size: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 /* BX 2022/2 活躍客戶 落地頁 */
 .lp_v202202hykh {
     .section2 {
