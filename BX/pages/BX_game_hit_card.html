@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+
+<head>
+    <title>BX 小遊戲 點擊卡牌</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/common/css/BX_reset.css">
+    <link rel="stylesheet" href="../src/common/css/BX_common.css">
+    <link rel="stylesheet" href="../src/css/BX_game_hit_card.css">
+</head>
+
+<body>
+    <h1>BX 小遊戲 點擊卡牌</h1>
+    <div class="wrapper">
+        <div class="banner">
+            <img class="game-info mobile" src="../src/images/BX_game_hit_card/game-info-m.png" />
+            <!-- "遊戲通關入口" -->
+            <div class=" badge">
+                <a href="javascript:;"></a>
+            </div>
+            <div class="banner_animation">
+                <!-- 吉祥物 -->
+                <img class="mascot" src="../src/images/BX_game_hit_card/mascot.png" />
+                <!-- 人造物 -->
+                <img class="artifact artifact1" src="../src/images/BX_game_hit_card/artifact1.png" />
+                <img class="artifact artifact2" src="../src/images/BX_game_hit_card/artifact2.png" />
+                <img class="artifact artifact3" src="../src/images/BX_game_hit_card/artifact3.png" />
+                <img class="artifact artifact4" src="../src/images/BX_game_hit_card/artifact4.png" />
+                <!-- 士兵 -->
+                <img class="soldier soldier1" src="../src/images/BX_game_hit_card/soldier1.png" />
+                <img class="soldier soldier2" src="../src/images/BX_game_hit_card/soldier2.png" />
+                <img class="soldier soldier3" src="../src/images/BX_game_hit_card/soldier3.png" />
+                <img class="soldier soldier4" src="../src/images/BX_game_hit_card/soldier4.png" />
+                <!-- 動物 -->
+                <img class="animal animal1" src="../src/images/BX_game_hit_card/animal1.png" />
+                <img class="animal animal2" src="../src/images/BX_game_hit_card/animal2.png" />
+                <img class="animal animal3" src="../src/images/BX_game_hit_card/animal3.png" />
+            </div>
+        </div>
+        <div id="section1" class="section1">
+            <div class="filter"></div>
+            <!-- 遊戲規則 -->
+            <img id="game-info" class="game-info pc" src="../src/images/BX_game_hit_card/game-info.png" />
+            <!-- 公版彈窗 -->
+            <div class="PopupBox" id="gameSuccessBox">
+                <div class="popMsg">
+                    <div class="title">报名失败</div>
+                    <div class="msgContent">
+                        <div class="msgInfo">
+                            <p>
+                                <span class="msgText">报名失败，请联系客服</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- "登入帳號" -->
+            <!-- 不能放到 vue 裡面，不然會吃不到相關的 css、JS 設定，進而導致操控失敗 -->
+            <div class="btn activity-btn1"></div>
+            <!-- 遊戲區域 -->
+            <div id="gameArea" class="gameArea" v-cloak>
+                <!-- 開始遊戲 -->
+                <div class="btn btn-start" :class="{'dp-block': btnStatus.start === true}" @click="startGame" data-stat="click,dadala,lp_vbxrpg4m"></div>
+                <!-- 再來一次 -->
+                <div class="btn btn-again" :class="{'dp-block': btnStatus.again === true}" @click="again" v-show="playStatus !== 'playing'"></div>
+                <!-- 遊戲結束 -->
+                <div class="fail" :class="{'dp-block': playStatus === 'gameover'}"></div>
+                <!-- 打擊次數 -->
+                <div class="left-chance">
+                    <div class="not-yet zero" :class="{'missed': leftChanceStatus.zero === true}"></div>
+                    <div class="not-yet one" :class="{'missed': leftChanceStatus.one === true}"></div>
+                    <div class="not-yet two" :class="{'missed': leftChanceStatus.two === true}"></div>
+                    <div class="not-yet three" :class="{'missed': leftChanceStatus.three === true}"></div>
+                    <div class="not-yet four" :class="{'missed': leftChanceStatus.four === true}"></div>
+                    <div class="not-yet five" :class="{'missed': leftChanceStatus.five === true}"></div>
+                    <div class="not-yet six" :class="{'missed': leftChanceStatus.six === true}"></div>
+                    <div class="not-yet seven" :class="{'missed': leftChanceStatus.seven === true}"></div>
+                    <div class="not-yet eight" :class="{'missed': leftChanceStatus.eight === true}"></div>
+                    <div class="not-yet nine" :class="{'missed': leftChanceStatus.nine === true}"></div>
+                </div>
+                <!-- 遊戲操作區域 -->
+                <div class="gameOperationArea" @click="judgeIfShootEmpty($event)">
+
+                    <!-- 戰報 -->
+                    <div class="level-report" v-show="showLevelReport && playStatus === 'pause'" :class="{
+                        'level-report-1': levelReport === 1,
+                        'level-report-2': levelReport === 2,
+                        'level-report-3': levelReport === 3,
+                        'level-report-4': levelReport === 4
+                    }">
+                    </div>
+
+                    <!-- 小怪 -->
+                    <div class="enemySArea" v-show="level === 1 && playStatus === 'playing'">
+                        <div v-for="enemy of enemyS" class="enemy enemy-s" :class="{ 
+                            'enemy-hide': enemy.nowTwinkleShow === false,
+                            'boom': enemy.boom === true,
+                            }" :style="{'transform': `translate(${enemy.translateX}px, ${enemy.translateY}px)`}" @click="judgeShootedFixed(enemy.order)">
+                        </div>
+                    </div>
+
+                    <!-- 中怪 -->
+                    <div class="enemyMArea" v-show="level === 2 && playStatus === 'playing'">
+                        <div class="enemy enemy-m enemy-m1" :class="{ 
+                            'shooted': enemyM1.beenShooted === true,
+                            'boom': enemyM1.boom === true,
+                            }" :style="{'transform': `translate(${enemyM1.translateX}px, ${enemyM1.translateY}px)`}" @click="judgeShootedMoving($event)" v-show="level === 2 && playStatus === 'playing'">
+                            <div class="life-bar m1-life-bar zero" v-show="enemyM1.life > 0"></div>
+                            <div class="life-bar m1-life-bar one" v-show="enemyM1.life > 1"></div>
+                            <div class="life-bar m1-life-bar two" v-show="enemyM1.life > 2"></div>
+                            <div class="life-bar m1-life-bar three" v-show="enemyM1.life > 3"></div>
+                            <div class="life-bar m1-life-bar four" v-show="enemyM1.life > 4"></div>
+                        </div>
+                        <div class="enemy enemy-m enemy-m2" :class="{ 
+                        'shooted': enemyM2.beenShooted === true,
+                        'boom': enemyM2.boom === true,
+                        }" :style="{'transform': `translate(${enemyM2.translateX}px, ${enemyM2.translateY}px)`}" @click="judgeShootedMoving($event)" v-show="level === 2 && playStatus === 'playing'">
+                            <div class="life-bar m2-life-bar zero" v-show="enemyM2.life > 0"></div>
+                            <div class="life-bar m2-life-bar one" v-show="enemyM2.life > 1"></div>
+                            <div class="life-bar m2-life-bar two" v-show="enemyM2.life > 2"></div>
+                            <div class="life-bar m2-life-bar three" v-show="enemyM2.life > 3"></div>
+                            <div class="life-bar m2-life-bar four" v-show="enemyM2.life > 4"></div>
+                        </div>
+                    </div>
+
+                    <!-- 大怪 -->
+                    <div class="enemy enemy-l" :class="{ 
+                        'enemy-hide': enemyL.nowTwinkleShow === false,
+                        'shooted': enemyL.beenShooted === true,
+                        'boom': enemyL.boom === true,
+                        }" :style="{'transform': `translate(${enemyL.translateX}px, ${enemyL.translateY}px)`}" @click="judgeShootedMoving($event)" v-show="level === 3 && playStatus === 'playing'">
+                        <div class="life-bar l-life-bar row1 zero" v-show="enemyL.life > 0"></div>
+                        <div class="life-bar l-life-bar row1 one" v-show="enemyL.life > 1"></div>
+                        <div class="life-bar l-life-bar row1 two" v-show="enemyL.life > 2"></div>
+                        <div class="life-bar l-life-bar row1 three" v-show="enemyL.life > 3"></div>
+                        <div class="life-bar l-life-bar row1 four" v-show="enemyL.life > 4"></div>
+                        <div class="life-bar l-life-bar row2 five" v-show="enemyL.life > 5"></div>
+                        <div class="life-bar l-life-bar row2 six" v-show="enemyL.life > 6"></div>
+                        <div class="life-bar l-life-bar row2 seven" v-show="enemyL.life > 7"></div>
+                        <div class="life-bar l-life-bar row2 eight" v-show="enemyL.life > 8"></div>
+                        <div class="life-bar l-life-bar row2 nine" v-show="enemyL.life > 9"></div>
+                    </div>
+
+                    <!-- bonus 怪 -->
+                    <div class="enemy enemy-xl" :class="{ 
+                        'enemy-hide': enemyXL.nowTwinkleShow === false,
+                        'shooted': enemyXL.beenShooted === true,
+                        'boom': enemyXL.boom === true,
+                        }" :style="{'transform': `translate(${enemyXL.translateX}px, ${enemyXL.translateY}px)`}" @click="judgeShootedMoving($event)" v-show="level === 4 && playStatus === 'playing'">
+                        <div class="life-bar xl-life-bar row1 zero" v-show="enemyXL.life > 0"></div>
+                        <div class="life-bar xl-life-bar row1 one" v-show="enemyXL.life > 1"></div>
+                        <div class="life-bar xl-life-bar row1 two" v-show="enemyXL.life > 2"></div>
+                        <div class="life-bar xl-life-bar row1 three" v-show="enemyXL.life > 3"></div>
+                        <div class="life-bar xl-life-bar row1 four" v-show="enemyXL.life > 4"></div>
+                        <div class="life-bar xl-life-bar row2 five" v-show="enemyXL.life > 5"></div>
+                        <div class="life-bar xl-life-bar row2 six" v-show="enemyXL.life > 6"></div>
+                        <div class="life-bar xl-life-bar row2 seven" v-show="enemyXL.life > 7"></div>
+                        <div class="life-bar xl-life-bar row2 eight" v-show="enemyXL.life > 8"></div>
+                        <div class="life-bar xl-life-bar row2 nine" v-show="enemyXL.life > 9"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section2">
+            <div class="rule-info">
+                <div class="title">
+                    <h3>奖励规则：</h3><br>
+                </div>
+                <ul>
+                    <li>奖励规则：从进入组件开始，完成该关指定产品，交易满足手即可获得后赠；请参照表格</li>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div>成功通关</div>
+                                </td>
+                                <td>
+                                    <div>奖励商品</div>
+                                </td>
+                                <td>
+                                    <div>每手返还</div>
+                                </td>
+                                <td>
+                                    <div>奖励上限</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>第一关</td>
+                                <td>黄金</td>
+                                <td>US$2</td>
+                                <td>US$100</td>
+                            </tr>
+                            <tr>
+                                <td>第二关</td>
+                                <td>指数</td>
+                                <td>US$2</td>
+                                <td>US$200</td>
+                            </tr>
+                            <tr>
+                                <td>第三关</td>
+                                <td>原油</td>
+                                <td>US$3</td>
+                                <td>US$300</td>
+                                <br>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="note">* 完美通关『神秘关卡』，并交易0.01手可再获得3美元</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                </ul>
+                <ul>
+                    <h3>注意事项：</h3>
+                    <br>
+                    <li>本公司员工不适合此活动。</li>
+                    <li>本活动可与其他活动一同参与。</li>
+                    <li>本公司保留随时修订、暂停、终止本活动及任何相关规则条款之权利及其解释权。</li>
+                </ul>
+            </div>
+        </div>
+        <input type="hidden" name="account" id="account" value="" />
+        <!-- 要預先載入的圖片放在 #preloader 裡面 -->
+        <div id="preloader">
+            <div class="preloader_1_1"></div>
+            <div class="preloader_1_2"></div>
+            <div class="preloader_1_3"></div>
+            <div class="preloader_1_4"></div>
+            <div class="preloader_2_1"></div>
+            <div class="preloader_2_2"></div>
+            <div class="preloader_3_1"></div>
+            <div class="preloader_4_1"></div>
+            <div class="preloader_4_2"></div>
+            <div class="preloader_4_3"></div>
+            <div class="preloader_4_4"></div>
+        </div>
+    </div>
+
+    <!-- jQuery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <!-- Vue 2 部屬版本 cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <!-- 自適應換算比例 -->
+    <!-- TODO: 自適應換算比例 看看要不要抽出去共用 -->
+    <script>
+        (function (doc, win) {
+            const docEl = doc.documentElement;
+            const resizeEvt = "orientationchange" in window ? "orientationchange" : "resize";
+            function recalc() {
+                const clientWidth = docEl.clientWidth; //clientWidth: 获取对象可见内容的宽度，不包括滚动条，不包括边框
+                if (!clientWidth) {
+                    return;
+                }
+                if (window.innerWidth <= 768) {
+                    document.documentElement.style.fontSize = clientWidth / 7.68 + "px";
+                }
+                else if (window.innerWidth >= 1920) {
+                    document.documentElement.style.fontSize = 1920 / 19.2 + "px";
+                }
+                else {
+                    document.documentElement.style.fontSize = clientWidth / 19.2 + "px";
+                }
+            }
+            recalc();
+
+            /* 判断是否支持监听事件 ，不支持则停止 */
+            if (!doc.addEventListener) {
+                return;
+            }
+
+            /* 注册翻转事件 */
+            win.addEventListener(resizeEvt, recalc, false);
+        })(document, window);
+    </script>
+
+    <!-- 小遊戲的邏輯寫在 index.js 裡面 -->
+    <!-- 報名用的 hd_common 就可以不用了 -->
+    <script src="../src/js/BX_game_hit_card/index.js"></script>
+</body>
+
+</html>

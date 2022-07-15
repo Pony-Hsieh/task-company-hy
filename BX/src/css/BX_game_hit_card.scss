@@ -1,0 +1,1572 @@
+$file-path: "../images/BX_game_hit_card";
+
+[v-cloak] {
+    display: none;
+}
+
+.pc {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+.dp-none {
+    display: none;
+}
+
+.dp-block {
+    display: block;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.activity-main .logo {
+    width: 211px !important;
+}
+
+.banner {
+    position: relative;
+    z-index: 1;
+    height: 636px;
+    background: url(#{$file-path}/banner.jpg) no-repeat center;
+    .badge {
+        // display: none; // 先關掉，不然好干擾
+        position: absolute;
+        top: 77.1%;
+        left: calc(50% - (220px / 2));
+        z-index: 3;
+        overflow: hidden;
+        width: 220px;
+        height: 146px;
+        background: url(#{$file-path}/badge.png) no-repeat bottom;
+        cursor: pointer;
+        animation-name: badge_flash;
+        animation-timing-function: step-end;
+        animation-iteration-count: infinite;
+        animation-duration: 1.2s;
+        &:active {
+            background-position: top;
+        }
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .kefu-right {
+        position: absolute;
+        top: 20px;
+        right: 63px;
+        display: inline-block;
+        box-sizing: border-box;
+        width: 220px;
+        height: 60px;
+        background-image: linear-gradient(0deg, #fdad06 0%, #ffde8c 100%);
+        border-radius: 0.5rem;
+        text-align: center;
+        font-size: 28px;
+        letter-spacing: 2px;
+        color: #122451;
+        line-height: 60px;
+    }
+    .banner_animation {
+        img {
+            position: absolute;
+        }
+        // 吉祥物
+        .mascot {
+            top: 366px;
+            left: 36.4%;
+            animation-name: animation-mascot;
+            animation-duration: 3s;
+            animation-timing-function: step-end;
+            animation-iteration-count: infinite;
+            animation-delay: 0.8s;
+            transform-origin: bottom left;
+        }
+        // 人造物
+        .artifact {
+            opacity: 0;
+            animation-duration: 1s;
+            animation-timing-function: ease-in;
+            animation-fill-mode: forwards;
+            &.artifact1 {
+                top: 160px;
+                left: 16%;
+                animation-name: animation-artifact1;
+                animation-delay: 4.5s;
+            }
+            &.artifact2 {
+                top: 220px;
+                left: 19.3%;
+                animation-name: animation-artifact2;
+                animation-delay: 5s;
+            }
+            &.artifact3 {
+                top: 230px;
+                left: 10.9%;
+                animation-name: animation-artifact3;
+                animation-delay: 5.5s;
+            }
+            &.artifact4 {
+                top: 290px;
+                left: 21.8%;
+                animation-name: animation-artifact4;
+                animation-delay: 6s;
+            }
+        }
+        // 士兵
+        .soldier {
+            opacity: 0;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in-out;
+            animation-timing-function: cubic-bezier(0, 1, 0.32, 1);
+            animation-fill-mode: forwards;
+            &.soldier1 {
+                top: 407px;
+                left: 26%;
+                animation-name: animation-soldier1;
+                animation-delay: 0.8s;
+            }
+            &.soldier2 {
+                top: 381px;
+                left: 20%;
+                animation-name: animation-soldier2;
+                animation-delay: 1.6s;
+            }
+            &.soldier3 {
+                top: 412px;
+                left: 13.5%;
+                animation-name: animation-soldier3;
+                animation-delay: 2.4s;
+            }
+            &.soldier4 {
+                top: 336px;
+                left: 6.8%;
+                animation-name: animation-soldier4;
+                animation-delay: 3.2s;
+            }
+        }
+        // 動物
+        .animal {
+            animation-duration: 3s;
+            animation-timing-function: step-end;
+            animation-iteration-count: infinite;
+            animation-delay: 0.8s;
+            &.animal1 {
+                top: 300px;
+                left: 79.1%;
+                animation-name: animation-animal1;
+            }
+            &.animal2 {
+                top: 400px;
+                left: 73.8%;
+                animation-name: animation-animal2;
+                transform-origin: bottom right;
+            }
+            &.animal3 {
+                top: 430px;
+                left: 79%;
+                animation-name: animation-animal3;
+                transform-origin: 50% 30%;
+            }
+        }
+    }
+}
+
+.section1 {
+    position: relative;
+    z-index: 0;
+    height: 1099px;
+    background: url(#{$file-path}/section1.jpg) no-repeat center;
+    &.miss {
+        background-image: url(#{$file-path}/miss_bg.jpg);
+    }
+    .filter {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #351307, $alpha: 0.4);
+    }
+    .btn {
+        position: absolute;
+        top: 44%;
+        left: calc(50% - 80px);
+        z-index: 50;
+        width: 146px;
+        height: 120px;
+        cursor: pointer;
+        // 預設都不顯示 // 加上 .dp-block 即可顯示
+        &.dp-block {
+            display: block !important;
+        }
+    }
+    // 登入 // 不能放在 vue 內，不然會吃不到相關的 css、JS 設定，進而導致操控失敗
+    .activity-btn1 {
+        // 須登入才可開始遊戲
+        // display: block;
+        // 不須登入即可開始遊戲 // 本機遊戲
+        display: none;
+        top: 47%;
+        z-index: 51;
+        background: url(#{$file-path}/icon_start.png) no-repeat 0% / cover;
+        background-position: 0 0;
+    }
+    // 開始遊戲 // 由 hd_common.js $(".btn-start").show() 控制
+    .btn-start {
+        // 須登入才可開始遊戲
+        // display: none;
+        // 不須登入即可開始遊戲 // 本機遊戲
+        display: block;
+        background: url(#{$file-path}/icon_start.png) no-repeat 0% / cover;
+        background-position: 0% 33%;
+    }
+    // 再來一次
+    .btn-again {
+        display: none;
+        background: url(#{$file-path}/icon_start.png) no-repeat 0% / cover;
+        background-position: 0% 66.5%;
+    }
+    .game-info {
+        position: absolute;
+        top: 0;
+        left: calc(50% - (640px) / 2); // 50% 減去 元素寬度的一半
+        width: 640px;
+        height: 200px;
+    }
+}
+
+.section2 {
+    position: relative;
+    height: 1100px;
+    background-color: #351307;
+    .rule-info {
+        position: absolute;
+        top: 0;
+        left: calc(50% - 300px);
+        width: 630px;
+        color: #fff;
+        font-size: 26px;
+        line-height: 42px;
+        h3 {
+            margin-top: 0.6rem;
+            font-size: 36px;
+            color: #fff;
+        }
+        li {
+            list-style-type: decimal;
+            list-style-position: outside;
+        }
+        table {
+            width: 100%;
+            font-weight: 600;
+            text-align: center;
+            border: none;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 24px;
+            td {
+                padding: 1px;
+                background-color: #f5daa7;
+                color: #141818;
+            }
+            tr:nth-child(even) {
+                // even 是偶數
+                td {
+                    border: none;
+                    border-bottom: 4px solid #351307;
+                    background-color: #d8d8d8;
+                }
+            }
+            tr:nth-child(1) {
+                td {
+                    height: 0.84rem;
+                    border: 2px solid #f5daa7;
+                    &:nth-child(1),
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                        div {
+                            border-right: 1px solid #141818;
+                        }
+                    }
+                }
+            }
+            tr:nth-child(2) {
+                td {
+                    border-top: 4px solid #351307;
+                    &:nth-child(1) {
+                        color: #141818;
+                    }
+                }
+            }
+            tr:nth-child(3) {
+                td {
+                    border: none;
+                    border-bottom: 4px solid #351307;
+                    background-color: #efefef;
+                    &:nth-child(1) {
+                        color: #141818;
+                    }
+                }
+            }
+            tr:nth-child(4) {
+                td {
+                    &:nth-child(1) {
+                        color: #141818;
+                    }
+                }
+            }
+            tr:nth-child(5) {
+                td {
+                    border-bottom: 2px solid #f5daa7;
+                    font-weight: normal;
+                }
+            }
+            tr:not(:first-child) {
+                td {
+                    height: 0.7rem;
+                    &:not(:first-child) {
+                        color: #626464;
+                    }
+                }
+            }
+            .bg-green {
+                background-color: #ffffff;
+            }
+            .bg-red {
+                background-color: transparent;
+                color: #f5daa7;
+                border: none;
+            }
+        }
+    }
+}
+
+//報名登入
+.login-main {
+    position: relative;
+    z-index: 99;
+    display: none;
+    transition: all 0.2s;
+    .mask-box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.72);
+    }
+    .mask-main {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 5.91rem;
+        background-color: #fff;
+        border-radius: 0.1rem;
+        padding: 0.4rem 0.46rem;
+        box-sizing: border-box;
+        .title {
+            position: relative;
+            width: 100%;
+            font-size: 0.22rem;
+            text-align: center;
+            line-height: 0.24rem;
+            i {
+                position: absolute;
+                right: 0;
+                cursor: pointer;
+                font-size: 0.18rem;
+                line-height: 0.24rem;
+                transition: all 0.2s;
+                &:active,
+                &:hover {
+                    color: #0f6eef;
+                }
+            }
+        }
+        .login-from {
+            margin-top: 45px;
+            .list {
+                width: 4.98rem;
+                height: 0.54rem;
+                line-height: 0.45rem;
+                background-color: #f3f3f3;
+                border-radius: 0.05rem;
+                color: #7e7e7e;
+                box-sizing: border-box;
+                border: 0.01rem solid transparent;
+                transition: all 0.3s;
+                .icon {
+                    font-size: 0.2rem;
+                    margin-left: 0.23rem;
+                    float: left;
+                }
+                .input {
+                    font-size: 0.2rem;
+                    width: 65%;
+                    height: 100%;
+                    border: 0;
+                    float: left;
+                    padding-left: 0.27rem;
+                    background-color: transparent;
+                    box-sizing: border-box;
+                    letter-spacing: 0.01rem;
+                    color: #7e7e7e;
+                }
+            }
+            .cur {
+                border-color: #97aff6;
+            }
+            li:first-child .list {
+                margin-top: 0;
+            }
+            .input-warning {
+                color: #e73838;
+                opacity: 0;
+                transition: all 0.2s;
+                margin-top: 0.01rem;
+                padding-bottom: 0.02rem;
+                height: 0.19rem;
+            }
+        }
+        .login-button {
+            width: 4.98rem;
+            height: 0.6rem;
+            line-height: 0.58rem;
+            background-color: #577ff6;
+            border-radius: 0.05rem;
+            font-size: 0.2rem;
+            color: #fff;
+            margin-top: 0.22rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            &:active {
+                background-color: #4d67cd;
+            }
+        }
+        .login-option {
+            font-size: 0.16rem;
+            margin-top: 0.2rem;
+            overflow: hidden;
+            span {
+                color: #577ff6;
+                cursor: pointer;
+                &:first-child {
+                    float: left;
+                }
+                &:last-child {
+                    float: right;
+                }
+            }
+        }
+        .canvas {
+            float: right;
+            width: 0.92rem;
+            height: 0.4rem;
+            margin-top: 0.06rem;
+            margin-right: 0.1rem;
+        }
+    }
+}
+
+.popMsg {
+    width: 476px;
+    height: 286px;
+    position: absolute;
+    top: 37%;
+    left: calc(50% - 250px);
+    background: url(#{$file-path}/msg_box.png) no-repeat 0 0/100%;
+    margin: 0 auto;
+    z-index: 1;
+    // 預設不顯示 // 爆炸的時候再顯示
+    display: none;
+    &.dp-block {
+        display: block;
+    }
+    .title {
+        font-size: 32px;
+        color: #ffffff;
+        text-align: center;
+        margin-top: 15px;
+    }
+    p {
+        font-size: 32px;
+        letter-spacing: 0.05px;
+        text-align: center;
+        color: #424a4a;
+    }
+    .msgContent {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: center;
+        margin-top: 20px;
+        height: 200px;
+        text-align: center;
+        font-size: 30px;
+        color: #424a4a;
+        .msgInfo {
+            width: 360px;
+            margin: 1px auto;
+            text-align: center;
+        }
+        .msgBtn {
+            border-radius: 20px;
+            border: 2px solid #b51616;
+            color: #b51616;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 5px 20px;
+            padding: 5px 10px;
+            &:hover {
+                border: 2px solid #b51616;
+                color: #fff;
+                background-color: #b51616;
+            }
+        }
+    }
+    .msgClose {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+    }
+    .fontRed {
+        color: #b51616;
+    }
+    .fontBold {
+        font-weight: 600;
+    }
+}
+.tips_box_1 > p {
+    margin: 0.7rem auto;
+    width: 1.9rem;
+    font-size: 0.2rem;
+    text-align: center;
+}
+
+#idError {
+    font-size: 0.18rem;
+}
+
+@media (max-width: 768px) {
+    .activity-main .logo {
+        width: 2.11rem !important;
+    }
+    .pc {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+    .gameRule {
+        display: none;
+    }
+    .banner {
+        height: 13.8rem;
+        background: url(#{$file-path}/banner_m.jpg) no-repeat 0/100%;
+        .mallet {
+            top: 49%;
+            left: calc(50% - 0.3rem);
+        }
+        .game-info {
+            position: absolute;
+            top: 64.2%;
+            left: calc(50% - (6.49rem) / 2); // 50% 減去 元素寬度的一半
+            width: 6.5rem;
+            height: 4.1rem;
+        }
+        .badge {
+            top: 39%;
+            left: calc(50% - (2.2rem) / 2); // 50% 減去 元素寬度的一半
+            width: 2.2rem;
+            height: 1.46rem;
+            background: url(#{$file-path}/badge.png) no-repeat bottom/100%;
+            &:active {
+                background-position: top;
+            }
+        }
+        .kefu-right {
+            font-size: 0.28rem;
+            top: 0.2rem;
+            right: 0.63rem;
+            width: 2.2rem;
+            height: 0.6rem;
+            line-height: 0.6rem;
+        }
+        .gameRule-m {
+            background: url(#{$file-path}/game_info_m.png) no-repeat 0/100%;
+            font-size: 0.36rem;
+            position: absolute;
+            top: 66%;
+            left: calc(50% - 3.25rem);
+            width: 6.5rem;
+            height: 4.06rem;
+            line-height: 0.4rem;
+            -webkit-filter: drop-shadow(0px 10px 7px rgba(0, 0, 0, 0.7));
+            filter: drop-shadow(0px 10px 7px rgba(0, 0, 0, 0.7));
+            h5 {
+                font-size: 0.48rem;
+            }
+        }
+        .banner_animation {
+            // 吉祥物
+            .mascot {
+                top: 3.8rem;
+                left: 1.3rem;
+                width: 1.66rem;
+                height: 2rem;
+            }
+            // 人造物
+            .artifact {
+                display: none;
+            }
+            // 士兵
+            .soldier {
+                &.soldier1 {
+                    top: 5.77rem;
+                    left: -1.06rem;
+                    width: 1.06rem;
+                    height: 1.76rem;
+                    animation-name: animation-soldier1-m;
+                }
+                &.soldier2 {
+                    top: 7.16rem;
+                    left: -1.02rem;
+                    width: 1.02rem;
+                    height: 1.98rem;
+                    animation-name: animation-soldier2-m;
+                }
+                &.soldier3 {
+                    top: 7.32rem;
+                    left: -1.1rem;
+                    widows: 1.1rem;
+                    height: 1.82rem;
+                    animation-name: animation-soldier3-m;
+                }
+                &.soldier4 {
+                    top: 5.35rem;
+                    left: -1.18rem;
+                    width: 1.18rem;
+                    height: 2.32rem;
+                    animation-name: animation-soldier4-m;
+                }
+            }
+            // 動物
+            .animal {
+                &.animal1 {
+                    top: 6.3rem;
+                    left: 5.3rem;
+                    width: 1.8rem;
+                    height: 1rem;
+                }
+                &.animal2 {
+                    width: 1rem;
+                    height: 0.7rem;
+                    top: 7.1rem;
+                    left: 3.9rem;
+                }
+                &.animal3 {
+                    width: 2.3rem;
+                    height: 1.5rem;
+                    top: 7.4rem;
+                    left: 4.7rem;
+                }
+            }
+        }
+    }
+    .section1 {
+        height: 17.4rem;
+        background: url(#{$file-path}/section1_m.jpg) no-repeat 0/100%;
+        margin-top: -2px;
+        position: relative;
+        margin-top: -0.45rem;
+        margin-bottom: -0.4rem;
+        &.miss {
+            background-image: url(#{$file-path}/miss_bg_m.jpg);
+        }
+        .btn {
+            width: 2.92rem;
+            height: 2.41rem;
+            position: absolute;
+            top: 28%;
+            left: calc(50vw - (2.92rem / 2)); // 一半裝置寬度 - 一半元素寬度 // 水平置中效果
+        }
+    }
+    .section2 {
+        height: 11rem;
+        margin-top: -1px;
+        .rule-info {
+            width: 6.3rem;
+            margin-top: 1rem;
+            position: absolute;
+            left: calc(50% - 3rem);
+            top: 0%;
+            color: #ffffff;
+            font-size: 0.26rem;
+            line-height: 0.42rem;
+            h3 {
+                font-size: 0.36rem;
+                color: #fff;
+                margin-top: 0;
+            }
+            table {
+                font-size: 0.24rem;
+            }
+        }
+    }
+    .popMsg {
+        width: 6.2rem;
+        height: 3.7rem;
+        position: absolute;
+        left: calc(50vw - (6.2rem / 2));
+        top: calc(50vh - 1.35rem);
+        .title {
+            font-size: 0.48rem;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 0.15rem;
+        }
+        .msgContent {
+            text-align: center;
+            font-size: 0.6rem;
+            color: #424a4a;
+            margin-top: 0.1rem;
+            line-height: 0.6rem;
+            letter-spacing: 0.03rem;
+            height: 2.8rem;
+            .msgInfo {
+                text-align: center;
+                width: 5.3rem;
+                line-height: 0.5rem;
+                letter-spacing: 0.02rem;
+                p {
+                    font-size: 0.48rem;
+                    line-height: 1.38;
+                    letter-spacing: 0.07px;
+                }
+            }
+            .msgBtn {
+                border-radius: 0.2rem;
+                border: 2px solid #b51616;
+                color: #b51616;
+                font-weight: 600;
+                cursor: pointer;
+                margin: 0.05rem 0.2rem;
+                padding: 0.1rem 0.2rem;
+                font-size: 0.3rem;
+            }
+        }
+        .msgClose {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+        }
+        .fontRed {
+            color: #b51616;
+        }
+        .fontBold {
+            font-weight: 600;
+        }
+    }
+    //報名登入
+    .login-main .mask-main {
+        width: 92.3%;
+        padding: 0.4rem 0.46rem;
+        height: unset;
+        border-radius: 0.2rem;
+        .title {
+            font-size: 0.32rem;
+        }
+        .login-from {
+            margin-top: 0.45rem;
+            .list {
+                width: 100%;
+                height: 0.9rem;
+                line-height: 0.9rem;
+                .icon {
+                    font-size: 0.3rem;
+                    margin-left: 0.23rem;
+                }
+                .input {
+                    font-size: 0.26rem;
+                    padding-left: 0.27rem;
+                }
+            }
+            .input-warning {
+                color: #e73838;
+                opacity: 0;
+                transition: all 0.2s;
+                height: 0.34rem;
+                line-height: 0.34rem;
+                margin-top: 1px;
+            }
+        }
+        .login-button {
+            width: 100%;
+            height: 0.9rem;
+            line-height: 0.9rem;
+            border-radius: 0.1rem;
+            font-size: 0.3rem;
+            margin-top: 0.22rem;
+        }
+        .login-option {
+            font-size: 0.26rem;
+            margin-top: 0.2rem;
+        }
+        .canvas {
+            float: right;
+            width: 1.5rem;
+            height: 0.7rem;
+            margin-top: 0.07rem;
+            margin-right: 0.1rem;
+        }
+    }
+    .tips_box_1 {
+        left: calc(50% - 135px);
+        top: 30%;
+    }
+}
+
+/* 遊戲相關操控 */
+// 遊戲相關區域
+.gameArea {
+    position: relative;
+    top: 31.1%;
+    left: calc(50% - 400.5px);
+    width: 800px;
+    height: 540px;
+    user-select: none; // 避免被使用者長壓選取
+}
+
+// 遊戲結束
+.fail {
+    position: absolute;
+    left: calc(50% - (533px / 2));
+    top: calc(50% - (194px / 2));
+    width: 533px;
+    height: 194px;
+    background: url(#{$file-path}/group.png) no-repeat -761px -474px;
+    display: none; // 預設不顯示
+    // 加上 .dp-block 即可顯示
+    &.dp-block {
+        display: block;
+    }
+}
+
+// 遊戲操作區域
+.gameOperationArea {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+// 戰報
+.level-report {
+    position: absolute;
+    top: calc((540px - 420px) / 2);
+    left: calc((800px - 410px) / 2);
+    width: 410px;
+    height: 420px;
+    background-image: url(#{$file-path}/group.png);
+    background-repeat: no-repeat;
+    &.level-report-1 {
+        background-position: 0px -816px;
+    }
+    &.level-report-2 {
+        background-position: -419px -816px;
+    }
+    &.level-report-3 {
+        background-position: -839px -816px;
+    }
+    &.level-report-4 {
+        background-position: -1259px -816px;
+    }
+}
+
+// 打擊次數
+.left-chance {
+    position: absolute;
+    top: -150px;
+    left: calc(50% - (680px / 2));
+    width: 680px;
+    height: 130px;
+    font-size: 0.5rem;
+    background-image: url(#{$file-path}/leftChance.png);
+    background-repeat: no-repeat;
+    display: flex;
+
+    .not-yet {
+        position: absolute;
+        top: 10px;
+        width: 44px;
+        height: 64px;
+        background-image: url(#{$file-path}/notYet.png);
+        background-repeat: no-repeat;
+    }
+    .missed {
+        background-image: url(#{$file-path}/missed.png);
+    }
+    .zero {
+        left: 471px;
+    }
+    .one {
+        left: 442px;
+    }
+    .two {
+        left: 413px;
+    }
+    .three {
+        left: 384px;
+    }
+    .four {
+        left: 355px;
+    }
+    .five {
+        left: 326px;
+    }
+    .six {
+        left: 297px;
+    }
+    .seven {
+        left: 268px;
+    }
+    .eight {
+        left: 239px;
+    }
+    .nine {
+        left: 210px;
+    }
+}
+
+.enemySArea {
+    position: relative;
+}
+
+.enemyMArea {
+    position: absolute;
+    z-index: 0;
+    width: 0;
+    height: 0;
+}
+
+.enemy {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-image: url(#{$file-path}/group.png);
+    background-repeat: no-repeat;
+}
+
+.enemy-show {
+    opacity: 1;
+}
+
+.enemy-hide {
+    opacity: 0;
+}
+
+.enemy-s {
+    background-position: -1px -436px;
+}
+
+.enemy-m {
+    background-position: -191px -436px;
+}
+
+.enemy-l {
+    background-position: -381px -436px;
+}
+
+.enemy-xl {
+    background-position: -571px -436px;
+}
+
+// 生命條
+.life-bar {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background-color: #e60201;
+    &.m1-life-bar,
+    &.m2-life-bar {
+        top: 200px;
+        &.zero {
+            left: 10px;
+        }
+        &.one {
+            left: 44px;
+        }
+        &.two {
+            left: 78px;
+        }
+        &.three {
+            left: 112px;
+        }
+        &.four {
+            left: 146px;
+        }
+    }
+    &.l-life-bar,
+    &.xl-life-bar {
+        &.row1 {
+            top: 200px;
+            &.zero {
+                left: 10px;
+            }
+            &.one {
+                left: 44px;
+            }
+            &.two {
+                left: 78px;
+            }
+            &.three {
+                left: 112px;
+            }
+            &.four {
+                left: 146px;
+            }
+        }
+        &.row2 {
+            top: 220px;
+            &.five {
+                left: 10px;
+            }
+            &.six {
+                left: 44px;
+            }
+            &.seven {
+                left: 78px;
+            }
+            &.eight {
+                left: 112px;
+            }
+            &.nine {
+                left: 146px;
+            }
+        }
+    }
+}
+
+.shooted {
+    /* 小怪 小怪沒有，因為被射到就死了 */
+    /* .shooted.enemy-s {} */
+    /* 中怪 */
+    &.enemy-m {
+        background-position: -191px -626px;
+    }
+    /* 大怪 */
+    &.enemy-l {
+        background-position: -381px -626px;
+    }
+    /* bonus 怪 */
+    &.enemy-xl {
+        background-position: -571px -626px;
+    }
+}
+
+.boom {
+    /* 小怪 */
+    &.enemy-s {
+        background-position: -1px -626px;
+    }
+    /* 中怪 */
+    &.enemy-m {
+        display: none;
+    }
+    /* 大怪 */
+    &.enemy-l {
+        display: none;
+    }
+    /* bonus 怪 */
+    &.enemy-xl {
+        display: none;
+    }
+}
+
+// 要預先載入的內容 // 只是為了先載入而已，並沒有要真的顯示
+#preloader {
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    .preloader_1_1 {
+        background: url(#{$file-path}/enemy_s_after_m.png);
+    }
+    .preloader_1_2 {
+        background: url(#{$file-path}/enemy_m_after_m.png);
+    }
+    .preloader_1_3 {
+        background: url(#{$file-path}/enemy_l_after_m.png);
+    }
+    .preloader_1_4 {
+        background: url(#{$file-path}/enemy_xl_after_m.png);
+    }
+    .preloader_2_1 {
+        background: url(#{$file-path}/miss_bg.jpg);
+    }
+    .preloader_2_2 {
+        background: url(#{$file-path}/miss_bg_m.jpg);
+    }
+    .preloader_3_1 {
+        background: url(#{$file-path}/msg_box.png);
+    }
+    .preloader_4_1 {
+        background: url(#{$file-path}/level_report_1.png);
+    }
+    .preloader_4_2 {
+        background: url(#{$file-path}/level_report_2.png);
+    }
+    .preloader_4_3 {
+        background: url(#{$file-path}/level_report_3.png);
+    }
+    .preloader_4_4 {
+        background: url(#{$file-path}/level_report_4.png);
+    }
+}
+
+@media (max-width: 768px) {
+    .gameArea {
+        left: 0;
+        top: 14.1%;
+    }
+    .pointArea {
+        top: -0.9rem;
+        left: calc(50vw - 116px / 2);
+    }
+    // 遊戲結束
+    .fail {
+        left: calc(50vw - (320px / 2));
+        top: calc(50vh - 140px);
+        width: 320px;
+        height: 115px;
+        background: url(#{$file-path}/group.png) no-repeat -761px -690px;
+    }
+    // 戰報
+    .level-report {
+        left: 0.75rem;
+        width: 6rem;
+        height: 6.14rem;
+        &.level-report-1 {
+            background: url(#{$file-path}/level_report_1.png) no-repeat center center;
+            background-size: contain;
+        }
+        &.level-report-2 {
+            background: url(#{$file-path}/level_report_2.png) no-repeat center center;
+            background-size: contain;
+        }
+        &.level-report-3 {
+            background: url(#{$file-path}/level_report_3.png) no-repeat center center;
+            background-size: contain;
+        }
+        &.level-report-4 {
+            background: url(#{$file-path}/level_report_4.png) no-repeat center center;
+            background-size: contain;
+        }
+    }
+    // 打擊次數(剩餘可 miss 次數)
+    .left-chance {
+        top: -1.2rem;
+        left: 0.4rem;
+        display: flex;
+        width: 6.8rem;
+        height: 1.3rem;
+        background-image: url(#{$file-path}/leftChance.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        .not-yet {
+            top: 0.1rem;
+            width: 0.44rem;
+            height: 0.64rem;
+            background-size: contain;
+        }
+        .zero {
+            left: 471px;
+            left: 4.71rem;
+        }
+        .one {
+            left: 442px;
+            left: 4.42rem;
+        }
+        .two {
+            left: 413px;
+            left: 4.13rem;
+        }
+        .three {
+            left: 384px;
+            left: 3.84rem;
+        }
+        .four {
+            left: 355px;
+            left: 3.55rem;
+        }
+        .five {
+            left: 326px;
+            left: 3.26rem;
+        }
+        .six {
+            left: 297px;
+            left: 2.97rem;
+        }
+        .seven {
+            left: 268px;
+            left: 2.68rem;
+        }
+        .eight {
+            left: 239px;
+            left: 2.39rem;
+        }
+        .nine {
+            left: 210px;
+            left: 2.1rem;
+        }
+    }
+    .enemy {
+        width: 1.8rem;
+        height: 1.8rem;
+        background-size: cover;
+    }
+    .enemy-s {
+        background: url(#{$file-path}/enemy_s_before_m.png) no-repeat center center;
+        background-size: contain;
+    }
+    .enemy-m {
+        background: url(#{$file-path}/enemy_m_before_m.png) no-repeat center center;
+        background-size: contain;
+    }
+    .enemy-l {
+        background: url(#{$file-path}/enemy_l_before_m.png) no-repeat center center;
+        background-size: contain;
+    }
+    .enemy-xl {
+        background: url(#{$file-path}/enemy_xl_before_m.png) no-repeat center center;
+        background-size: contain;
+    }
+    // 生命條
+    .life-bar {
+        width: 0.2rem;
+        height: 0.1rem;
+        background-color: #e60201;
+        &.m1-life-bar,
+        &.m2-life-bar {
+            top: 2rem;
+            &.zero {
+                left: 0.1rem;
+            }
+            &.one {
+                left: 0.44rem;
+            }
+            &.two {
+                left: 0.78rem;
+            }
+            &.three {
+                left: 1.12rem;
+            }
+            &.four {
+                left: 1.46rem;
+            }
+        }
+        &.l-life-bar,
+        &.xl-life-bar {
+            &.row1 {
+                top: 2rem;
+                &.zero {
+                    left: 0.1rem;
+                }
+                &.one {
+                    left: 0.44rem;
+                }
+                &.two {
+                    left: 0.78rem;
+                }
+                &.three {
+                    left: 1.12rem;
+                }
+                &.four {
+                    left: 1.46rem;
+                }
+            }
+            &.row2 {
+                top: 2.2rem;
+                &.five {
+                    left: 0.1rem;
+                }
+                &.six {
+                    left: 0.44rem;
+                }
+                &.seven {
+                    left: 0.78rem;
+                }
+                &.eight {
+                    left: 1.12rem;
+                }
+                &.nine {
+                    left: 1.46rem;
+                }
+            }
+        }
+    }
+    .shooted {
+        /* animation-name: animation-shooted;
+        animation-name: animation-shooted-friend;
+        animation-timing-function: linear;
+        animation-duration: 0.4s;
+        animation-fill-mode: forwards;
+        background-color: brown;
+        color: #fff;
+        opacity: 0;
+        transition: opacity 1s; */
+        /* 小怪 小怪沒有，因為被射到就死了 */
+        /* .shooted.enemy-s {} */
+        /* 中怪 */
+        &.enemy-m {
+            background: url(#{$file-path}/enemy_m_after_m.png) no-repeat center center;
+            background-size: contain;
+        }
+        /* 大怪 */
+        &.enemy-l {
+            background: url(#{$file-path}/enemy_l_after_m.png) no-repeat center center;
+            background-size: contain;
+        }
+        /* bonus 怪 */
+        &.enemy-xl {
+            background: url(#{$file-path}/enemy_xl_after_m.png) no-repeat center center;
+            background-size: contain;
+        }
+    }
+    .boom {
+        /* 小怪 */
+        &.enemy-s {
+            background: url(#{$file-path}/enemy_s_after_m.png) no-repeat center center;
+            background-size: contain;
+        }
+        /* 中怪 */
+        &.enemy-m {
+            display: none;
+        }
+        /* 大怪 */
+        &.enemy-l {
+            display: none;
+        }
+        /* bonus 怪 */
+        &.enemy-xl {
+            display: none;
+        }
+    }
+}
+
+// 遊戲通關入口 閃爍
+@keyframes badge_flash {
+    0% {
+        background-position: top;
+    }
+    50% {
+        background-position: bottom;
+    }
+    100% {
+        background-position: top;
+    }
+}
+
+/* banner 動畫 */
+// 吉祥物
+@keyframes animation-mascot {
+    0% {
+        transform: rotate(0deg);
+    }
+    5% {
+        transform: rotate(-12deg);
+    }
+    10% {
+        transform: rotate(0deg);
+    }
+    15% {
+        transform: rotate(-12deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+// 人造物
+@keyframes animation-artifact1 {
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animation-artifact2 {
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animation-artifact3 {
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animation-artifact4 {
+    100% {
+        opacity: 1;
+    }
+}
+
+// 士兵 - PC
+@keyframes animation-soldier1 {
+    0% {
+        top: 407px;
+        left: -150px;
+    }
+    100% {
+        left: 26%;
+        opacity: 1;
+    }
+}
+@keyframes animation-soldier2 {
+    0% {
+        top: 381px;
+        left: -150px;
+    }
+    100% {
+        left: 20%;
+        opacity: 1;
+    }
+}
+@keyframes animation-soldier3 {
+    0% {
+        top: 412px;
+        left: -150px;
+    }
+    100% {
+        left: 13.5%;
+        opacity: 1;
+    }
+}
+@keyframes animation-soldier4 {
+    0% {
+        top: 336px;
+        left: -150px;
+    }
+    100% {
+        left: 6.8%;
+        opacity: 1;
+    }
+}
+// 士兵 - M
+@keyframes animation-soldier1-m {
+    0% {
+        top: 5.77rem;
+        left: -1.06rem;
+    }
+    100% {
+        left: 1.3rem;
+        opacity: 1;
+    }
+}
+@keyframes animation-soldier2-m {
+    0% {
+        top: 7.16rem;
+        left: -1.02rem;
+    }
+    100% {
+        left: 2rem;
+        opacity: 1;
+    }
+}
+@keyframes animation-soldier3-m {
+    0% {
+        top: 7.32rem;
+        left: -1.1rem;
+    }
+    100% {
+        left: 0.6rem;
+        opacity: 1;
+    }
+}
+@keyframes animation-soldier4-m {
+    0% {
+        top: 5.35rem;
+        left: -1.18rem;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+// 動物
+@keyframes animation-animal1 {
+    0% {
+        transform: rotate(16deg);
+    }
+    5% {
+        transform: rotate(-8deg);
+    }
+    10% {
+        transform: rotate(16deg);
+    }
+    15% {
+        transform: rotate(-8deg);
+    }
+    20% {
+        transform: rotate(16deg);
+    }
+    100% {
+        transform: rotate(16deg);
+    }
+}
+@keyframes animation-animal2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    5% {
+        transform: rotate(-24deg);
+    }
+    10% {
+        transform: rotate(0deg);
+    }
+    15% {
+        transform: rotate(-24deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes animation-animal3 {
+    0% {
+        transform: rotate(-12deg);
+    }
+    5% {
+        transform: rotate(12deg);
+    }
+    10% {
+        transform: rotate(-12deg);
+    }
+    15% {
+        transform: rotate(12deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}

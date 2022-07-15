@@ -1,0 +1,2023 @@
+@charset "UTF-8";
+[v-cloak] {
+  display: none;
+}
+
+.pc {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+.dp-none {
+  display: none;
+}
+
+.dp-block {
+  display: block;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.activity-main .logo {
+  width: 211px !important;
+}
+
+.banner {
+  position: relative;
+  z-index: 1;
+  height: 636px;
+  background: url(../images/BX_game_hit_card/banner.jpg) no-repeat center;
+}
+
+.banner .badge {
+  position: absolute;
+  top: 77.1%;
+  left: -webkit-calc(50% - (220px / 2));
+  left: calc(50% - (220px / 2));
+  z-index: 3;
+  overflow: hidden;
+  width: 220px;
+  height: 146px;
+  background: url(../images/BX_game_hit_card/badge.png) no-repeat bottom;
+  cursor: pointer;
+  -webkit-animation-name: badge_flash;
+          animation-name: badge_flash;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+}
+
+.banner .badge:active {
+  background-position: top;
+}
+
+.banner .badge a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.banner .kefu-right {
+  position: absolute;
+  top: 20px;
+  right: 63px;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 220px;
+  height: 60px;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#fdad06), to(#ffde8c));
+  background-image: -webkit-linear-gradient(bottom, #fdad06 0%, #ffde8c 100%);
+  background-image: -o-linear-gradient(bottom, #fdad06 0%, #ffde8c 100%);
+  background-image: linear-gradient(0deg, #fdad06 0%, #ffde8c 100%);
+  -webkit-border-radius: 0.5rem;
+          border-radius: 0.5rem;
+  text-align: center;
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: #122451;
+  line-height: 60px;
+}
+
+.banner .banner_animation img {
+  position: absolute;
+}
+
+.banner .banner_animation .mascot {
+  top: 366px;
+  left: 36.4%;
+  -webkit-animation-name: animation-mascot;
+          animation-name: animation-mascot;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-transform-origin: bottom left;
+      -ms-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.banner .banner_animation .artifact {
+  opacity: 0;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.banner .banner_animation .artifact.artifact1 {
+  top: 160px;
+  left: 16%;
+  -webkit-animation-name: animation-artifact1;
+          animation-name: animation-artifact1;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+}
+
+.banner .banner_animation .artifact.artifact2 {
+  top: 220px;
+  left: 19.3%;
+  -webkit-animation-name: animation-artifact2;
+          animation-name: animation-artifact2;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.banner .banner_animation .artifact.artifact3 {
+  top: 230px;
+  left: 10.9%;
+  -webkit-animation-name: animation-artifact3;
+          animation-name: animation-artifact3;
+  -webkit-animation-delay: 5.5s;
+          animation-delay: 5.5s;
+}
+
+.banner .banner_animation .artifact.artifact4 {
+  top: 290px;
+  left: 21.8%;
+  -webkit-animation-name: animation-artifact4;
+          animation-name: animation-artifact4;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+.banner .banner_animation .soldier {
+  opacity: 0;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 0.32, 1);
+          animation-timing-function: cubic-bezier(0, 1, 0.32, 1);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.banner .banner_animation .soldier.soldier1 {
+  top: 407px;
+  left: 26%;
+  -webkit-animation-name: animation-soldier1;
+          animation-name: animation-soldier1;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.banner .banner_animation .soldier.soldier2 {
+  top: 381px;
+  left: 20%;
+  -webkit-animation-name: animation-soldier2;
+          animation-name: animation-soldier2;
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+}
+
+.banner .banner_animation .soldier.soldier3 {
+  top: 412px;
+  left: 13.5%;
+  -webkit-animation-name: animation-soldier3;
+          animation-name: animation-soldier3;
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+
+.banner .banner_animation .soldier.soldier4 {
+  top: 336px;
+  left: 6.8%;
+  -webkit-animation-name: animation-soldier4;
+          animation-name: animation-soldier4;
+  -webkit-animation-delay: 3.2s;
+          animation-delay: 3.2s;
+}
+
+.banner .banner_animation .animal {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.banner .banner_animation .animal.animal1 {
+  top: 300px;
+  left: 79.1%;
+  -webkit-animation-name: animation-animal1;
+          animation-name: animation-animal1;
+}
+
+.banner .banner_animation .animal.animal2 {
+  top: 400px;
+  left: 73.8%;
+  -webkit-animation-name: animation-animal2;
+          animation-name: animation-animal2;
+  -webkit-transform-origin: bottom right;
+      -ms-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.banner .banner_animation .animal.animal3 {
+  top: 430px;
+  left: 79%;
+  -webkit-animation-name: animation-animal3;
+          animation-name: animation-animal3;
+  -webkit-transform-origin: 50% 30%;
+      -ms-transform-origin: 50% 30%;
+          transform-origin: 50% 30%;
+}
+
+.section1 {
+  position: relative;
+  z-index: 0;
+  height: 1099px;
+  background: url(../images/BX_game_hit_card/section1.jpg) no-repeat center;
+}
+
+.section1.miss {
+  background-image: url(../images/BX_game_hit_card/miss_bg.jpg);
+}
+
+.section1 .filter {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(53, 19, 7, 0.4);
+}
+
+.section1 .btn {
+  position: absolute;
+  top: 44%;
+  left: -webkit-calc(50% - 80px);
+  left: calc(50% - 80px);
+  z-index: 50;
+  width: 146px;
+  height: 120px;
+  cursor: pointer;
+}
+
+.section1 .btn.dp-block {
+  display: block !important;
+}
+
+.section1 .activity-btn1 {
+  display: none;
+  top: 47%;
+  z-index: 51;
+  background: url(../images/BX_game_hit_card/icon_start.png) no-repeat 0%/cover;
+  background-position: 0 0;
+}
+
+.section1 .btn-start {
+  display: block;
+  background: url(../images/BX_game_hit_card/icon_start.png) no-repeat 0%/cover;
+  background-position: 0% 33%;
+}
+
+.section1 .btn-again {
+  display: none;
+  background: url(../images/BX_game_hit_card/icon_start.png) no-repeat 0%/cover;
+  background-position: 0% 66.5%;
+}
+
+.section1 .game-info {
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - (640px) / 2);
+  left: calc(50% - (640px) / 2);
+  width: 640px;
+  height: 200px;
+}
+
+.section2 {
+  position: relative;
+  height: 1100px;
+  background-color: #351307;
+}
+
+.section2 .rule-info {
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 300px);
+  left: calc(50% - 300px);
+  width: 630px;
+  color: #fff;
+  font-size: 26px;
+  line-height: 42px;
+}
+
+.section2 .rule-info h3 {
+  margin-top: 0.6rem;
+  font-size: 36px;
+  color: #fff;
+}
+
+.section2 .rule-info li {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
+.section2 .rule-info table {
+  width: 100%;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 24px;
+}
+
+.section2 .rule-info table td {
+  padding: 1px;
+  background-color: #f5daa7;
+  color: #141818;
+}
+
+.section2 .rule-info table tr:nth-child(even) td {
+  border: none;
+  border-bottom: 4px solid #351307;
+  background-color: #d8d8d8;
+}
+
+.section2 .rule-info table tr:nth-child(1) td {
+  height: 0.84rem;
+  border: 2px solid #f5daa7;
+}
+
+.section2 .rule-info table tr:nth-child(1) td:nth-child(1) div, .section2 .rule-info table tr:nth-child(1) td:nth-child(2) div, .section2 .rule-info table tr:nth-child(1) td:nth-child(3) div {
+  border-right: 1px solid #141818;
+}
+
+.section2 .rule-info table tr:nth-child(2) td {
+  border-top: 4px solid #351307;
+}
+
+.section2 .rule-info table tr:nth-child(2) td:nth-child(1) {
+  color: #141818;
+}
+
+.section2 .rule-info table tr:nth-child(3) td {
+  border: none;
+  border-bottom: 4px solid #351307;
+  background-color: #efefef;
+}
+
+.section2 .rule-info table tr:nth-child(3) td:nth-child(1) {
+  color: #141818;
+}
+
+.section2 .rule-info table tr:nth-child(4) td:nth-child(1) {
+  color: #141818;
+}
+
+.section2 .rule-info table tr:nth-child(5) td {
+  border-bottom: 2px solid #f5daa7;
+  font-weight: normal;
+}
+
+.section2 .rule-info table tr:not(:first-child) td {
+  height: 0.7rem;
+}
+
+.section2 .rule-info table tr:not(:first-child) td:not(:first-child) {
+  color: #626464;
+}
+
+.section2 .rule-info table .bg-green {
+  background-color: #ffffff;
+}
+
+.section2 .rule-info table .bg-red {
+  background-color: transparent;
+  color: #f5daa7;
+  border: none;
+}
+
+.login-main {
+  position: relative;
+  z-index: 99;
+  display: none;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.login-main .mask-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.72);
+}
+
+.login-main .mask-main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 5.91rem;
+  background-color: #fff;
+  -webkit-border-radius: 0.1rem;
+          border-radius: 0.1rem;
+  padding: 0.4rem 0.46rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.login-main .mask-main .title {
+  position: relative;
+  width: 100%;
+  font-size: 0.22rem;
+  text-align: center;
+  line-height: 0.24rem;
+}
+
+.login-main .mask-main .title i {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  font-size: 0.18rem;
+  line-height: 0.24rem;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.login-main .mask-main .title i:active, .login-main .mask-main .title i:hover {
+  color: #0f6eef;
+}
+
+.login-main .mask-main .login-from {
+  margin-top: 45px;
+}
+
+.login-main .mask-main .login-from .list {
+  width: 4.98rem;
+  height: 0.54rem;
+  line-height: 0.45rem;
+  background-color: #f3f3f3;
+  -webkit-border-radius: 0.05rem;
+          border-radius: 0.05rem;
+  color: #7e7e7e;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0.01rem solid transparent;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.login-main .mask-main .login-from .list .icon {
+  font-size: 0.2rem;
+  margin-left: 0.23rem;
+  float: left;
+}
+
+.login-main .mask-main .login-from .list .input {
+  font-size: 0.2rem;
+  width: 65%;
+  height: 100%;
+  border: 0;
+  float: left;
+  padding-left: 0.27rem;
+  background-color: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  letter-spacing: 0.01rem;
+  color: #7e7e7e;
+}
+
+.login-main .mask-main .login-from .cur {
+  border-color: #97aff6;
+}
+
+.login-main .mask-main .login-from li:first-child .list {
+  margin-top: 0;
+}
+
+.login-main .mask-main .login-from .input-warning {
+  color: #e73838;
+  opacity: 0;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  margin-top: 0.01rem;
+  padding-bottom: 0.02rem;
+  height: 0.19rem;
+}
+
+.login-main .mask-main .login-button {
+  width: 4.98rem;
+  height: 0.6rem;
+  line-height: 0.58rem;
+  background-color: #577ff6;
+  -webkit-border-radius: 0.05rem;
+          border-radius: 0.05rem;
+  font-size: 0.2rem;
+  color: #fff;
+  margin-top: 0.22rem;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.login-main .mask-main .login-button:active {
+  background-color: #4d67cd;
+}
+
+.login-main .mask-main .login-option {
+  font-size: 0.16rem;
+  margin-top: 0.2rem;
+  overflow: hidden;
+}
+
+.login-main .mask-main .login-option span {
+  color: #577ff6;
+  cursor: pointer;
+}
+
+.login-main .mask-main .login-option span:first-child {
+  float: left;
+}
+
+.login-main .mask-main .login-option span:last-child {
+  float: right;
+}
+
+.login-main .mask-main .canvas {
+  float: right;
+  width: 0.92rem;
+  height: 0.4rem;
+  margin-top: 0.06rem;
+  margin-right: 0.1rem;
+}
+
+.popMsg {
+  width: 476px;
+  height: 286px;
+  position: absolute;
+  top: 37%;
+  left: -webkit-calc(50% - 250px);
+  left: calc(50% - 250px);
+  background: url(../images/BX_game_hit_card/msg_box.png) no-repeat 0 0/100%;
+  margin: 0 auto;
+  z-index: 1;
+  display: none;
+}
+
+.popMsg.dp-block {
+  display: block;
+}
+
+.popMsg .title {
+  font-size: 32px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.popMsg p {
+  font-size: 32px;
+  letter-spacing: 0.05px;
+  text-align: center;
+  color: #424a4a;
+}
+
+.popMsg .msgContent {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  margin-top: 20px;
+  height: 200px;
+  text-align: center;
+  font-size: 30px;
+  color: #424a4a;
+}
+
+.popMsg .msgContent .msgInfo {
+  width: 360px;
+  margin: 1px auto;
+  text-align: center;
+}
+
+.popMsg .msgContent .msgBtn {
+  -webkit-border-radius: 20px;
+          border-radius: 20px;
+  border: 2px solid #b51616;
+  color: #b51616;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 5px 20px;
+  padding: 5px 10px;
+}
+
+.popMsg .msgContent .msgBtn:hover {
+  border: 2px solid #b51616;
+  color: #fff;
+  background-color: #b51616;
+}
+
+.popMsg .msgClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.popMsg .fontRed {
+  color: #b51616;
+}
+
+.popMsg .fontBold {
+  font-weight: 600;
+}
+
+.tips_box_1 > p {
+  margin: 0.7rem auto;
+  width: 1.9rem;
+  font-size: 0.2rem;
+  text-align: center;
+}
+
+#idError {
+  font-size: 0.18rem;
+}
+
+@media (max-width: 768px) {
+  .activity-main .logo {
+    width: 2.11rem !important;
+  }
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .gameRule {
+    display: none;
+  }
+  .banner {
+    height: 13.8rem;
+    background: url(../images/BX_game_hit_card/banner_m.jpg) no-repeat 0/100%;
+  }
+  .banner .mallet {
+    top: 49%;
+    left: -webkit-calc(50% - 0.3rem);
+    left: calc(50% - 0.3rem);
+  }
+  .banner .game-info {
+    position: absolute;
+    top: 64.2%;
+    left: -webkit-calc(50% - (6.49rem) / 2);
+    left: calc(50% - (6.49rem) / 2);
+    width: 6.5rem;
+    height: 4.1rem;
+  }
+  .banner .badge {
+    top: 39%;
+    left: -webkit-calc(50% - (2.2rem) / 2);
+    left: calc(50% - (2.2rem) / 2);
+    width: 2.2rem;
+    height: 1.46rem;
+    background: url(../images/BX_game_hit_card/badge.png) no-repeat bottom/100%;
+  }
+  .banner .badge:active {
+    background-position: top;
+  }
+  .banner .kefu-right {
+    font-size: 0.28rem;
+    top: 0.2rem;
+    right: 0.63rem;
+    width: 2.2rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+  }
+  .banner .gameRule-m {
+    background: url(../images/BX_game_hit_card/game_info_m.png) no-repeat 0/100%;
+    font-size: 0.36rem;
+    position: absolute;
+    top: 66%;
+    left: -webkit-calc(50% - 3.25rem);
+    left: calc(50% - 3.25rem);
+    width: 6.5rem;
+    height: 4.06rem;
+    line-height: 0.4rem;
+    -webkit-filter: drop-shadow(0px 10px 7px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(0px 10px 7px rgba(0, 0, 0, 0.7));
+  }
+  .banner .gameRule-m h5 {
+    font-size: 0.48rem;
+  }
+  .banner .banner_animation .mascot {
+    top: 3.8rem;
+    left: 1.3rem;
+    width: 1.66rem;
+    height: 2rem;
+  }
+  .banner .banner_animation .artifact {
+    display: none;
+  }
+  .banner .banner_animation .soldier.soldier1 {
+    top: 5.77rem;
+    left: -1.06rem;
+    width: 1.06rem;
+    height: 1.76rem;
+    -webkit-animation-name: animation-soldier1-m;
+            animation-name: animation-soldier1-m;
+  }
+  .banner .banner_animation .soldier.soldier2 {
+    top: 7.16rem;
+    left: -1.02rem;
+    width: 1.02rem;
+    height: 1.98rem;
+    -webkit-animation-name: animation-soldier2-m;
+            animation-name: animation-soldier2-m;
+  }
+  .banner .banner_animation .soldier.soldier3 {
+    top: 7.32rem;
+    left: -1.1rem;
+    widows: 1.1rem;
+    height: 1.82rem;
+    -webkit-animation-name: animation-soldier3-m;
+            animation-name: animation-soldier3-m;
+  }
+  .banner .banner_animation .soldier.soldier4 {
+    top: 5.35rem;
+    left: -1.18rem;
+    width: 1.18rem;
+    height: 2.32rem;
+    -webkit-animation-name: animation-soldier4-m;
+            animation-name: animation-soldier4-m;
+  }
+  .banner .banner_animation .animal.animal1 {
+    top: 6.3rem;
+    left: 5.3rem;
+    width: 1.8rem;
+    height: 1rem;
+  }
+  .banner .banner_animation .animal.animal2 {
+    width: 1rem;
+    height: 0.7rem;
+    top: 7.1rem;
+    left: 3.9rem;
+  }
+  .banner .banner_animation .animal.animal3 {
+    width: 2.3rem;
+    height: 1.5rem;
+    top: 7.4rem;
+    left: 4.7rem;
+  }
+  .section1 {
+    height: 17.4rem;
+    background: url(../images/BX_game_hit_card/section1_m.jpg) no-repeat 0/100%;
+    margin-top: -2px;
+    position: relative;
+    margin-top: -0.45rem;
+    margin-bottom: -0.4rem;
+  }
+  .section1.miss {
+    background-image: url(../images/BX_game_hit_card/miss_bg_m.jpg);
+  }
+  .section1 .btn {
+    width: 2.92rem;
+    height: 2.41rem;
+    position: absolute;
+    top: 28%;
+    left: -webkit-calc(50vw - (2.92rem / 2));
+    left: calc(50vw - (2.92rem / 2));
+  }
+  .section2 {
+    height: 11rem;
+    margin-top: -1px;
+  }
+  .section2 .rule-info {
+    width: 6.3rem;
+    margin-top: 1rem;
+    position: absolute;
+    left: -webkit-calc(50% - 3rem);
+    left: calc(50% - 3rem);
+    top: 0%;
+    color: #ffffff;
+    font-size: 0.26rem;
+    line-height: 0.42rem;
+  }
+  .section2 .rule-info h3 {
+    font-size: 0.36rem;
+    color: #fff;
+    margin-top: 0;
+  }
+  .section2 .rule-info table {
+    font-size: 0.24rem;
+  }
+  .popMsg {
+    width: 6.2rem;
+    height: 3.7rem;
+    position: absolute;
+    left: -webkit-calc(50vw - (6.2rem / 2));
+    left: calc(50vw - (6.2rem / 2));
+    top: -webkit-calc(50vh - 1.35rem);
+    top: calc(50vh - 1.35rem);
+  }
+  .popMsg .title {
+    font-size: 0.48rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 0.15rem;
+  }
+  .popMsg .msgContent {
+    text-align: center;
+    font-size: 0.6rem;
+    color: #424a4a;
+    margin-top: 0.1rem;
+    line-height: 0.6rem;
+    letter-spacing: 0.03rem;
+    height: 2.8rem;
+  }
+  .popMsg .msgContent .msgInfo {
+    text-align: center;
+    width: 5.3rem;
+    line-height: 0.5rem;
+    letter-spacing: 0.02rem;
+  }
+  .popMsg .msgContent .msgInfo p {
+    font-size: 0.48rem;
+    line-height: 1.38;
+    letter-spacing: 0.07px;
+  }
+  .popMsg .msgContent .msgBtn {
+    -webkit-border-radius: 0.2rem;
+            border-radius: 0.2rem;
+    border: 2px solid #b51616;
+    color: #b51616;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0.05rem 0.2rem;
+    padding: 0.1rem 0.2rem;
+    font-size: 0.3rem;
+  }
+  .popMsg .msgClose {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
+  .popMsg .fontRed {
+    color: #b51616;
+  }
+  .popMsg .fontBold {
+    font-weight: 600;
+  }
+  .login-main .mask-main {
+    width: 92.3%;
+    padding: 0.4rem 0.46rem;
+    height: unset;
+    -webkit-border-radius: 0.2rem;
+            border-radius: 0.2rem;
+  }
+  .login-main .mask-main .title {
+    font-size: 0.32rem;
+  }
+  .login-main .mask-main .login-from {
+    margin-top: 0.45rem;
+  }
+  .login-main .mask-main .login-from .list {
+    width: 100%;
+    height: 0.9rem;
+    line-height: 0.9rem;
+  }
+  .login-main .mask-main .login-from .list .icon {
+    font-size: 0.3rem;
+    margin-left: 0.23rem;
+  }
+  .login-main .mask-main .login-from .list .input {
+    font-size: 0.26rem;
+    padding-left: 0.27rem;
+  }
+  .login-main .mask-main .login-from .input-warning {
+    color: #e73838;
+    opacity: 0;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    height: 0.34rem;
+    line-height: 0.34rem;
+    margin-top: 1px;
+  }
+  .login-main .mask-main .login-button {
+    width: 100%;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    -webkit-border-radius: 0.1rem;
+            border-radius: 0.1rem;
+    font-size: 0.3rem;
+    margin-top: 0.22rem;
+  }
+  .login-main .mask-main .login-option {
+    font-size: 0.26rem;
+    margin-top: 0.2rem;
+  }
+  .login-main .mask-main .canvas {
+    float: right;
+    width: 1.5rem;
+    height: 0.7rem;
+    margin-top: 0.07rem;
+    margin-right: 0.1rem;
+  }
+  .tips_box_1 {
+    left: -webkit-calc(50% - 135px);
+    left: calc(50% - 135px);
+    top: 30%;
+  }
+}
+
+/* 遊戲相關操控 */
+.gameArea {
+  position: relative;
+  top: 31.1%;
+  left: -webkit-calc(50% - 400.5px);
+  left: calc(50% - 400.5px);
+  width: 800px;
+  height: 540px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.fail {
+  position: absolute;
+  left: -webkit-calc(50% - (533px / 2));
+  left: calc(50% - (533px / 2));
+  top: -webkit-calc(50% - (194px / 2));
+  top: calc(50% - (194px / 2));
+  width: 533px;
+  height: 194px;
+  background: url(../images/BX_game_hit_card/group.png) no-repeat -761px -474px;
+  display: none;
+}
+
+.fail.dp-block {
+  display: block;
+}
+
+.gameOperationArea {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.level-report {
+  position: absolute;
+  top: -webkit-calc((540px - 420px) / 2);
+  top: calc((540px - 420px) / 2);
+  left: -webkit-calc((800px - 410px) / 2);
+  left: calc((800px - 410px) / 2);
+  width: 410px;
+  height: 420px;
+  background-image: url(../images/BX_game_hit_card/group.png);
+  background-repeat: no-repeat;
+}
+
+.level-report.level-report-1 {
+  background-position: 0px -816px;
+}
+
+.level-report.level-report-2 {
+  background-position: -419px -816px;
+}
+
+.level-report.level-report-3 {
+  background-position: -839px -816px;
+}
+
+.level-report.level-report-4 {
+  background-position: -1259px -816px;
+}
+
+.left-chance {
+  position: absolute;
+  top: -150px;
+  left: -webkit-calc(50% - (680px / 2));
+  left: calc(50% - (680px / 2));
+  width: 680px;
+  height: 130px;
+  font-size: 0.5rem;
+  background-image: url(../images/BX_game_hit_card/leftChance.png);
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.left-chance .not-yet {
+  position: absolute;
+  top: 10px;
+  width: 44px;
+  height: 64px;
+  background-image: url(../images/BX_game_hit_card/notYet.png);
+  background-repeat: no-repeat;
+}
+
+.left-chance .missed {
+  background-image: url(../images/BX_game_hit_card/missed.png);
+}
+
+.left-chance .zero {
+  left: 471px;
+}
+
+.left-chance .one {
+  left: 442px;
+}
+
+.left-chance .two {
+  left: 413px;
+}
+
+.left-chance .three {
+  left: 384px;
+}
+
+.left-chance .four {
+  left: 355px;
+}
+
+.left-chance .five {
+  left: 326px;
+}
+
+.left-chance .six {
+  left: 297px;
+}
+
+.left-chance .seven {
+  left: 268px;
+}
+
+.left-chance .eight {
+  left: 239px;
+}
+
+.left-chance .nine {
+  left: 210px;
+}
+
+.enemySArea {
+  position: relative;
+}
+
+.enemyMArea {
+  position: absolute;
+  z-index: 0;
+  width: 0;
+  height: 0;
+}
+
+.enemy {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background-image: url(../images/BX_game_hit_card/group.png);
+  background-repeat: no-repeat;
+}
+
+.enemy-show {
+  opacity: 1;
+}
+
+.enemy-hide {
+  opacity: 0;
+}
+
+.enemy-s {
+  background-position: -1px -436px;
+}
+
+.enemy-m {
+  background-position: -191px -436px;
+}
+
+.enemy-l {
+  background-position: -381px -436px;
+}
+
+.enemy-xl {
+  background-position: -571px -436px;
+}
+
+.life-bar {
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  background-color: #e60201;
+}
+
+.life-bar.m1-life-bar, .life-bar.m2-life-bar {
+  top: 200px;
+}
+
+.life-bar.m1-life-bar.zero, .life-bar.m2-life-bar.zero {
+  left: 10px;
+}
+
+.life-bar.m1-life-bar.one, .life-bar.m2-life-bar.one {
+  left: 44px;
+}
+
+.life-bar.m1-life-bar.two, .life-bar.m2-life-bar.two {
+  left: 78px;
+}
+
+.life-bar.m1-life-bar.three, .life-bar.m2-life-bar.three {
+  left: 112px;
+}
+
+.life-bar.m1-life-bar.four, .life-bar.m2-life-bar.four {
+  left: 146px;
+}
+
+.life-bar.l-life-bar.row1, .life-bar.xl-life-bar.row1 {
+  top: 200px;
+}
+
+.life-bar.l-life-bar.row1.zero, .life-bar.xl-life-bar.row1.zero {
+  left: 10px;
+}
+
+.life-bar.l-life-bar.row1.one, .life-bar.xl-life-bar.row1.one {
+  left: 44px;
+}
+
+.life-bar.l-life-bar.row1.two, .life-bar.xl-life-bar.row1.two {
+  left: 78px;
+}
+
+.life-bar.l-life-bar.row1.three, .life-bar.xl-life-bar.row1.three {
+  left: 112px;
+}
+
+.life-bar.l-life-bar.row1.four, .life-bar.xl-life-bar.row1.four {
+  left: 146px;
+}
+
+.life-bar.l-life-bar.row2, .life-bar.xl-life-bar.row2 {
+  top: 220px;
+}
+
+.life-bar.l-life-bar.row2.five, .life-bar.xl-life-bar.row2.five {
+  left: 10px;
+}
+
+.life-bar.l-life-bar.row2.six, .life-bar.xl-life-bar.row2.six {
+  left: 44px;
+}
+
+.life-bar.l-life-bar.row2.seven, .life-bar.xl-life-bar.row2.seven {
+  left: 78px;
+}
+
+.life-bar.l-life-bar.row2.eight, .life-bar.xl-life-bar.row2.eight {
+  left: 112px;
+}
+
+.life-bar.l-life-bar.row2.nine, .life-bar.xl-life-bar.row2.nine {
+  left: 146px;
+}
+
+.shooted {
+  /* 小怪 小怪沒有，因為被射到就死了 */
+  /* .shooted.enemy-s {} */
+  /* 中怪 */
+  /* 大怪 */
+  /* bonus 怪 */
+}
+
+.shooted.enemy-m {
+  background-position: -191px -626px;
+}
+
+.shooted.enemy-l {
+  background-position: -381px -626px;
+}
+
+.shooted.enemy-xl {
+  background-position: -571px -626px;
+}
+
+.boom {
+  /* 小怪 */
+  /* 中怪 */
+  /* 大怪 */
+  /* bonus 怪 */
+}
+
+.boom.enemy-s {
+  background-position: -1px -626px;
+}
+
+.boom.enemy-m {
+  display: none;
+}
+
+.boom.enemy-l {
+  display: none;
+}
+
+.boom.enemy-xl {
+  display: none;
+}
+
+#preloader {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+}
+
+#preloader .preloader_1_1 {
+  background: url(../images/BX_game_hit_card/enemy_s_after_m.png);
+}
+
+#preloader .preloader_1_2 {
+  background: url(../images/BX_game_hit_card/enemy_m_after_m.png);
+}
+
+#preloader .preloader_1_3 {
+  background: url(../images/BX_game_hit_card/enemy_l_after_m.png);
+}
+
+#preloader .preloader_1_4 {
+  background: url(../images/BX_game_hit_card/enemy_xl_after_m.png);
+}
+
+#preloader .preloader_2_1 {
+  background: url(../images/BX_game_hit_card/miss_bg.jpg);
+}
+
+#preloader .preloader_2_2 {
+  background: url(../images/BX_game_hit_card/miss_bg_m.jpg);
+}
+
+#preloader .preloader_3_1 {
+  background: url(../images/BX_game_hit_card/msg_box.png);
+}
+
+#preloader .preloader_4_1 {
+  background: url(../images/BX_game_hit_card/level_report_1.png);
+}
+
+#preloader .preloader_4_2 {
+  background: url(../images/BX_game_hit_card/level_report_2.png);
+}
+
+#preloader .preloader_4_3 {
+  background: url(../images/BX_game_hit_card/level_report_3.png);
+}
+
+#preloader .preloader_4_4 {
+  background: url(../images/BX_game_hit_card/level_report_4.png);
+}
+
+@media (max-width: 768px) {
+  .gameArea {
+    left: 0;
+    top: 14.1%;
+  }
+  .pointArea {
+    top: -0.9rem;
+    left: -webkit-calc(50vw - 116px / 2);
+    left: calc(50vw - 116px / 2);
+  }
+  .fail {
+    left: -webkit-calc(50vw - (320px / 2));
+    left: calc(50vw - (320px / 2));
+    top: -webkit-calc(50vh - 140px);
+    top: calc(50vh - 140px);
+    width: 320px;
+    height: 115px;
+    background: url(../images/BX_game_hit_card/group.png) no-repeat -761px -690px;
+  }
+  .level-report {
+    left: 0.75rem;
+    width: 6rem;
+    height: 6.14rem;
+  }
+  .level-report.level-report-1 {
+    background: url(../images/BX_game_hit_card/level_report_1.png) no-repeat center center;
+    -webkit-background-size: contain;
+            background-size: contain;
+  }
+  .level-report.level-report-2 {
+    background: url(../images/BX_game_hit_card/level_report_2.png) no-repeat center center;
+    -webkit-background-size: contain;
+            background-size: contain;
+  }
+  .level-report.level-report-3 {
+    background: url(../images/BX_game_hit_card/level_report_3.png) no-repeat center center;
+    -webkit-background-size: contain;
+            background-size: contain;
+  }
+  .level-report.level-report-4 {
+    background: url(../images/BX_game_hit_card/level_report_4.png) no-repeat center center;
+    -webkit-background-size: contain;
+            background-size: contain;
+  }
+  .left-chance {
+    top: -1.2rem;
+    left: 0.4rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 6.8rem;
+    height: 1.3rem;
+    background-image: url(../images/BX_game_hit_card/leftChance.png);
+    -webkit-background-size: contain;
+            background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .left-chance .not-yet {
+    top: 0.1rem;
+    width: 0.44rem;
+    height: 0.64rem;
+    -webkit-background-size: contain;
+            background-size: contain;
+  }
+  .left-chance .zero {
+    left: 471px;
+    left: 4.71rem;
+  }
+  .left-chance .one {
+    left: 442px;
+    left: 4.42rem;
+  }
+  .left-chance .two {
+    left: 413px;
+    left: 4.13rem;
+  }
+  .left-chance .three {
+    left: 384px;
+    left: 3.84rem;
+  }
+  .left-chance .four {
+    left: 355px;
+    left: 3.55rem;
+  }
+  .left-chance .five {
+    left: 326px;
+    left: 3.26rem;
+  }
+  .left-chance .six {
+    left: 297px;
+    left: 2.97rem;
+  }
+  .left-chance .seven {
+    left: 268px;
+    left: 2.68rem;
+  }
+  .left-chance .eight {
+    left: 239px;
+    left: 2.39rem;
+  }
+  .left-chance .nine {
+    left: 210px;
+    left: 2.1rem;
+  }
+  .enemy {
+    width: 1.8rem;
+    height: 1.8rem;
+    -webkit-background-size: cover;
+            background-size: cover;
+  }
+  .enemy-s {
+    background: url(../images/BX_game_hit_card/enemy_s_before_m.png) no-repeat center center;
+    -webkit-background-size: contain;
+            background-size: contain;
+  }
+  .enemy-m {
+    background: url(../images/BX_game_hit_card/enemy_m_before_m.png) no-repeat center center;
+    -webkit-background-size: contain;
+            background-size: contain;
+  }
+  .enemy-l {
+    background: url(../images/BX_game_hit_card/enemy_l_before_m.png) no-repeat center center;
+    -webkit-background-size: contain;
+            background-size: contain;
+  }
+  .enemy-xl {
+    background: url(../images/BX_game_hit_card/enemy_xl_before_m.png) no-repeat center center;
+    -webkit-background-size: contain;
+            background-size: contain;
+  }
+  .life-bar {
+    width: 0.2rem;
+    height: 0.1rem;
+    background-color: #e60201;
+  }
+  .life-bar.m1-life-bar, .life-bar.m2-life-bar {
+    top: 2rem;
+  }
+  .life-bar.m1-life-bar.zero, .life-bar.m2-life-bar.zero {
+    left: 0.1rem;
+  }
+  .life-bar.m1-life-bar.one, .life-bar.m2-life-bar.one {
+    left: 0.44rem;
+  }
+  .life-bar.m1-life-bar.two, .life-bar.m2-life-bar.two {
+    left: 0.78rem;
+  }
+  .life-bar.m1-life-bar.three, .life-bar.m2-life-bar.three {
+    left: 1.12rem;
+  }
+  .life-bar.m1-life-bar.four, .life-bar.m2-life-bar.four {
+    left: 1.46rem;
+  }
+  .life-bar.l-life-bar.row1, .life-bar.xl-life-bar.row1 {
+    top: 2rem;
+  }
+  .life-bar.l-life-bar.row1.zero, .life-bar.xl-life-bar.row1.zero {
+    left: 0.1rem;
+  }
+  .life-bar.l-life-bar.row1.one, .life-bar.xl-life-bar.row1.one {
+    left: 0.44rem;
+  }
+  .life-bar.l-life-bar.row1.two, .life-bar.xl-life-bar.row1.two {
+    left: 0.78rem;
+  }
+  .life-bar.l-life-bar.row1.three, .life-bar.xl-life-bar.row1.three {
+    left: 1.12rem;
+  }
+  .life-bar.l-life-bar.row1.four, .life-bar.xl-life-bar.row1.four {
+    left: 1.46rem;
+  }
+  .life-bar.l-life-bar.row2, .life-bar.xl-life-bar.row2 {
+    top: 2.2rem;
+  }
+  .life-bar.l-life-bar.row2.five, .life-bar.xl-life-bar.row2.five {
+    left: 0.1rem;
+  }
+  .life-bar.l-life-bar.row2.six, .life-bar.xl-life-bar.row2.six {
+    left: 0.44rem;
+  }
+  .life-bar.l-life-bar.row2.seven, .life-bar.xl-life-bar.row2.seven {
+    left: 0.78rem;
+  }
+  .life-bar.l-life-bar.row2.eight, .life-bar.xl-life-bar.row2.eight {
+    left: 1.12rem;
+  }
+  .life-bar.l-life-bar.row2.nine, .life-bar.xl-life-bar.row2.nine {
+    left: 1.46rem;
+  }
+  .shooted {
+    /* animation-name: animation-shooted;
+        animation-name: animation-shooted-friend;
+        animation-timing-function: linear;
+        animation-duration: 0.4s;
+        animation-fill-mode: forwards;
+        background-color: brown;
+        color: #fff;
+        opacity: 0;
+        transition: opacity 1s; */
+    /* 小怪 小怪沒有，因為被射到就死了 */
+    /* .shooted.enemy-s {} */
+    /* 中怪 */
+    /* 大怪 */
+    /* bonus 怪 */
+  }
+  .shooted.enemy-m {
+    background: url(../images/BX_game_hit_card/enemy_m_after_m.png) no-repeat center center;
+    -webkit-background-size: contain;
+            background-size: contain;
+  }
+  .shooted.enemy-l {
+    background: url(../images/BX_game_hit_card/enemy_l_after_m.png) no-repeat center center;
+    -webkit-background-size: contain;
+            background-size: contain;
+  }
+  .shooted.enemy-xl {
+    background: url(../images/BX_game_hit_card/enemy_xl_after_m.png) no-repeat center center;
+    -webkit-background-size: contain;
+            background-size: contain;
+  }
+  .boom {
+    /* 小怪 */
+    /* 中怪 */
+    /* 大怪 */
+    /* bonus 怪 */
+  }
+  .boom.enemy-s {
+    background: url(../images/BX_game_hit_card/enemy_s_after_m.png) no-repeat center center;
+    -webkit-background-size: contain;
+            background-size: contain;
+  }
+  .boom.enemy-m {
+    display: none;
+  }
+  .boom.enemy-l {
+    display: none;
+  }
+  .boom.enemy-xl {
+    display: none;
+  }
+}
+
+@-webkit-keyframes badge_flash {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}
+
+@keyframes badge_flash {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}
+
+/* banner 動畫 */
+@-webkit-keyframes animation-mascot {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  5% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  10% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  15% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  20% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes animation-mascot {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  5% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  10% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  15% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  20% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes animation-artifact1 {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-artifact1 {
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animation-artifact2 {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-artifact2 {
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animation-artifact3 {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-artifact3 {
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animation-artifact4 {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-artifact4 {
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animation-soldier1 {
+  0% {
+    top: 407px;
+    left: -150px;
+  }
+  100% {
+    left: 26%;
+    opacity: 1;
+  }
+}
+
+@keyframes animation-soldier1 {
+  0% {
+    top: 407px;
+    left: -150px;
+  }
+  100% {
+    left: 26%;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animation-soldier2 {
+  0% {
+    top: 381px;
+    left: -150px;
+  }
+  100% {
+    left: 20%;
+    opacity: 1;
+  }
+}
+
+@keyframes animation-soldier2 {
+  0% {
+    top: 381px;
+    left: -150px;
+  }
+  100% {
+    left: 20%;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animation-soldier3 {
+  0% {
+    top: 412px;
+    left: -150px;
+  }
+  100% {
+    left: 13.5%;
+    opacity: 1;
+  }
+}
+
+@keyframes animation-soldier3 {
+  0% {
+    top: 412px;
+    left: -150px;
+  }
+  100% {
+    left: 13.5%;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animation-soldier4 {
+  0% {
+    top: 336px;
+    left: -150px;
+  }
+  100% {
+    left: 6.8%;
+    opacity: 1;
+  }
+}
+
+@keyframes animation-soldier4 {
+  0% {
+    top: 336px;
+    left: -150px;
+  }
+  100% {
+    left: 6.8%;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animation-soldier1-m {
+  0% {
+    top: 5.77rem;
+    left: -1.06rem;
+  }
+  100% {
+    left: 1.3rem;
+    opacity: 1;
+  }
+}
+
+@keyframes animation-soldier1-m {
+  0% {
+    top: 5.77rem;
+    left: -1.06rem;
+  }
+  100% {
+    left: 1.3rem;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animation-soldier2-m {
+  0% {
+    top: 7.16rem;
+    left: -1.02rem;
+  }
+  100% {
+    left: 2rem;
+    opacity: 1;
+  }
+}
+
+@keyframes animation-soldier2-m {
+  0% {
+    top: 7.16rem;
+    left: -1.02rem;
+  }
+  100% {
+    left: 2rem;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animation-soldier3-m {
+  0% {
+    top: 7.32rem;
+    left: -1.1rem;
+  }
+  100% {
+    left: 0.6rem;
+    opacity: 1;
+  }
+}
+
+@keyframes animation-soldier3-m {
+  0% {
+    top: 7.32rem;
+    left: -1.1rem;
+  }
+  100% {
+    left: 0.6rem;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animation-soldier4-m {
+  0% {
+    top: 5.35rem;
+    left: -1.18rem;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animation-soldier4-m {
+  0% {
+    top: 5.35rem;
+    left: -1.18rem;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animation-animal1 {
+  0% {
+    -webkit-transform: rotate(16deg);
+            transform: rotate(16deg);
+  }
+  5% {
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+  }
+  10% {
+    -webkit-transform: rotate(16deg);
+            transform: rotate(16deg);
+  }
+  15% {
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+  }
+  20% {
+    -webkit-transform: rotate(16deg);
+            transform: rotate(16deg);
+  }
+  100% {
+    -webkit-transform: rotate(16deg);
+            transform: rotate(16deg);
+  }
+}
+
+@keyframes animation-animal1 {
+  0% {
+    -webkit-transform: rotate(16deg);
+            transform: rotate(16deg);
+  }
+  5% {
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+  }
+  10% {
+    -webkit-transform: rotate(16deg);
+            transform: rotate(16deg);
+  }
+  15% {
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+  }
+  20% {
+    -webkit-transform: rotate(16deg);
+            transform: rotate(16deg);
+  }
+  100% {
+    -webkit-transform: rotate(16deg);
+            transform: rotate(16deg);
+  }
+}
+
+@-webkit-keyframes animation-animal2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  5% {
+    -webkit-transform: rotate(-24deg);
+            transform: rotate(-24deg);
+  }
+  10% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  15% {
+    -webkit-transform: rotate(-24deg);
+            transform: rotate(-24deg);
+  }
+  20% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes animation-animal2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  5% {
+    -webkit-transform: rotate(-24deg);
+            transform: rotate(-24deg);
+  }
+  10% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  15% {
+    -webkit-transform: rotate(-24deg);
+            transform: rotate(-24deg);
+  }
+  20% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes animation-animal3 {
+  0% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  5% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  10% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  15% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  20% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes animation-animal3 {
+  0% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  5% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  10% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  15% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  20% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
