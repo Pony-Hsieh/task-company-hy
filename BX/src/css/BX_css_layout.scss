@@ -1,8 +1,4 @@
-%background-center {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
+@import "../common/css/_utilities.scss";
 
 /* 2022 7~9 好友推薦 */
 .section3 {
@@ -156,12 +152,6 @@
     }
 }
 @media (max-width: 768px) {
-    %background-center-m {
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-
     .section3 {
         padding-top: 0.73rem;
         height: 14.6rem;

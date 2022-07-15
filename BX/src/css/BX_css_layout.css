@@ -6,6 +6,15 @@
           background-size: contain;
 }
 
+@media (max-width: 768px) {
+  .section3 .reward-calc-wrapper-m .draggable-area .dot-draggable, .section3 .reward-calc-wrapper-m .draggable-area .dot-and-bar .dot, .section3 .reward-calc-wrapper-m .condition.condition-10 .section3-tip, .section3 .reward-calc-wrapper-m .condition .arrow, .section3 .reward-calc-wrapper-m .condition .icon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+            background-size: contain;
+  }
+}
+
 /* 2022 7~9 好友推薦 */
 .section3 {
   padding-top: 0.9rem;
@@ -202,12 +211,6 @@
 }
 
 @media (max-width: 768px) {
-  .section3 .reward-calc-wrapper-m .draggable-area .dot-draggable, .section3 .reward-calc-wrapper-m .draggable-area .dot-and-bar .dot, .section3 .reward-calc-wrapper-m .condition.condition-10 .section3-tip, .section3 .reward-calc-wrapper-m .condition .arrow, .section3 .reward-calc-wrapper-m .condition .icon {
-    background-position: center center;
-    background-repeat: no-repeat;
-    -webkit-background-size: contain;
-            background-size: contain;
-  }
   .section3 {
     padding-top: 0.73rem;
     height: 14.6rem;

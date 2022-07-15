@@ -1,0 +1,13 @@
+%background-center {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media (max-width: 768px) {
+    %background-center-m {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
