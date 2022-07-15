@@ -1,15 +1,17 @@
 @import "../common/css/_utilities.scss";
 
+$file-path: "../images";
+
 /* 2022 7~9 好友推薦 */
 .section3 {
     padding-top: 0.9rem;
     height: 7.2rem;
-    background: url(../images/lp_40000hydg/section3.jpg) no-repeat 0 0/100% auto;
+    background: url(#{$file-path}/lp_40000hydg/section3.jpg) no-repeat 0 0/100% auto;
     .title {
         margin: 0 auto;
         width: 4.21rem;
         height: 0.55rem;
-        background-image: url(../images/lp_40000hydg/section3-title.png);
+        background-image: url(#{$file-path}/lp_40000hydg/section3-title.png);
         @extend %background-center;
     }
     .subtitle {
@@ -37,7 +39,7 @@
             z-index: 9;
             width: 1.27rem;
             height: 0.43rem;
-            background-image: url(../images/lp_40000hydg/section3-title-people.png);
+            background-image: url(#{$file-path}/lp_40000hydg/section3-title-people.png);
             @extend %background-center;
         }
         .title-amount {
@@ -47,7 +49,7 @@
             z-index: 9;
             width: 1.27rem;
             height: 0.43rem;
-            background-image: url(../images/lp_40000hydg/section3-title-reward.png);
+            background-image: url(#{$file-path}/lp_40000hydg/section3-title-reward.png);
             @extend %background-center;
         }
         .background-color-area {
@@ -95,7 +97,7 @@
                     left: calc(50% - 3.2rem / 2);
                     width: 3.2rem;
                     height: 1.46rem;
-                    background-image: url(../images/lp_40000hydg/section3-tip.png);
+                    background-image: url(#{$file-path}/lp_40000hydg/section3-tip.png);
                     @extend %background-center;
                 }
             }
@@ -111,7 +113,7 @@
                 margin-top: 0.24rem;
                 width: 0.84rem;
                 height: 0.92rem;
-                background-image: url(../images/lp_40000hydg/condition-icon.png);
+                background-image: url(#{$file-path}/lp_40000hydg/condition-icon.png);
                 @extend %background-center;
             }
             .dot-and-bar {
@@ -190,7 +192,7 @@
                     width: 0.3rem;
                     height: 0.3rem;
                     border-radius: 50%;
-                    background-image: url(../images/lp_40000hydg/dot.png);
+                    background-image: url(#{$file-path}/lp_40000hydg/dot.png);
                     @extend %background-center-m;
                 }
                 .dot-and-bar {
@@ -219,7 +221,7 @@
                         height: 0.3rem;
                         border-radius: 50%;
                         background-color: transparent;
-                        background-image: url(../images/lp_40000hydg/dot.png);
+                        background-image: url(#{$file-path}/lp_40000hydg/dot.png);
                         @extend %background-center-m;
                     }
                 }
@@ -237,7 +239,7 @@
                 &.act {
                     opacity: 1;
                     .icon {
-                        background-image: url(../images/lp_40000hydg/condition-icon.png);
+                        background-image: url(#{$file-path}/lp_40000hydg/condition-icon.png);
                     }
                 }
                 &.condition-2,
@@ -287,7 +289,7 @@
                         left: calc(50% - 3.2rem / 2);
                         width: 3.2rem;
                         height: 1.46rem;
-                        background-image: url(../images/lp_40000hydg/section3-tip.png);
+                        background-image: url(#{$file-path}/lp_40000hydg/section3-tip.png);
                         @extend %background-center-m;
                     }
                 }
@@ -295,13 +297,13 @@
                     margin-bottom: 0.35rem;
                     width: 0.17rem;
                     height: 0.3rem;
-                    background-image: url(../images/lp_40000hydg/arrow-right.png);
+                    background-image: url(#{$file-path}/lp_40000hydg/arrow-right.png);
                     @extend %background-center-m;
                 }
                 .icon {
                     width: 0.84rem;
                     height: 0.92rem;
-                    background-image: url(../images/lp_40000hydg/condition-icon-silhouette.png);
+                    background-image: url(#{$file-path}/lp_40000hydg/condition-icon-silhouette.png);
                     @extend %background-center-m;
                 }
                 .people-and-amount {
@@ -338,7 +340,7 @@
         margin-top: -0.06rem;
         width: 100%;
         height: 10.78rem;
-        background: url(../images/lp_v202202hykh/section2-bg.jpg) no-repeat 0 0/100%;
+        background: url(#{$file-path}/lp_v202202hykh/section2-bg.jpg) no-repeat 0 0/100%;
         user-select: none;
         .section2-title {
             margin-top: 0.8rem;
@@ -383,7 +385,7 @@
             bottom: 0.94rem;
             width: 2.82rem;
             height: 0.8rem;
-            background-image: url(../images/lp_v202202hykh/section2-understand.svg);
+            background-image: url(#{$file-path}/lp_v202202hykh/section2-understand.svg);
             background-size: cover;
             background-color: transparent;
             outline: none;
@@ -476,7 +478,7 @@
     .lp_v202202hykh {
         .section2 {
             height: 20.65rem;
-            background: url(../images/lp_v202202hykh/section2-bg-m.jpg) no-repeat 0 0/100% auto;
+            background: url(#{$file-path}/lp_v202202hykh/section2-bg-m.jpg) no-repeat 0 0/100% auto;
             .section2-title {
                 margin-top: 0.4rem;
             }
