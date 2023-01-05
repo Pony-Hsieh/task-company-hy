@@ -596,20 +596,7 @@
             finalScore: {
                 handler: function (newVal, oldVal) {
                     const vm = this;
-                    let print;
-                    /* 原始分數的開頭要補上幾個 0 */
-                    if (newVal < 10) { //  補三個0
-                        print = `000${vm.finalScore.toString()}`;
-                    }
-                    else if (newVal < 100) { //  補兩個0
-                        print = `00${vm.finalScore.toString()}`;
-                    }
-                    else if (newVal < 1000) { //  補一個0
-                        print = `0${vm.finalScore.toString()}`;
-                    }
-                    else {
-                        print = `${vm.finalScore.toString()}`;
-                    }
+                    const print = vm.finalScore.toString().padStart(4, "0");
 
                     function renderDigit(digitParam, placeParam) {
                         /* 
