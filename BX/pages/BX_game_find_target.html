@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BX 小遊戲 尋找目標</title>
+    <link rel="stylesheet" href="../src/common/css/BX_reset.css">
+    <link rel="stylesheet" href="../src/common/css/BX_common.css">
+    <link rel="stylesheet" href="../src/css/BX_game_find_target.css">
+</head>
+
+<body>
+    <h1>BX 小遊戲 尋找目標</h1>
+    <div class="wrapper">
+        <div class="banner">
+            <!-- 遊戲規則 -->
+            <img class="game-info pc" src="../src/images/BX_game_find_target/game-info.png" />
+            <img class="game-info mobile" src="../src/images/BX_game_find_target/game-info-m.png" />
+            <!-- "遊戲通關入口" -->
+            <div class="badge">
+                <a href="javascript:;"></a>
+            </div>
+            <div class="banner-animation-wrapper">
+                <!-- 飛機 -->
+                <div class="banner-animation plane-1"></div>
+                <div class="banner-animation plane-2"></div>
+                <div class="banner-animation plane-3"></div>
+                <!-- 雲朵 -->
+                <div class="banner-animation cloud"></div>
+                <!-- 地標 -->
+                <div class="banner-animation landmark landmark-1"></div>
+                <div class="banner-animation landmark landmark-2"></div>
+                <div class="banner-animation landmark landmark-3"></div>
+                <div class="banner-animation landmark landmark-4"></div>
+                <div class="banner-animation landmark landmark-5"></div>
+                <div class="banner-animation landmark landmark-6"></div>
+            </div>
+        </div>
+
+        <div class="section-1">
+            <!-- 遊戲區域 -->
+            <div v-cloak id="gameArea" class="game-area" :class="{
+                    'pause': game_status === 'pause',
+                    'playing': game_status === 'playing',
+                    'game-over': game_status === 'game_over',
+                    'level-1': level === 1,
+                    'level-2': level === 2,
+                    'level-3': level === 3,
+                    'level-4': level === 4,
+                }">
+                <!-- 遮罩 -->
+                <div class="game-mask" v-show="game_status !== 'playing'"></div>
+                <!-- 倒數動畫 -->
+                <div class="animation-before-start" :class="{'playing': showAnimationBeforeStart === true}"></div>
+                <!-- 開始遊戲 -->
+                <div class="btn btn-start" :class="{'dp-block': btn_status.start === true}" @click="startGame"></div>
+                <!-- 再來一次 -->
+                <div class="btn btn-restart" :class="{'dp-block': btn_status.restart === true}" @click="startGame"></div>
+                <!-- 遊戲操作區域 -->
+                <div class="game-operation-area" :class="{
+                    'pause': game_status === 'pause',
+                    'playing': game_status === 'playing',
+                    'game-over': game_status === 'game_over',
+                    'level-0': level === 0,
+                    'level-1': level === 1,
+                    'level-2': level === 2,
+                    'level-3': level === 3,
+                    'level-4': level === 4,
+                    'level-5': level === 5,
+                }" @click="generateWrongHint($event)">
+                    <div class="target target-1" :class="{'found': target.target_1.found === true}" @click="judgeSingleTarget(1)"></div>
+                    <div class="target target-2" :class="{'found': target.target_2.found === true}" @click="judgeSingleTarget(2)"></div>
+                    <div class="target target-3" :class="{'found': target.target_3.found === true}" @click="judgeSingleTarget(3)"></div>
+                    <div class="target target-wrong" :style="{'transform': `translate(${target.target_wrong.translateX}px, ${target.target_wrong.translateY}px)`}" v-show="target.target_wrong.show"></div>
+                </div>
+                <!-- 目標提示 + 倒數計時器 -->
+                <div class="target-tips-and-count-down-wrapper">
+                    <div class="target-tip-wrapper">
+                        <!-- TODO: 之後可以再用 v-for 重構 -->
+                        <div class="target-tip target-tip-1 level" :class="{
+                            'level-0': level === 0,
+                            'level-1': level === 1,
+                            'level-2': level === 2,
+                            'level-3': level === 3,
+                            'level-4': level === 4,
+                            'level-5': level === 5,
+                            'found': target.target_1.found === true 
+                        }"></div>
+                        <div class="target-tip target-tip-2 level" :class="{
+                            'level-0': level === 0,
+                            'level-1': level === 1,
+                            'level-2': level === 2,
+                            'level-3': level === 3,
+                            'level-4': level === 4,
+                            'level-5': level === 5,
+                            'found': target.target_2.found === true 
+                        }"></div>
+                        <div class="target-tip target-tip-3 level" :class="{
+                            'level-0': level === 0,
+                            'level-1': level === 1,
+                            'level-2': level === 2,
+                            'level-3': level === 3,
+                            'level-4': level === 4,
+                            'level-5': level === 5,
+                            'found': target.target_3.found === true 
+                        }"></div>
+                    </div>
+                    <div class="game-count-down start-with" :class="{
+                        'start-with-3': remaining_time.background_style === 'start_with_3',
+                        'start-with-2': remaining_time.background_style === 'start_with_2',
+                        'start-with-1': remaining_time.background_style === 'start_with_1',
+                        'start-with-0': remaining_time.background_style === 'start_with_0'
+                    }">
+                        <div class="seconds">
+                            <div>{{ addZero(remaining_time.seconds) }}</div>
+                        </div>
+                    </div>
+                </div>
+                <!--  通過單一關卡訊息 -->
+                <div class="beat-level-message" :class="{
+                    'level-1': level === 1,
+                    'level-2': level === 2,
+                    'level-3': level === 3,
+                    'level-4': level === 4,
+                }" v-show="showBeatLevelMessage"></div>
+                <!-- 闖關失敗 -->
+                <div class="fail" :class="{'dp-block': game_status === 'game_over'}"></div>
+            </div>
+        </div>
+
+        <div class="section-2">
+            <div class="content-wrapper">
+                <h3>活动时间</h3>
+                <p class="pc">2022/11/01 00:00:00-2022/11/30 23:59:59</p>
+                <p class="mobile">
+                    2022/11/01 00:00:00-<br />
+                    2022/11/30 23:59:59
+                </p>
+            </div>
+            <div class="content-wrapper">
+                <h3>手数计算时间</h3>
+                <p class="pc">客户完成游戏即开始计算手数至11/30 23:59:59</p>
+                <p class="mobile">
+                    客户完成游戏即开始计算手数至<br />
+                    11/30 23:59:59
+                </p>
+            </div>
+            <div class="content-wrapper">
+                <h3>参予用户类型</h3>
+                <p>标准、专业、尊贵账户</p>
+            </div>
+            <div class="content-wrapper">
+                <h3>奖励规则</h3>
+                <p>交易满足手即可获得后赠；请参照表格</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="border-top-left-radius">
+                                <div>成功通关</div>
+                            </th>
+                            <th>
+                                <div>奖励商品</div>
+                            </th>
+                            <th>
+                                <div>每手返还</div>
+                            </th>
+                            <th class="border-top-right-radius">
+                                <div>奖励上限</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="row-title">第一关</th>
+                            <td>原油</td>
+                            <td>US$2</td>
+                            <td>US$200</td>
+                        </tr>
+                        <tr>
+                            <td class="row-title">第二关</th>
+                            <td>指数</td>
+                            <td>US$2</td>
+                            <td>US$200</td>
+                        </tr>
+                        <tr>
+                            <td class="row-title">第三关</th>
+                            <td>黄金</td>
+                            <td>US$2</td>
+                            <td>US$200</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="border-bottom-radius">
+                            <td colspan="4">* 完美通关并交易0.01手可再获得3美元</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p class="example">
+                    举例：陈先生成功通过第一关卡，即可享2美元/手原油后赠；最高奖励200美元，若陈先生全数破关，即享有所以奖励资格，若完成10手原油5手指数与3手黄金，共可获取
+                    10*2+5*2+3*2=36美元以及额外3美元，奖励实时到账。</p>
+                <p class="lot">
+                    完成手数定义：报名后开仓1手且平仓1手即为<br class="mobile" />完成1手。
+                    <br class="pc" />
+                    活动期间客户享自由出入金特权。
+                    <span></span>
+                </p>
+            </div>
+            <div class="content-wrapper">
+                <button type="button" class="js-open-pop-notice"></button>
+            </div>
+        </div>
+
+        <div id="pop-notice" class="pop-notice-wrapper">
+            <div class="pop-notice-content-wrapper">
+                <button type="button" class="close js-close-pop-notice"></button>
+                <h3>注意事项</h3>
+                <ol class="content">
+                    <li>本公司员工不适合此活动；</li>
+                    <li>本活动可与其他活动一同参与</li>
+                    <li>如果本公司怀疑客户滥用、企图滥用、以其他方式滥用优惠，或怀疑客户使用内部交易账户，外挂操作软件或其他经纪商或个人进行对冲，本公司有权停止客户新交易及要求客户取消账户所获投资资金及取消所有交易，并视情况扣除账户结余 6%至 10%作行政费用；</li>
+                    <li>本公司保留随时修订、暂停、终止本活动及任何相关规则条款之权利及其解释权。</li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="preloader">
+            <div class="preloader-1-1"></div>
+            <div class="preloader-1-2"></div>
+            <div class="preloader-1-3"></div>
+
+            <div class="preloader-2-1"></div>
+            <div class="preloader-2-2"></div>
+            <div class="preloader-2-3"></div>
+            <div class="preloader-2-4"></div>
+            <div class="preloader-2-5"></div>
+            <div class="preloader-2-6"></div>
+            <div class="preloader-2-7"></div>
+            <div class="preloader-2-8"></div>
+
+            <div class="preloader-3-1"></div>
+            <div class="preloader-3-2"></div>
+            <div class="preloader-3-3"></div>
+        </div>
+    </div>
+
+    <!-- jQuery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+    <!-- Vue 2 部屬版本 cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <!-- 自適應換算比例 -->
+    <script>
+        (function (doc, win) {
+            const docEl = doc.documentElement;
+            const resizeEvt = "orientationchange" in window ? "orientationchange" : "resize";
+            function recalc() {
+                const clientWidth = docEl.clientWidth; // clientWidth: 获取对象可见内容的宽度，不包括滚动条，不包括边框
+                if (!clientWidth) {
+                    return;
+                }
+                if (window.innerWidth <= 768) {
+                    document.documentElement.style.fontSize = clientWidth / 7.68 + "px";
+                }
+                else if (window.innerWidth >= 1920) {
+                    document.documentElement.style.fontSize = 1920 / 19.2 + "px";
+                }
+                else {
+                    document.documentElement.style.fontSize = clientWidth / 19.2 + "px";
+                }
+            }
+            recalc();
+
+            /* 判断是否支持监听事件 ，不支持则停止 */
+            if (!doc.addEventListener) {
+                return;
+            }
+
+            /* 注册翻转事件 */
+            win.addEventListener(resizeEvt, recalc, false);
+        })(document, window);
+    </script>
+    <!-- 小遊戲的邏輯寫在 index.js 裡面 -->
+    <script src="../src/js/BX_game_find_target/index.js"></script>
+</body>
+
+</html>

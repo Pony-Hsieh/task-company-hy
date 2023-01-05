@@ -1,0 +1,821 @@
+$file-path: "../images/BX_game_find_target";
+
+@font-face {
+    font-family: "digital-dream.fat-narrow";
+    src: url("../font/digital-dream.fat-narrow.woff2");
+}
+
+body {
+    max-width: 1920px;
+    margin: 0 auto;
+    font-size: 0;
+    font-family: "PingFang SC", "Hiragino Sans GB", arial, "Microsoft Yahei", sans-serif;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.pc {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+.dp-none {
+    display: none;
+}
+
+.dp-block {
+    display: block;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.banner {
+    position: relative;
+    z-index: 1;
+    height: 10.36rem;
+    background-image: url(#{$file-path}/bg-banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .game-info {
+        position: absolute;
+        top: 7.1rem;
+        left: calc(50% - (7.3rem) / 2); // 50% 減去 元素寬度的一半
+        width: 7.3rem;
+        height: 2.4rem;
+        object-fit: cover;
+        pointer-events: none;
+    }
+    .badge {
+        position: absolute;
+        top: 4.3rem;
+        left: calc(50% - (2.4rem / 2));
+        z-index: 3;
+        width: 2.4rem;
+        height: 2.4rem;
+        background-image: url(#{$file-path}/badge.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        cursor: pointer;
+        overflow: hidden;
+        animation-name: animation-badge-flash;
+        animation-timing-function: step-end;
+        animation-iteration-count: infinite;
+        animation-duration: 1.2s;
+        &:active {
+            background-position: top;
+        }
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.section-1 {
+    position: relative;
+    z-index: 1;
+    height: 11.4rem;
+    background-image: url(#{$file-path}/bg-section-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    &.game-over {
+        background-image: url(#{$file-path}/gameover_bg.jpg);
+    }
+}
+
+.section-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.3rem;
+    padding-bottom: 2.11rem;
+    background-color: #945124;
+    background-image: url(#{$file-path}/bg-section-2.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &:not(:first-of-type) {
+            margin-top: 0.4rem;
+        }
+        h3 {
+            width: 2.8rem;
+            height: 0.6rem;
+            font-size: 0.3rem;
+            line-height: 0.6rem;
+            text-align: center;
+            color: #fff;
+            background-color: #552b23;
+            border-radius: 0.35rem;
+        }
+        p {
+            margin-top: 0.2rem;
+            max-width: 6.86rem;
+            font-size: 0.28rem;
+            color: #fff;
+            text-align: center;
+            &.example {
+                margin-top: 0.4rem;
+                padding-left: 0.1rem;
+                text-align: left;
+            }
+            &.lot {
+                position: relative;
+                padding-left: 0.1rem;
+                text-align: left;
+                span {
+                    position: absolute;
+                    top: 0;
+                    left: -0.4rem;
+                    width: 0.4rem;
+                    height: 0.4rem;
+                    background-image: url(#{$file-path}/maple.svg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+        }
+        table {
+            margin-top: 0.2rem;
+            width: 6.7rem;
+            text-align: center;
+            color: #141818;
+            font-size: 0.24rem;
+            .row-title {
+                font-weight: 600;
+            }
+            thead {
+                tr {
+                    height: 0.84rem;
+                    background-color: #552b23;
+                    font-weight: 600;
+                    color: #fff;
+                    th:not(:first-of-type) {
+                        div {
+                            border-left: 0.02rem solid #fff;
+                        }
+                    }
+                }
+            }
+            tbody,
+            tfoot {
+                tr {
+                    border-top: 0.04rem solid #552b23;
+                }
+            }
+            tbody {
+                tr {
+                    &:nth-of-type(odd) {
+                        background-color: #d8d8d8;
+                        height: 0.7rem;
+                    }
+                    &:nth-of-type(even) {
+                        background-color: #efefef;
+                        height: 0.7rem;
+                    }
+                }
+            }
+            tfoot {
+                tr {
+                    height: 0.74rem;
+                    background-color: #fdf6cc;
+                    font-weight: 600;
+                    color: #552b23;
+                    td {
+                        border-bottom-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                    }
+                }
+            }
+            tr td {
+                border-top: 4px solid #945124;
+            }
+            .border-top-left-radius {
+                border-top-left-radius: 10px;
+            }
+            .border-top-right-radius {
+                border-top-right-radius: 10px;
+            }
+        }
+        button {
+            width: 2.5rem;
+            height: 0.5rem;
+            background-color: transparent;
+            background-image: url(#{$file-path}/btn-notice.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.pop-notice-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.72);
+    .pop-notice-content-wrapper {
+        position: relative;
+        width: 7.2rem;
+        height: 6.7rem;
+        .close {
+            position: absolute;
+            top: 0.3rem;
+            right: calc(0.3rem + 0.17rem);
+            width: 0.7rem;
+            height: 0.7rem;
+            background-image: url(#{$file-path}/close.svg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        h3 {
+            width: 100%;
+            height: 1.3rem;
+            background-color: #3050aa;
+            font-size: 0.42rem;
+            font-weight: 300;
+            letter-spacing: 1.91px;
+            color: #fff;
+            text-align: center;
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+            line-height: 1.3rem;
+        }
+        .content {
+            padding: 0.4rem;
+            padding-left: 0.72rem;
+            background-color: #fff;
+            color: #000;
+            font-size: 0.26rem;
+            border: 1px solid #979797;
+            border-top: none;
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+            line-height: 1.77;
+            li {
+                list-style-type: decimal;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .pc {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+    .banner {
+        height: 13.3rem;
+        background-image: url(#{$file-path}/bg-banner-m.jpg);
+        .game-info {
+            top: 9.4rem;
+            left: calc(50% - (6.4rem) / 2); // 50% 減去 元素寬度的一半
+            width: 6.4rem;
+            height: 2.7rem;
+        }
+        .badge {
+            top: 6.3rem;
+        }
+    }
+    .section-1 {
+        height: 11rem;
+        background-image: url(#{$file-path}/bg-section-1-m.jpg);
+        .btn {
+            position: absolute;
+            top: 28%;
+            left: calc(50vw - (2.92rem / 2)); // 一半裝置寬度 - 一半元素寬度 // 水平置中效果
+            width: 2.92rem;
+            height: 2.41rem;
+        }
+    }
+    .section-2 {
+        background-image: url(#{$file-path}/bg-section-2-m.jpg);
+        .content-wrapper {
+            button {
+                width: 2.1rem;
+                height: 0.8rem;
+                background-image: url(#{$file-path}/btn-notice-m.png);
+            }
+        }
+    }
+}
+
+/* 遊戲相關操控 */
+// 遊戲相關區域
+.game-area {
+    position: relative;
+    top: 0.8rem;
+    left: calc(50% - (7.5rem / 2));
+    width: 7.5rem;
+    height: 9rem;
+}
+
+.game-mask {
+    position: absolute;
+    top: -0.85rem;
+    left: -0.8rem;
+    z-index: 10;
+    width: 9.1rem;
+    height: 10.6rem;
+    background-color: rgba(20, 24, 24, 0.7);
+}
+
+.animation-before-start {
+    position: absolute;
+    top: calc(50% - (0.74rem / 2));
+    left: calc(50% - (0.5rem / 2));
+    z-index: 20;
+    width: 0.5rem;
+    height: 0.74rem;
+    &.playing {
+        background-image: url(#{$file-path}/sprite-animation-before-start.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        animation-name: animation-before-start;
+        animation-timing-function: step-end;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+    }
+}
+
+.btn {
+    position: absolute;
+    top: 44%;
+    left: calc(50% - (1.46rem / 2));
+    z-index: 50;
+    width: 1.46rem;
+    height: 1.2rem;
+    cursor: pointer;
+    // 預設都不顯示 // 加上 .dp-block 即可顯示
+    &.dp-block {
+        display: block;
+    }
+}
+// 開始遊戲
+.btn-start {
+    display: none;
+    background-image: url(#{$file-path}/sprite-game-control-button.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 33%;
+}
+// 再來一次
+.btn-restart {
+    display: none;
+    background-image: url(#{$file-path}/sprite-game-control-button.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 66.5%;
+}
+
+// 遊戲操作區域
+.game-operation-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    user-select: none;
+    &.level-0,
+    &.level-1 {
+        background-image: url(#{$file-path}/bg-game-level-1.jpg);
+        .target-1 {
+            top: 2.72rem;
+            left: 4.16rem;
+            background-image: url(#{$file-path}/level-1-target-1.png);
+        }
+        .target-2 {
+            top: 1.54rem;
+            left: 0;
+            background-image: url(#{$file-path}/level-1-target-2.png);
+        }
+        .target-3 {
+            top: 5.1rem;
+            left: 1.42rem;
+            background-image: url(#{$file-path}/level-1-target-3.png);
+        }
+    }
+    &.level-2 {
+        background-image: url(#{$file-path}/bg-game-level-2.jpg);
+        .target-1 {
+            top: 2.74rem;
+            left: 1.34rem;
+            background-image: url(#{$file-path}/level-2-target-1.png);
+        }
+        .target-2 {
+            top: 3.7rem;
+            left: 6.1rem;
+            background-image: url(#{$file-path}/level-2-target-2.png);
+        }
+        .target-3 {
+            top: 7.26rem;
+            left: 6.1rem;
+            background-image: url(#{$file-path}/level-2-target-3.png);
+        }
+    }
+    &.level-3 {
+        background-image: url(#{$file-path}/bg-game-level-3.jpg);
+        .target-1 {
+            top: 2.06rem;
+            left: 4.48rem;
+            background-image: url(#{$file-path}/level-3-target-1.png);
+        }
+        .target-2 {
+            top: 3.76rem;
+            left: 0.58rem;
+            background-image: url(#{$file-path}/level-3-target-2.png);
+        }
+        .target-3 {
+            top: 6.16rem;
+            left: 3.6rem;
+            background-image: url(#{$file-path}/level-3-target-3.png);
+        }
+    }
+    &.level-4,
+    &.level-5 {
+        background-image: url(#{$file-path}/bg-game-level-4.jpg);
+        .target-1 {
+            top: 4.78rem;
+            left: 2.76rem;
+            background-image: url(#{$file-path}/level-4-target-1.png);
+        }
+        .target-2 {
+            top: 3.16rem;
+            left: 4.3rem;
+            background-image: url(#{$file-path}/level-4-target-2.png);
+        }
+        .target-3 {
+            top: 2.06rem;
+            left: 0.74rem;
+            background-image: url(#{$file-path}/level-4-target-3.png);
+        }
+    }
+    .target {
+        position: absolute;
+        width: 1.4rem;
+        height: 1.4rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: -2.84rem center;
+        &.found {
+            background-position: 0 center;
+        }
+    }
+    .target-wrong {
+        background-image: url(#{$file-path}/target-wrong.png);
+        background-position: center;
+    }
+}
+
+// 目標提示、倒數計時
+.target-tips-and-count-down-wrapper {
+    position: absolute;
+    top: -1.6rem;
+    left: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 8rem;
+    user-select: none;
+    pointer-events: none;
+    .target-tip-wrapper {
+        display: flex;
+        width: 4.8rem;
+        .target-tip {
+            width: 1.4rem;
+            height: 1.4rem;
+            &.level {
+                background-repeat: no-repeat;
+                background-position: 0 center;
+                background-size: cover;
+                &.found {
+                    background-position: -1.42rem center;
+                }
+            }
+            &:not(:first-child) {
+                margin-left: 0.3rem;
+            }
+        }
+        .target-tip-1 {
+            &.level-0,
+            &.level-1 {
+                background-image: url(#{$file-path}/level-1-target-1.png);
+            }
+            &.level-2 {
+                background-image: url(#{$file-path}/level-2-target-1.png);
+            }
+            &.level-3 {
+                background-image: url(#{$file-path}/level-3-target-1.png);
+            }
+            &.level-4,
+            &.level-5 {
+                background-image: url(#{$file-path}/level-4-target-1.png);
+            }
+        }
+        .target-tip-2 {
+            &.level-0,
+            &.level-1 {
+                background-image: url(#{$file-path}/level-1-target-2.png);
+            }
+            &.level-2 {
+                background-image: url(#{$file-path}/level-2-target-2.png);
+            }
+            &.level-3 {
+                background-image: url(#{$file-path}/level-3-target-2.png);
+            }
+            &.level-4,
+            &.level-5 {
+                background-image: url(#{$file-path}/level-4-target-2.png);
+            }
+        }
+        .target-tip-3 {
+            &.level-0,
+            &.level-1 {
+                background-image: url(#{$file-path}/level-1-target-3.png);
+            }
+            &.level-2 {
+                background-image: url(#{$file-path}/level-2-target-3.png);
+            }
+            &.level-3 {
+                background-image: url(#{$file-path}/level-3-target-3.png);
+            }
+            &.level-4,
+            &.level-5 {
+                background-image: url(#{$file-path}/level-4-target-3.png);
+            }
+        }
+    }
+    .game-count-down {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        color: #fff;
+        font-family: "digital-dream.fat-narrow";
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-size: cover;
+        background-position: center;
+        font-size: 0.84rem;
+        font-weight: 900;
+        border-radius: 50%;
+        &.start-with {
+            .seconds {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 2rem;
+                height: 2.3rem;
+                background-position: center;
+                background-size: cover;
+                div {
+                    position: absolute;
+                    top: 0.7rem;
+                    left: 0.45rem;
+                    width: 1.1rem;
+                    height: 1.3rem;
+                    text-align: right;
+                    line-height: 1.3rem;
+                }
+            }
+        }
+        &.start-with-3 {
+            background-image: url(#{$file-path}/shadow-game-count-down-3.png);
+            .seconds {
+                background-image: url(#{$file-path}/bg-game-count-down-3.png);
+            }
+        }
+        &.start-with-2 {
+            background-image: url(#{$file-path}/shadow-game-count-down-2.png);
+            .seconds {
+                background-image: url(#{$file-path}/bg-game-count-down-2.png);
+            }
+        }
+        &.start-with-1 {
+            background-image: url(#{$file-path}/shadow-game-count-down-1.png);
+            .seconds {
+                background-image: url(#{$file-path}/bg-game-count-down-1.png);
+            }
+        }
+        &.start-with-0 {
+            background-image: url(#{$file-path}/shadow-game-count-down-0.png);
+            .seconds {
+                background-image: url(#{$file-path}/bg-game-count-down-0.png);
+            }
+        }
+    }
+}
+
+// 通過單一關卡訊息
+.beat-level-message {
+    position: absolute;
+    top: calc(50% - 4.36rem / 2);
+    left: calc(50% - 4rem / 2);
+    z-index: 20;
+    width: 4rem;
+    height: 4.36rem;
+    background-image: url(#{$file-path}/sprite-beat-level-message.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    &.level-1 {
+        background-position: 0 center;
+    }
+    &.level-2 {
+        background-position: -4.02rem center;
+    }
+    &.level-3 {
+        background-position: -8.04rem center;
+    }
+    &.level-4 {
+        background-position: -12.06rem center;
+    }
+}
+
+// 闖關失敗
+.fail {
+    position: absolute;
+    top: calc(50% - (2rem / 2));
+    left: calc(50% - (5.5rem / 2));
+    z-index: 30;
+    // 預設不顯示 // 加上 .dp-block 即可顯示
+    display: none;
+    width: 5.5rem;
+    height: 2rem;
+    background-image: url(#{$file-path}/game-over.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &.dp-block {
+        display: block;
+    }
+}
+
+// 要預先載入的內容 // 只是為了先載入而已，並沒有要真的顯示
+#preloader {
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    .preloader-1-1 {
+        background-image: url(#{$file-path}/sprite-animation-before-start.png);
+    }
+    .preloader-1-2 {
+        background-image: url(#{$file-path}/sprite-game-control-button.png);
+    }
+    .preloader-1-3 {
+        background-image: url(#{$file-path}/sprite-beat-level-message.png);
+    }
+
+    .preloader-2-1 {
+        background-image: url(#{$file-path}/shadow-game-count-down-3.png);
+    }
+    .preloader-2-2 {
+        background-image: url(#{$file-path}/bg-game-count-down-3.png);
+    }
+    .preloader-2-3 {
+        background-image: url(#{$file-path}/shadow-game-count-down-2.png);
+    }
+    .preloader-2-4 {
+        background-image: url(#{$file-path}/bg-game-count-down-2.png);
+    }
+    .preloader-2-5 {
+        background-image: url(#{$file-path}/shadow-game-count-down-1.png);
+    }
+    .preloader-2-6 {
+        background-image: url(#{$file-path}/bg-game-count-down-1.png);
+    }
+    .preloader-2-7 {
+        background-image: url(#{$file-path}/shadow-game-count-down-0.png);
+    }
+    .preloader-2-8 {
+        background-image: url(#{$file-path}/bg-game-count-down-0.png);
+    }
+
+    .preloader-3-1 {
+        background-image: url(#{$file-path}/bg-game-level-1.jpg);
+    }
+    .preloader-3-2 {
+        background-image: url(#{$file-path}/bg-game-level-2.jpg);
+    }
+    .preloader-3-3 {
+        background-image: url(#{$file-path}/bg-game-level-3.jpg);
+    }
+}
+
+@media (max-width: 768px) {
+    .game-area {
+        top: 0.3rem;
+    }
+    .game-mask {
+        top: -1.9rem;
+        height: 12.32rem;
+    }
+    .target-tips-and-count-down-wrapper {
+        top: -1.9rem;
+        width: 7.5rem;
+        .target-tip-wrapper {
+            position: absolute;
+            top: 10.2rem;
+            left: 0;
+            justify-content: center;
+            width: 100%;
+            .target-tip {
+                &.level {
+                    &.found {
+                        background-position: -1.43rem center;
+                    }
+                }
+            }
+        }
+        .game-count-down {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+    .fail {
+        top: 3rem;
+        left: calc(50vw - (5.5rem / 2));
+        width: 5.5rem;
+        height: 2rem;
+    }
+    // 通過單一關卡訊息
+    .beat-level-message {
+        top: calc(50% - 6.76rem / 2);
+        left: calc(50% - 6.2rem / 2);
+        width: 6.2rem;
+        height: 6.76rem;
+        background-image: url(#{$file-path}/sprite-beat-level-message-m.png);
+        &.level-1 {
+            background-position: 0 center;
+        }
+        &.level-2 {
+            background-position: -6.22rem center;
+        }
+        &.level-3 {
+            background-position: -12.42rem center;
+        }
+        &.level-4 {
+            background-position: -18.64rem center;
+        }
+    }
+}
+
+// 遊戲通關入口 閃爍
+@keyframes animation-badge-flash {
+    0% {
+        background-position: top;
+    }
+    50% {
+        background-position: bottom;
+    }
+    100% {
+        background-position: top;
+    }
+}
+
+@keyframes animation-before-start {
+    0% {
+        background-position: center -1.6rem; // 3
+    }
+    33% {
+        background-position: center -0.78rem; // 2
+    }
+    66% {
+        background-position: center 0; // 1
+    }
+    100% {
+        background-position: center 0; // 1
+    }
+}
