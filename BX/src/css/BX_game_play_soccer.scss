@@ -1,0 +1,1307 @@
+$file-path: "../images/BX_game_play_soccer";
+
+body {
+    max-width: 1920px;
+    margin: 0 auto;
+    font-size: 0;
+    font-family: "PingFang SC", "Hiragino Sans GB", arial, "Microsoft Yahei", sans-serif;
+    background-color: #fff;
+    overflow: hidden;
+    &.noYScroll {
+        touch-action: pan-x;
+    }
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.pc {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+.dp-none {
+    display: none;
+}
+
+.dp-block {
+    display: block;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.activity-main .logo {
+    width: 211px !important;
+}
+
+.banner {
+    position: relative;
+    z-index: 2;
+    height: 6.2rem;
+    background-image: url(#{$file-path}/sprite-bg-banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 top;
+    animation-name: animation-bg-banner;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+    animation-duration: 1.2s;
+    .banner-description {
+        display: block;
+        margin: 0 auto;
+        padding-top: 0.86rem;
+        width: 6.6rem;
+        height: 4.77rem;
+    }
+    .badge {
+        position: absolute;
+        top: 4.3rem;
+        left: calc(50% - (2.4rem / 2));
+        z-index: 3;
+        width: 2.4rem;
+        height: 2.4rem;
+        background-image: url(#{$file-path}/badge.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        animation-name: animation-badge-flash;
+        animation-timing-function: step-end;
+        animation-iteration-count: infinite;
+        animation-duration: 1.2s;
+        cursor: pointer;
+        &:active {
+            background-position: top;
+        }
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .banner-mascot {
+        position: absolute;
+        top: 2.76rem;
+        left: 11.77rem;
+        width: 2.66rem;
+        height: 3.32rem;
+        background-image: url(#{$file-path}/sprite-mascot-kicking-ball.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        animation-name: animation-banner-mascot;
+        animation-timing-function: step-end;
+        animation-iteration-count: infinite;
+        animation-duration: 3s;
+    }
+    .banner-soccer {
+        position: absolute;
+        top: 0;
+        left: 1.74rem;
+        width: 9.1rem;
+        height: 4.8rem;
+        background-image: url(#{$file-path}/sprite-banner-soccer-goal.png);
+        background-position: -9.1rem 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        animation-name: animation-banner-soccer;
+        animation-timing-function: step-end;
+        animation-iteration-count: infinite;
+        animation-duration: 3s;
+    }
+}
+
+.section-1 {
+    position: relative;
+    z-index: 1;
+    height: 15.4rem;
+    background-image: url(#{$file-path}/bg-section-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .court-camera-flash {
+        position: absolute;
+        top: 3.4rem;
+        left: calc(50% - 16.7rem / 2);
+        width: 16.7rem;
+        height: 3.6rem;
+        background-image: url(#{$file-path}/sprite-court-camera-flash.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-size: cover;
+        background-position: top;
+        animation-name: animation-court-camera-flash;
+        animation-duration: 0.8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: step-end;
+    }
+    .game-info {
+        position: absolute;
+        top: 0.8rem;
+        left: calc(50% - (7.3rem) / 2); // 50% 減去 元素寬度的一半
+        width: 7.3rem;
+        height: 2.4rem;
+        object-fit: cover;
+        pointer-events: none;
+    }
+}
+
+.section-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 17.04rem;
+    background-color: #2c3d45;
+    background-image: url(#{$file-path}/bg-section-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: cover;
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &:not(:first-of-type) {
+            margin-top: 0.4rem;
+        }
+        h3 {
+            width: 2.8rem;
+            height: 0.6rem;
+            font-size: 0.3rem;
+            line-height: 0.6rem;
+            text-align: center;
+            color: #fff;
+            background-color: #7d5aab;
+            border-radius: 0.35rem;
+        }
+        p {
+            margin-top: 0.2rem;
+            max-width: 6.86rem;
+            font-size: 0.28rem;
+            color: #fff;
+            text-align: center;
+            &.example {
+                margin-top: 0.4rem;
+                padding-left: 0.1rem;
+                text-align: left;
+            }
+            &.lot {
+                position: relative;
+                padding-left: 0.1rem;
+                text-align: left;
+                span {
+                    position: absolute;
+                    top: 0;
+                    left: -0.4rem;
+                    width: 0.4rem;
+                    height: 0.4rem;
+                    background-image: url(#{$file-path}/icon-soccer.svg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+            }
+        }
+        table {
+            margin-top: 0.2rem;
+            width: 6.7rem;
+            text-align: center;
+            color: #141818;
+            font-size: 0.24rem;
+            .row-title {
+                font-weight: 600;
+            }
+            thead {
+                tr {
+                    height: 0.84rem;
+                    background-color: #7d5aab;
+                    font-weight: 600;
+                    color: #fff;
+                    th:not(:first-of-type) {
+                        div {
+                            border-left: 0.02rem solid #fff;
+                        }
+                    }
+                }
+            }
+            tbody,
+            tfoot {
+                tr {
+                    border-top: 0.04rem solid #7d5aab;
+                }
+            }
+            tbody {
+                tr {
+                    &:nth-of-type(odd) {
+                        background-color: #d8d8d8;
+                        height: 0.7rem;
+                    }
+                    &:nth-of-type(even) {
+                        background-color: #efefef;
+                        height: 0.7rem;
+                    }
+                }
+            }
+            tfoot {
+                tr {
+                    height: 0.74rem;
+                    background-color: #fdf6cc;
+                    font-weight: 600;
+                    color: #7d5aab;
+                    td {
+                        border-bottom-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                    }
+                }
+            }
+            tr td {
+                border-top: 4px solid #2a3b43;
+            }
+            .border-top-left-radius {
+                border-top-left-radius: 10px;
+            }
+            .border-top-right-radius {
+                border-top-right-radius: 10px;
+            }
+        }
+        button {
+            width: 2.5rem;
+            height: 0.5rem;
+            background-color: transparent;
+            background-image: url(#{$file-path}/btn-notice.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.pop-notice-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.72);
+    .pop-notice-content-wrapper {
+        position: relative;
+        width: 7.2rem;
+        height: 6.7rem;
+        .close {
+            position: absolute;
+            top: 0.3rem;
+            right: calc(0.3rem + 0.17rem);
+            width: 0.7rem;
+            height: 0.7rem;
+            background-image: url(#{$file-path}/close.svg);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        h3 {
+            width: 100%;
+            height: 1.3rem;
+            background-color: #3050aa;
+            font-size: 0.42rem;
+            font-weight: 300;
+            letter-spacing: 1.91px;
+            color: #fff;
+            text-align: center;
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+            line-height: 1.3rem;
+        }
+        .content {
+            padding: 0.4rem;
+            padding-left: 0.72rem;
+            background-color: #fff;
+            color: #000;
+            font-size: 0.26rem;
+            border: 1px solid #979797;
+            border-top: none;
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+            line-height: 1.77;
+            li {
+                list-style-type: decimal;
+            }
+        }
+    }
+}
+
+//報名登入
+.login-main {
+    position: relative;
+    z-index: 99;
+    display: none;
+    transition: all 0.2s;
+    .mask-box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.72);
+    }
+    .mask-main {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 5.91rem;
+        background-color: #fff;
+        border-radius: 0.1rem;
+        padding: 0.4rem 0.46rem;
+        box-sizing: border-box;
+        .title {
+            font-size: 0.22rem;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            line-height: 0.24rem;
+            i {
+                position: absolute;
+                right: 0;
+                cursor: pointer;
+                font-size: 0.18rem;
+                line-height: 0.24rem;
+                transition: all 0.2s;
+                &:active,
+                &:hover {
+                    color: #0f6eef;
+                }
+            }
+        }
+        .login-from {
+            margin-top: 45px;
+            .list {
+                width: 4.98rem;
+                height: 0.54rem;
+                line-height: 0.45rem;
+                background-color: #f3f3f3;
+                border-radius: 0.05rem;
+                color: #7e7e7e;
+                box-sizing: border-box;
+                border: 0.01rem solid transparent;
+                transition: all 0.3s;
+                .icon {
+                    font-size: 0.2rem;
+                    margin-left: 0.23rem;
+                    float: left;
+                }
+                .input {
+                    font-size: 0.2rem;
+                    width: 65%;
+                    height: 100%;
+                    border: 0;
+                    float: left;
+                    padding-left: 0.27rem;
+                    background-color: transparent;
+                    box-sizing: border-box;
+                    letter-spacing: 0.01rem;
+                    color: #7e7e7e;
+                }
+            }
+            .cur {
+                border-color: #97aff6;
+            }
+            li:first-child .list {
+                margin-top: 0;
+            }
+            .input-warning {
+                color: #e73838;
+                opacity: 0;
+                transition: all 0.2s;
+                margin-top: 0.01rem;
+                padding-bottom: 0.02rem;
+                height: 0.19rem;
+            }
+        }
+        .login-button {
+            width: 4.98rem;
+            height: 0.6rem;
+            line-height: 0.58rem;
+            background-color: #577ff6;
+            border-radius: 0.05rem;
+            font-size: 0.2rem;
+            color: #fff;
+            margin-top: 0.22rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            &:active {
+                background-color: #4d67cd;
+            }
+        }
+        .login-option {
+            font-size: 0.16rem;
+            margin-top: 0.2rem;
+            overflow: hidden;
+            span {
+                color: #577ff6;
+                cursor: pointer;
+                &:first-child {
+                    float: left;
+                }
+                &:last-child {
+                    float: right;
+                }
+            }
+        }
+        .canvas {
+            float: right;
+            width: 0.92rem;
+            height: 0.4rem;
+            margin-top: 0.06rem;
+            margin-right: 0.1rem;
+        }
+    }
+}
+
+#idError {
+    font-size: 0.18rem;
+}
+
+@media (max-width: 768px) {
+    .activity-main .logo {
+        width: 2.11rem !important;
+    }
+    .pc {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+    .banner {
+        height: 8.6rem;
+        background-image: url(#{$file-path}/sprite-bg-banner-m.jpg);
+        animation-name: animation-bg-banner-m;
+        .game-info {
+            top: 9.4rem;
+            left: calc(50% - (6.4rem) / 2); // 50% 減去 元素寬度的一半
+            width: 6.4rem;
+            height: 2.7rem;
+        }
+        .badge {
+            top: 6.3rem;
+        }
+        .kefu-right {
+            top: 0.2rem;
+            right: 0.63rem;
+            width: 2.2rem;
+            height: 0.6rem;
+            line-height: 0.6rem;
+            font-size: 0.28rem;
+        }
+        .banner-mascot {
+            top: 4.64rem;
+            left: 4.84rem;
+            width: 2.56rem;
+        }
+        .banner-soccer {
+            left: 0;
+            width: 5.3rem;
+            background-image: url(#{$file-path}/sprite-banner-soccer-goal-m.png);
+            background-position: 0 0;
+            animation-name: animation-banner-soccer-m;
+        }
+    }
+    .section-1 {
+        height: 15.9rem;
+        background-image: url(#{$file-path}/bg-section-1-m.jpg);
+        .court-camera-flash {
+            top: 5.34rem;
+            left: calc(50% - 6.84rem / 2);
+            width: 6.84rem;
+            height: 2.7rem;
+            background-image: url(#{$file-path}/sprite-court-camera-flash-m.png);
+        }
+        .game-info {
+            top: 0.9rem;
+            left: calc(50% - (6.4rem) / 2); // 50% 減去 元素寬度的一半
+            width: 6.4rem;
+            height: 2.7rem;
+        }
+    }
+    .section-2 {
+        height: 16.7rem;
+        background-image: url(#{$file-path}/bg-section-2-m.jpg);
+        .content-wrapper {
+            button {
+                width: 2.1rem;
+                height: 0.8rem;
+                background-image: url(#{$file-path}/btn-notice-m.png);
+            }
+        }
+    }
+    //報名登入
+    .login-main .mask-main {
+        padding: 0.4rem 0.46rem;
+        width: 92.3%;
+        height: unset;
+        border-radius: 0.2rem;
+    }
+    .login-main .mask-main .title {
+        font-size: 0.32rem;
+    }
+    .login-main .mask-main .login-from {
+        margin-top: 0.45rem;
+    }
+    .login-main .mask-main .login-from .list {
+        width: 100%;
+        height: 0.9rem;
+        line-height: 0.9rem;
+    }
+    .login-main .mask-main .login-from .list .icon {
+        font-size: 0.3rem;
+        margin-left: 0.23rem;
+    }
+    .login-main .mask-main .login-from .list .input {
+        padding-left: 0.27rem;
+        font-size: 0.26rem;
+    }
+    .login-main .mask-main .login-from .input-warning {
+        color: #e73838;
+        opacity: 0;
+        transition: all 0.2s;
+        height: 0.34rem;
+        line-height: 0.34rem;
+        margin-top: 1px;
+    }
+    .login-main .mask-main .login-button {
+        width: 100%;
+        height: 0.9rem;
+        line-height: 0.9rem;
+        border-radius: 0.1rem;
+        font-size: 0.3rem;
+        margin-top: 0.22rem;
+    }
+    .login-main .mask-main .login-option {
+        font-size: 0.26rem;
+        margin-top: 0.2rem;
+    }
+    .login-main .mask-main .canvas {
+        float: right;
+        width: 1.5rem;
+        height: 0.7rem;
+        margin-top: 0.07rem;
+        margin-right: 0.1rem;
+    }
+}
+
+/* 遊戲相關操控 */
+// 遊戲相關區域
+.game-area {
+    position: relative;
+    top: 0.8rem;
+    left: calc(50% - (7.5rem / 2));
+    width: 7.5rem;
+    height: 9rem;
+}
+
+.game-mask {
+    position: absolute;
+    top: calc(50% - 1.8rem); // 此數字為 magic number
+    left: calc(50% - (9.1rem / 2));
+    z-index: 10;
+    width: 9.1rem;
+    height: 10.6rem;
+    background-color: rgba(20, 24, 24, 0.7);
+}
+
+.btn {
+    position: absolute;
+    top: 74%;
+    left: calc(50% - (1.46rem / 2));
+    z-index: 50;
+    width: 1.46rem;
+    height: 1.2rem;
+    display: none;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    // 預設都不顯示 // 加上 .dp-block 即可顯示
+    &.dp-block {
+        display: block;
+    }
+}
+// 開始遊戲
+.btn-start {
+    background-image: url(#{$file-path}/sprite-game-control-button.png);
+    background-size: cover;
+    background-position: 0 33%;
+}
+// 再來一次
+.btn-restart {
+    background-image: url(#{$file-path}/sprite-game-control-button.png);
+    background-size: cover;
+    background-position: 0 66.5%;
+}
+// 聯繫客服
+.btn-customer-service {
+    top: 90%;
+    background-image: url(#{$file-path}/btn-customer-service.png);
+    background-size: contain;
+    background-position: 0 0;
+}
+
+// 遊戲操作區域
+.game-operation-area {
+    position: relative;
+    top: 4.65rem;
+    width: 100%;
+    height: 100%;
+    .animation-before-start {
+        position: absolute;
+        top: 2.4rem;
+        left: calc(50% - (0.5rem / 2));
+        z-index: 20;
+        width: 0.5rem;
+        height: 0.74rem;
+        &.playing {
+            background-image: url(#{$file-path}/sprite-animation-before-start.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation-name: animation-before-start;
+            animation-timing-function: step-end;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+        }
+    }
+    .goal {
+        position: absolute;
+        z-index: 0;
+        width: 5.7rem;
+        height: 2.9rem;
+        background-image: url(#{$file-path}/goal.png);
+        background-position: 0 center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .goalkeeper {
+        position: absolute;
+        width: 1.54rem;
+        height: 1.72rem;
+        background-position: 0 center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        animation-timing-function: step-end;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        &.level-0,
+        &.level-1 {
+            background-image: url(#{$file-path}/sprite-goalkeeper-same-side.png);
+            animation-name: animation-goalkeeper-same-side;
+        }
+        &.level-2,
+        &.level-3 {
+            background-image: url(#{$file-path}/sprite-goalkeeper-different-side.png);
+            animation-name: animation-goalkeeper-different-side;
+        }
+    }
+    .soccer {
+        position: absolute;
+        z-index: 5;
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: calc(-0.85rem * 0) center;
+        animation-name: animation-soccer;
+        animation-timing-function: step-end;
+        animation-duration: 0.3s;
+        animation-iteration-count: infinite;
+        transition: transform ease-in 0.8s;
+        opacity: 1;
+        &.spinning {
+            background-image: url(#{$file-path}/sprite-soccer-spinning.png);
+            animation-name: animation-soccer;
+            cursor: pointer;
+        }
+        // 射門成功
+        &.in {
+            background-image: url(#{$file-path}/sprite-soccer-in.png);
+            cursor: default;
+        }
+        // 射門失敗
+        &.out {
+            background-image: url(#{$file-path}/sprite-soccer-out.png);
+            cursor: default;
+        }
+        &.backward {
+            opacity: 0;
+            cursor: default;
+        }
+    }
+    .ellipses {
+        position: absolute;
+        top: 5.45rem; // magic number
+        left: calc(7.5rem / 2 - 1.86rem / 2);
+        width: 1.86rem;
+        height: 1.14rem;
+        background-color: #fff98c;
+        border-radius: 50% / 50%;
+    }
+    .pointer {
+        position: absolute;
+        top: 4rem;
+        left: calc(7.5rem / 2 - 0.4rem / 2); // 水平置中
+        width: 0.4rem;
+        height: 2rem;
+        background-image: url(#{$file-path}/pointer.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform-origin: 50% 100%;
+    }
+}
+
+// 跑馬燈訊息 + 倒數計時器
+.led-display-board {
+    position: absolute;
+    top: 3.1rem;
+    left: calc(50% - (7.2rem) / 2);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 7.2rem;
+    height: 1.2rem;
+    background-image: url(#{$file-path}/bg-led-display-board.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    .countdown-time {
+        width: 2.26rem;
+        height: 0.96rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+            width: 0.72rem;
+            height: 0.96rem;
+            &.digit {
+                background-image: url(#{$file-path}/sprite-news-ticker-countdown-digit.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            &.zero {
+                background-position: 0 0;
+                background-position: calc(-0.72rem * 0) 0;
+            }
+            &.one {
+                background-position: calc(-0.72rem * 1) 0;
+            }
+            &.two {
+                background-position: calc(-0.72rem * 2) 0;
+            }
+            &.three {
+                background-position: calc(-0.72rem * 3) 0;
+            }
+            &.four {
+                background-position: calc(-0.72rem * 4) 0;
+            }
+            &.five {
+                background-position: calc(-0.72rem * 5) 0;
+            }
+            &.six {
+                background-position: calc(-0.72rem * 6) 0;
+            }
+            &.seven {
+                background-position: calc(-0.72rem * 7) 0;
+            }
+            &.eight {
+                background-position: calc(-0.72rem * 8) 0;
+            }
+            &.nine {
+                background-position: calc(-0.72rem * 9) 0;
+            }
+            &.unit {
+                background-image: url(#{$file-path}/news-ticker-countdown-unit.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+    }
+    .news-ticker {
+        width: 3.8rem;
+        height: 0.96rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        &.start {
+            background-image: url(#{$file-path}/news-ticker-start.png);
+            background-position: calc(100% + 2.98rem) center;
+            animation-name: animation-news-ticker-start;
+        }
+        &.game_over {
+            background-image: url(#{$file-path}/news-ticker-game-over.png);
+            background-position: calc(100% + 2.98rem) center;
+            animation-name: animation-news-ticker-game-over;
+        }
+        &.news_ticker_complete_level_1 {
+            background-image: url(#{$file-path}/news-ticker-complete-level-1.png);
+            background-position: calc(100% + 7.6rem) center;
+            animation-name: animation-news-ticker-complete-level;
+        }
+        &.news_ticker_complete_level_2 {
+            background-image: url(#{$file-path}/news-ticker-complete-level-2.png);
+            background-position: calc(100% + 7.6rem) center;
+            animation-name: animation-news-ticker-complete-level;
+        }
+        &.news_ticker_complete_level_3 {
+            background-image: url(#{$file-path}/news-ticker-complete-level-3.png);
+            background-position: calc(100% + 7.6rem) center;
+            animation-name: animation-news-ticker-complete-level;
+        }
+    }
+}
+
+// 射門成功提示動畫
+.msg-goal-successfully-wrapper {
+    position: relative;
+    top: -2.9rem;
+    left: 0;
+    width: 7.5rem;
+    margin: 0 auto;
+    .msg-goal-successfully {
+        position: absolute;
+        top: 3rem;
+        width: 1.04rem;
+        height: 0.5rem;
+        background-image: url(#{$file-path}/msg-goal-successfully.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        pointer-events: none;
+        transform: rotate(20deg);
+        &.msg-goal-successfully-1 {
+            left: calc(7.5rem / 4 * 1 - 1.04rem / 2);
+        }
+        &.msg-goal-successfully-2 {
+            left: calc(7.5rem / 4 * 2 - 1.04rem / 2);
+            &.dp-block {
+                animation-delay: 0.8s;
+            }
+        }
+        &.msg-goal-successfully-3 {
+            left: calc(7.5rem / 4 * 3 - 1.04rem / 2);
+            &.dp-block {
+                animation-delay: 0.4s;
+            }
+        }
+        &.dp-block {
+            animation-name: animation-msg-goal-successfully;
+            animation-duration: 0.8s;
+        }
+    }
+}
+
+// 闖關失敗
+.msg-fail {
+    position: absolute;
+    top: calc(50% + 2.3rem); // 此數字為 magic number
+    left: calc(50% - (5.5rem / 2));
+    z-index: 30;
+    // 預設不顯示 // 加上 .dp-block 即可顯示
+    display: none;
+    width: 5.5rem;
+    height: 2rem;
+    background-image: url(#{$file-path}/game-over.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    &.dp-block {
+        display: block;
+    }
+}
+
+// 恭喜通關
+.msg-bonus-1 {
+    position: absolute;
+    top: calc(50% + 1.5rem); // 此數字為 magic number
+    left: calc(50% - (4rem / 2));
+    z-index: 30;
+    // 預設不顯示 // 加上 .dp-block 即可顯示
+    display: none;
+    width: 4rem;
+    height: 4rem;
+    background-image: url(#{$file-path}/msg-bonus-1.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    &.dp-block {
+        display: block;
+    }
+}
+
+// 再加碼 3 美元
+.msg-bonus-2 {
+    position: absolute;
+    top: calc(50% + 1.5rem); // 此數字為 magic number
+    left: calc(50% - (4rem / 2));
+    z-index: 30;
+    // 預設不顯示 // 加上 .dp-block 即可顯示
+    display: none;
+    width: 4rem;
+    height: 4rem;
+    background-image: url(#{$file-path}/msg-bonus-2.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    &.dp-block {
+        display: block;
+    }
+}
+
+// 報名結果
+.msg-sign-up-result {
+    position: absolute;
+    top: 3.5rem;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    .msg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 0.8rem;
+        color: #fff;
+        background-color: rgba($color: #1e1e1e, $alpha: 0.7);
+        border-radius: 0.1rem;
+        font-size: 0.32rem;
+        opacity: 0;
+    }
+}
+
+// 要預先載入的內容 // 只是為了先載入而已，並沒有要真的顯示
+#preloader {
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    .preloader-1-1 {
+        background-image: url(#{$file-path}/sprite-animation-before-start.png);
+    }
+    .preloader-1-2 {
+        background-image: url(#{$file-path}/sprite-game-control-button.png);
+    }
+    .preloader-1-3 {
+        background-image: url(#{$file-path}/sprite-soccer-spinning.png);
+    }
+    .preloader-1-4 {
+        background-image: url(#{$file-path}/sprite-soccer-in.png);
+    }
+    .preloader-1-5 {
+        background-image: url(#{$file-path}/sprite-soccer-out.png);
+    }
+
+    .preloader-2-1 {
+        background-image: url(#{$file-path}/msg-goal-successfully.png);
+    }
+    .preloader-2-2 {
+        background-image: url(#{$file-path}/msg-bonus-1.png);
+    }
+    .preloader-2-3 {
+        background-image: url(#{$file-path}/msg-bonus-2.png);
+    }
+
+    .preloader-3-1 {
+        background-image: url(#{$file-path}/btn-customer-service.png);
+    }
+}
+
+@media (max-width: 768px) {
+    .game-area {
+        top: 2.6rem;
+    }
+    .game-mask {
+        top: 2.8rem;
+        height: 9.8rem;
+    }
+    .fail {
+        top: 3rem;
+        left: calc(50vw - (5.5rem / 2));
+        width: 5.5rem;
+        height: 2rem;
+    }
+    .btn {
+        position: absolute;
+        top: 5.8rem;
+        left: calc(50vw - (2.92rem / 2)); // 一半裝置寬度 - 一半元素寬度 // 水平置中效果
+        width: 2.92rem;
+        height: 2.41rem;
+    }
+    .btn-customer-service {
+        top: 9rem;
+    }
+}
+
+@keyframes animation-banner-mascot {
+    0% {
+        background-position: calc(-2.66rem * 0) 0;
+    }
+    4% {
+        background-position: calc(-2.66rem * 1) 0;
+    }
+    8% {
+        background-position: calc(-2.66rem * 2) 0;
+    }
+    12% {
+        background-position: calc(-2.66rem * 3) 0;
+    }
+    15% {
+        background-position: calc(-2.66rem * 4) 0;
+    }
+    19% {
+        background-position: calc(-2.66rem * 5) 0;
+    }
+    23% {
+        background-position: calc(-2.66rem * 6) 0;
+    }
+    27% {
+        background-position: calc(-2.66rem * 7) 0;
+    }
+    30% {
+        background-position: calc(-2.66rem * 8) 0;
+    }
+    34% {
+        background-position: calc(-2.66rem * 9) 0;
+    }
+    38% {
+        background-position: calc(-2.66rem * 10) 0;
+    }
+    42% {
+        background-position: calc(-2.66rem * 11) 0;
+    }
+    45% {
+        background-position: calc(-2.66rem * 12) 0;
+    }
+    50% {
+        background-position: calc(-2.66rem * 13) 0;
+    }
+    100% {
+        background-position: calc(-2.66rem * 13) 0;
+    }
+}
+
+@keyframes animation-banner-soccer {
+    0% {
+        background-position: 9.1rem 0;
+    }
+    60% {
+        background-position: 0 0;
+    }
+    80% {
+        background-position: -9.1rem 0;
+    }
+    100% {
+        background-position: -9.1rem 0;
+    }
+}
+@keyframes animation-banner-soccer-m {
+    0% {
+        background-position: 5.3rem 0;
+    }
+    60% {
+        background-position: -5.3rem 0;
+    }
+    80% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes animation-bg-banner {
+    0% {
+        background-position: 0 top;
+    }
+    50% {
+        background-position: 0 bottom;
+    }
+    100% {
+        background-position: 0 top;
+    }
+}
+@keyframes animation-bg-banner-m {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 0 -8.6rem;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+// 遊戲通關入口 閃爍
+@keyframes animation-badge-flash {
+    0% {
+        background-position: top;
+    }
+    50% {
+        background-position: bottom;
+    }
+    100% {
+        background-position: top;
+    }
+}
+
+@keyframes animation-court-camera-flash {
+    0% {
+        background-position: top;
+    }
+    50% {
+        background-position: bottom;
+    }
+    100% {
+        background-position: top;
+    }
+}
+
+@keyframes animation-before-start {
+    0% {
+        background-position: center -1.6rem; // 3
+    }
+    33% {
+        background-position: center -0.78rem; // 2
+    }
+    66% {
+        background-position: center 0; // 1
+    }
+    100% {
+        background-position: center 0; // 1
+    }
+}
+
+@keyframes animation-msg-goal-successfully {
+    0% {
+        top: 3rem;
+        transform: rotate(20deg);
+        opacity: 1;
+    }
+    20% {
+        transform: rotate(-15deg);
+    }
+    40% {
+        transform: rotate(20deg);
+    }
+    60% {
+        transform: rotate(-15deg);
+    }
+    80% {
+        transform: rotate(20deg);
+    }
+    100% {
+        top: 1rem;
+        transform: rotate(-15deg);
+        opacity: 0;
+    }
+}
+
+/* 跑馬燈 */
+// 開始
+@keyframes animation-news-ticker-start {
+    0% {
+        background-position: calc(100% + 2.98rem) center;
+    }
+    100% {
+        background-position: calc(0% - 2.98rem) center;
+    }
+}
+// 結束
+@keyframes animation-news-ticker-game-over {
+    0% {
+        background-position: calc(100% + 2.98rem) center;
+    }
+    100% {
+        background-position: calc(0% - 2.98rem) center;
+    }
+}
+// 結束 關卡
+@keyframes animation-news-ticker-complete-level {
+    0% {
+        background-position: calc(100% + 7.6rem) center;
+    }
+    100% {
+        background-position: calc(0% - 7.6rem) center;
+    }
+}
+
+// 守門員 雙手同上同下
+@keyframes animation-goalkeeper-same-side {
+    0% {
+        background-position: 0 center;
+    }
+    50% {
+        background-position: -1.56rem center;
+    }
+    100% {
+        background-position: 0 center;
+    }
+}
+// 守門員 雙手不同上同下
+@keyframes animation-goalkeeper-different-side {
+    0% {
+        background-position: 0 center;
+    }
+    50% {
+        background-position: -1.56rem center;
+    }
+    100% {
+        background-position: 0 center;
+    }
+}
+
+// 足球 旋轉
+@keyframes animation-soccer {
+    0% {
+        background-position: calc(-0.85rem * 0) center;
+    }
+    17% {
+        background-position: calc(-0.85rem * 1) center;
+    }
+    33% {
+        background-position: calc(-0.85rem * 2) center;
+    }
+    50% {
+        background-position: calc(-0.85rem * 3) center;
+    }
+    67% {
+        background-position: calc(-0.85rem * 4) center;
+    }
+    83% {
+        background-position: calc(-0.85rem * 5) center;
+    }
+    100% {
+        background-position: calc(-0.85rem * 5) center;
+    }
+}
