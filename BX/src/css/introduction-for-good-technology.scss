@@ -1,0 +1,512 @@
+$file-path: "../images/introduction-for-good-technology";
+
+$color-text: #2b2b2b;
+$mobile-p-font-size: 18px;
+$color-primary: #c6a776;
+
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: $color-primary;
+    color: #fff;
+}
+
+body {
+    max-width: 100%;
+    color: $color-text;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.67;
+    @include mobile() {
+        font-size: 18px;
+    }
+}
+
+header {
+    position: relative;
+    .logo {
+        position: absolute;
+        top: 0.3rem;
+        left: 0.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        img {
+            max-width: 0.6rem;
+            max-width: 48px;
+        }
+        div {
+            color: $color-primary;
+            margin-left: 0.1rem;
+        }
+    }
+    nav {
+        position: absolute;
+        top: 0.54rem;
+        right: 0.4rem;
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            li {
+                &:not(:first-of-type) {
+                    margin-left: 18px;
+                }
+                a,
+                button {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #7a7a7a;
+                }
+                a.router-link-active {
+                    color: $color-primary;
+                }
+                select {
+                    padding: 8px 12px;
+                    cursor: pointer;
+                    text-align: center;
+                    font-size: 16px;
+                    font-weight: bold;
+                    outline: none;
+                    color: $color-primary;
+                    border: 1px solid #f5d2a0;
+                    border-radius: 9999px; // pill
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+    }
+    @include tablet() {
+        position: absolute;
+        top: 0.4rem;
+        left: calc(50% - 80% / 2);
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            position: static;
+            > div {
+                display: none;
+            }
+        }
+        nav {
+            position: static;
+            ul {
+                li {
+                    &:not(:first-of-type) {
+                        margin: 0;
+                    }
+                    &:not(:last-of-type) {
+                        display: none;
+                        margin: 0;
+                    }
+                    &:last-of-type {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.banner {
+    overflow: hidden;
+}
+
+.about-us {
+    position: relative;
+    padding: 1rem 0 1.72rem 2.4rem;
+    h2 {
+        font-size: 28px;
+        font-weight: 600;
+    }
+    p {
+        margin-top: 0.4rem;
+        margin-left: 1rem;
+        max-width: 7.2rem;
+        color: #7a776d;
+    }
+    .decoration {
+        position: absolute;
+        top: 1rem;
+        right: 3.35rem;
+        max-width: 3.8rem;
+    }
+    @include mobile() {
+        padding: 0.5rem 0.4rem;
+        height: auto;
+        h2 {
+            font-size: 0.48rem;
+            text-align: center;
+        }
+        p {
+            margin: 0;
+            margin-top: 0.2rem;
+            max-width: auto;
+        }
+        .decoration {
+            position: static;
+            display: block;
+            margin: 0 auto;
+            margin-top: 0.48rem;
+        }
+    }
+}
+
+.application-center {
+    overflow: hidden;
+    padding: 1.42rem 0 1rem;
+    background-image: url(#{$file-path}/bg-index-application-center.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    h2 {
+        margin-left: 2.4rem;
+        font-size: 0.6rem;
+        font-weight: 600;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 0.8rem;
+        li {
+            width: 23%;
+            min-height: 5.1rem;
+            border: 1px solid #a49878;
+            &:nth-child(4),
+            &:nth-child(5) {
+                margin-top: 0.8rem;
+            }
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(5) {
+                margin-left: 5%;
+            }
+            &:nth-child(1) {
+                h3 {
+                    background-image: url(#{$file-path}/bg-index-application-center-application-introduction.jpg);
+                }
+            }
+            &:nth-child(2) {
+                h3 {
+                    background-image: url(#{$file-path}/bg-index-application-center-market-information.jpg);
+                }
+            }
+            &:nth-child(3) {
+                h3 {
+                    background-image: url(#{$file-path}/bg-index-application-center-popular-products.jpg);
+                }
+            }
+            &:nth-child(4) {
+                h3 {
+                    background-image: url(#{$file-path}/bg-index-application-center-trading-straregy.jpg);
+                }
+            }
+            &:nth-child(5) {
+                h3 {
+                    background-image: url(#{$file-path}/bg-index-application-center-investment-exchange.jpg);
+                }
+            }
+            h3 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 2.4rem;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-size: 24px;
+                text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                text-align: center;
+                font-weight: bold;
+                color: #fff;
+            }
+            p {
+                padding: 0.3rem 0.35rem;
+                line-height: 1.5;
+                color: #7a776d;
+            }
+        }
+    }
+    @include mobile() {
+        padding-top: 0.5rem;
+        h2 {
+            margin-left: 0;
+            text-align: center;
+            font-size: 32px;
+        }
+        ul {
+            li {
+                margin-left: 0;
+                width: 75%;
+                &:nth-child(4),
+                &:nth-child(5) {
+                    margin-top: 0;
+                }
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(5) {
+                    margin-left: 0;
+                }
+                &:not(:first-child) {
+                    margin-top: 0.3rem;
+                }
+                h3 {
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    padding: 0.5rem 0 0.5rem 3.3rem;
+    background-image: linear-gradient(to left, #ac9363 100%, #bfaf80);
+    color: #fff;
+    nav {
+        li {
+            display: inline-block;
+            border-right: 2px solid #fff;
+            a {
+                padding: 0 0.3rem;
+                display: block;
+                width: 100%;
+                height: 100%;
+                font-size: 0.24rem;
+                color: #fff; // 覆寫 reset.css 的設定
+            }
+            &:first-of-type {
+                a {
+                    padding: 0;
+                    padding-right: 0.3rem;
+                }
+            }
+            &:last-of-type {
+                border-right: none;
+                a {
+                    padding: 0;
+                    padding-left: 0.3rem;
+                }
+            }
+        }
+    }
+    .risk-warning {
+        margin-top: 0.1rem;
+        font-size: 0.16rem;
+    }
+    .divider {
+        margin: 0.5rem 0;
+        width: 12.6rem;
+        border-top: 1px solid #fff;
+    }
+    .copyright {
+        font-size: 0.18rem;
+    }
+    @include mobile() {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0.3rem;
+        text-align: center;
+        nav {
+            ul {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            li {
+                border-right: none;
+                margin: 0.1rem 0;
+                a {
+                    padding: 0;
+                    font-size: 24px;
+                }
+                &:first-of-type,
+                &:last-of-type {
+                    a {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        .risk-warning {
+            margin-top: 0.3rem;
+            font-size: 0.24rem;
+        }
+        .divider {
+            width: 90%;
+        }
+        .copyright {
+            font-size: 0.28rem;
+        }
+    }
+}
+
+/* index */
+.banner.index {
+    padding-left: 2.4rem;
+    height: 100vh;
+    background-image: url(#{$file-path}/bg-banner-index.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    h1 {
+        margin-top: 4.7rem;
+        max-width: 7.8rem;
+        font-size: 44px;
+        font-weight: bold;
+        line-height: 1.17;
+    }
+    .subtitle-1 {
+        margin-top: 0.6rem;
+        max-width: 7.8rem;
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1.11;
+    }
+    .subtitle-2 {
+        margin-top: 0.16rem;
+        max-width: 7.8rem;
+        font-size: 24px;
+    }
+    @include mobile() {
+        padding: 0 0.4rem;
+        h1 {
+            margin-top: 3.8rem;
+        }
+    }
+}
+
+/* 其餘頁面 共用 start */
+.banner.risk-disclosure-statement,
+.banner.disclaimer,
+.banner.customer-agreement,
+.banner.privacy-policy {
+    display: flex;
+    align-items: center;
+    padding-left: 2.1rem;
+    height: 5.45rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    h1 {
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+        font-size: 44px;
+        color: $color-text;
+    }
+    @include mobile() {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.4rem;
+        h1 {
+            text-align: center;
+        }
+    }
+}
+
+main {
+    padding: 1rem 1.9rem;
+    li {
+        &:not(:first-child) {
+            margin-top: 0.32rem;
+        }
+        h3 {
+            font-size: 32px;
+        }
+    }
+    p {
+        font-size: 20px;
+        line-height: 2;
+    }
+    @include mobile() {
+        padding: 0.4rem;
+        li {
+            h3 {
+                font-size: 24px;
+            }
+        }
+    }
+    &.disclaimer,
+    &.customer-agreement,
+    &.risk-disclosure-statement,
+    &.privacy-policy {
+        ol {
+            list-style: decimal;
+            li::marker {
+                font-size: 32px;
+                font-weight: bold;
+            }
+        }
+        @include mobile() {
+            padding-left: 0.8rem;
+            ol {
+                li::marker {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    &.disclaimer {
+        ol {
+            li::marker {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+/* 其餘頁面 共用 end */
+
+.banner.risk-disclosure-statement {
+    background-image: url(#{$file-path}/bg-banner-risk-disclosure-statement.jpg);
+}
+.banner.disclaimer {
+    background-image: url(#{$file-path}/bg-banner-disclaimer.jpg);
+}
+.banner.privacy-policy {
+    background-image: url(#{$file-path}/bg-banner-privacy-policy.jpg);
+}
+.banner.customer-agreement {
+    background-image: url(#{$file-path}/bg-banner-customer-agreement.jpg);
+}
+main.customer-agreement {
+    ol {
+        margin-top: 0.32rem;
+    }
+}

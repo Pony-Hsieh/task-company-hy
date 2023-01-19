@@ -1,0 +1,635 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+::-moz-selection {
+  background-color: #c6a776;
+  color: #fff;
+}
+
+::selection {
+  background-color: #c6a776;
+  color: #fff;
+}
+
+body {
+  max-width: 100%;
+  color: #2b2b2b;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.67;
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 18px;
+  }
+}
+
+header {
+  position: relative;
+}
+
+header .logo {
+  position: absolute;
+  top: 0.3rem;
+  left: 0.4rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header .logo img {
+  max-width: 0.6rem;
+  max-width: 48px;
+}
+
+header .logo div {
+  color: #c6a776;
+  margin-left: 0.1rem;
+}
+
+header nav {
+  position: absolute;
+  top: 0.54rem;
+  right: 0.4rem;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav ul li:not(:first-of-type) {
+  margin-left: 18px;
+}
+
+header nav ul li a,
+header nav ul li button {
+  font-size: 16px;
+  font-weight: bold;
+  color: #7a7a7a;
+}
+
+header nav ul li a.router-link-active {
+  color: #c6a776;
+}
+
+header nav ul li select {
+  padding: 8px 12px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  color: #c6a776;
+  border: 1px solid #f5d2a0;
+  -webkit-border-radius: 9999px;
+          border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1200px) {
+  header {
+    position: absolute;
+    top: 0.4rem;
+    left: -webkit-calc(50% - 80% / 2);
+    left: calc(50% - 80% / 2);
+    width: 80%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .logo {
+    position: static;
+  }
+  header .logo > div {
+    display: none;
+  }
+  header nav {
+    position: static;
+  }
+  header nav ul li:not(:first-of-type) {
+    margin: 0;
+  }
+  header nav ul li:not(:last-of-type) {
+    display: none;
+    margin: 0;
+  }
+  header nav ul li:last-of-type {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.banner {
+  overflow: hidden;
+}
+
+.about-us {
+  position: relative;
+  padding: 1rem 0 1.72rem 2.4rem;
+}
+
+.about-us h2 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.about-us p {
+  margin-top: 0.4rem;
+  margin-left: 1rem;
+  max-width: 7.2rem;
+  color: #7a776d;
+}
+
+.about-us .decoration {
+  position: absolute;
+  top: 1rem;
+  right: 3.35rem;
+  max-width: 3.8rem;
+}
+
+@media (max-width: 768px) {
+  .about-us {
+    padding: 0.5rem 0.4rem;
+    height: auto;
+  }
+  .about-us h2 {
+    font-size: 0.48rem;
+    text-align: center;
+  }
+  .about-us p {
+    margin: 0;
+    margin-top: 0.2rem;
+    max-width: auto;
+  }
+  .about-us .decoration {
+    position: static;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0.48rem;
+  }
+}
+
+.application-center {
+  overflow: hidden;
+  padding: 1.42rem 0 1rem;
+  background-image: url(../images/introduction-for-good-technology/bg-index-application-center.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+}
+
+.application-center h2 {
+  margin-left: 2.4rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.application-center ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 0.8rem;
+}
+
+.application-center ul li {
+  width: 23%;
+  min-height: 5.1rem;
+  border: 1px solid #a49878;
+}
+
+.application-center ul li:nth-child(4), .application-center ul li:nth-child(5) {
+  margin-top: 0.8rem;
+}
+
+.application-center ul li:nth-child(2), .application-center ul li:nth-child(3), .application-center ul li:nth-child(5) {
+  margin-left: 5%;
+}
+
+.application-center ul li:nth-child(1) h3 {
+  background-image: url(../images/introduction-for-good-technology/bg-index-application-center-application-introduction.jpg);
+}
+
+.application-center ul li:nth-child(2) h3 {
+  background-image: url(../images/introduction-for-good-technology/bg-index-application-center-market-information.jpg);
+}
+
+.application-center ul li:nth-child(3) h3 {
+  background-image: url(../images/introduction-for-good-technology/bg-index-application-center-popular-products.jpg);
+}
+
+.application-center ul li:nth-child(4) h3 {
+  background-image: url(../images/introduction-for-good-technology/bg-index-application-center-trading-straregy.jpg);
+}
+
+.application-center ul li:nth-child(5) h3 {
+  background-image: url(../images/introduction-for-good-technology/bg-index-application-center-investment-exchange.jpg);
+}
+
+.application-center ul li h3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 2.4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  font-size: 24px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+.application-center ul li p {
+  padding: 0.3rem 0.35rem;
+  line-height: 1.5;
+  color: #7a776d;
+}
+
+@media (max-width: 768px) {
+  .application-center {
+    padding-top: 0.5rem;
+  }
+  .application-center h2 {
+    margin-left: 0;
+    text-align: center;
+    font-size: 32px;
+  }
+  .application-center ul li {
+    margin-left: 0;
+    width: 75%;
+  }
+  .application-center ul li:nth-child(4), .application-center ul li:nth-child(5) {
+    margin-top: 0;
+  }
+  .application-center ul li:nth-child(2), .application-center ul li:nth-child(3), .application-center ul li:nth-child(5) {
+    margin-left: 0;
+  }
+  .application-center ul li:not(:first-child) {
+    margin-top: 0.3rem;
+  }
+  .application-center ul li h3 {
+    font-size: 28px;
+  }
+}
+
+footer {
+  padding: 0.5rem 0 0.5rem 3.3rem;
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(100%, #ac9363), to(#bfaf80));
+  background-image: -webkit-linear-gradient(right, #ac9363 100%, #bfaf80);
+  background-image: -o-linear-gradient(right, #ac9363 100%, #bfaf80);
+  background-image: linear-gradient(to left, #ac9363 100%, #bfaf80);
+  color: #fff;
+}
+
+footer nav li {
+  display: inline-block;
+  border-right: 2px solid #fff;
+}
+
+footer nav li a {
+  padding: 0 0.3rem;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 0.24rem;
+  color: #fff;
+}
+
+footer nav li:first-of-type a {
+  padding: 0;
+  padding-right: 0.3rem;
+}
+
+footer nav li:last-of-type {
+  border-right: none;
+}
+
+footer nav li:last-of-type a {
+  padding: 0;
+  padding-left: 0.3rem;
+}
+
+footer .risk-warning {
+  margin-top: 0.1rem;
+  font-size: 0.16rem;
+}
+
+footer .divider {
+  margin: 0.5rem 0;
+  width: 12.6rem;
+  border-top: 1px solid #fff;
+}
+
+footer .copyright {
+  font-size: 0.18rem;
+}
+
+@media (max-width: 768px) {
+  footer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0.3rem;
+    text-align: center;
+  }
+  footer nav ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer nav li {
+    border-right: none;
+    margin: 0.1rem 0;
+  }
+  footer nav li a {
+    padding: 0;
+    font-size: 24px;
+  }
+  footer nav li:first-of-type a, footer nav li:last-of-type a {
+    padding: 0;
+  }
+  footer .risk-warning {
+    margin-top: 0.3rem;
+    font-size: 0.24rem;
+  }
+  footer .divider {
+    width: 90%;
+  }
+  footer .copyright {
+    font-size: 0.28rem;
+  }
+}
+
+/* index */
+.banner.index {
+  padding-left: 2.4rem;
+  height: 100vh;
+  background-image: url(../images/introduction-for-good-technology/bg-banner-index.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+
+.banner.index h1 {
+  margin-top: 4.7rem;
+  max-width: 7.8rem;
+  font-size: 44px;
+  font-weight: bold;
+  line-height: 1.17;
+}
+
+.banner.index .subtitle-1 {
+  margin-top: 0.6rem;
+  max-width: 7.8rem;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.11;
+}
+
+.banner.index .subtitle-2 {
+  margin-top: 0.16rem;
+  max-width: 7.8rem;
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .banner.index {
+    padding: 0 0.4rem;
+  }
+  .banner.index h1 {
+    margin-top: 3.8rem;
+  }
+}
+
+/* 其餘頁面 共用 start */
+.banner.risk-disclosure-statement,
+.banner.disclaimer,
+.banner.customer-agreement,
+.banner.privacy-policy {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 2.1rem;
+  height: 5.45rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+
+.banner.risk-disclosure-statement h1,
+.banner.disclaimer h1,
+.banner.customer-agreement h1,
+.banner.privacy-policy h1 {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  font-size: 44px;
+  color: #2b2b2b;
+}
+
+@media (max-width: 768px) {
+  .banner.risk-disclosure-statement,
+  .banner.disclaimer,
+  .banner.customer-agreement,
+  .banner.privacy-policy {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 0.4rem;
+  }
+  .banner.risk-disclosure-statement h1,
+  .banner.disclaimer h1,
+  .banner.customer-agreement h1,
+  .banner.privacy-policy h1 {
+    text-align: center;
+  }
+}
+
+main {
+  padding: 1rem 1.9rem;
+}
+
+main li:not(:first-child) {
+  margin-top: 0.32rem;
+}
+
+main li h3 {
+  font-size: 32px;
+}
+
+main p {
+  font-size: 20px;
+  line-height: 2;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 0.4rem;
+  }
+  main li h3 {
+    font-size: 24px;
+  }
+}
+
+main.disclaimer ol, main.customer-agreement ol, main.risk-disclosure-statement ol, main.privacy-policy ol {
+  list-style: decimal;
+}
+
+main.disclaimer ol li::marker, main.customer-agreement ol li::marker, main.risk-disclosure-statement ol li::marker, main.privacy-policy ol li::marker {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  main.disclaimer, main.customer-agreement, main.risk-disclosure-statement, main.privacy-policy {
+    padding-left: 0.8rem;
+  }
+  main.disclaimer ol li::marker, main.customer-agreement ol li::marker, main.risk-disclosure-statement ol li::marker, main.privacy-policy ol li::marker {
+    font-size: 24px;
+  }
+}
+
+main.disclaimer ol li::marker {
+  font-size: 20px;
+}
+
+/* 其餘頁面 共用 end */
+.banner.risk-disclosure-statement {
+  background-image: url(../images/introduction-for-good-technology/bg-banner-risk-disclosure-statement.jpg);
+}
+
+.banner.disclaimer {
+  background-image: url(../images/introduction-for-good-technology/bg-banner-disclaimer.jpg);
+}
+
+.banner.privacy-policy {
+  background-image: url(../images/introduction-for-good-technology/bg-banner-privacy-policy.jpg);
+}
+
+.banner.customer-agreement {
+  background-image: url(../images/introduction-for-good-technology/bg-banner-customer-agreement.jpg);
+}
+
+main.customer-agreement ol {
+  margin-top: 0.32rem;
+}

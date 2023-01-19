@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Technology Co. Ltd.</title>
+    <link rel="icon" href="../../src/images/introduction-for-good-technology/favicon.ico" sizes="25x32" type="image/x-icon" />
+    <link rel="stylesheet" href="../../src/common/css/BX_reset.css">
+    <link rel="stylesheet" href="../../src/css/introduction-for-good-technology.css">
+    <script src="../../src/common/js/set_rem_1920_and_768.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue-i18n@9"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <router-link to="/" class="logo">
+                <img src="../../src/images/introduction-for-good-technology/logo.svg" alt="logo">
+                <div>{{ $t("logo") }}</div>
+            </router-link>
+            </a>
+            <nav>
+                <ul>
+                    <li>
+                        <router-link to="/">{{ $t("nav.home") }}</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/risk_disclosure_statement">{{ $t("nav.risk_disclosure_statement") }}</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/disclaimer">{{ $t("nav.disclaimer") }}</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/privacy_policy">{{ $t("nav.privacy_policy") }}</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/customer_agreement">{{ $t("nav.customer_agreement") }}</router-link>
+                    </li>
+                    <li>
+                        <!-- TODO: 可以考慮用 地球的 icon 代替文字 -->
+                        <select @change="handleChangeLanguage">
+                            <option value="en">English</option>
+                            <option value="cn">简体中文</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <router-view></router-view>
+
+        <footer>
+            <nav>
+                <ul>
+                    <li>
+                        <router-link to="/risk_disclosure_statement">{{ $t("nav.risk_disclosure_statement") }}</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/disclaimer">{{ $t("nav.disclaimer") }}</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/privacy_policy">{{ $t("nav.privacy_policy") }}</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/customer_agreement">{{ $t("nav.customer_agreement") }}</router-link>
+                    </li>
+                </ul>
+            </nav>
+            <p class="risk-warning">{{ $t("footer.risk_warning") }}</p>
+            <div class="divider"></div>
+            <p class="copyright">{{ $t("footer.copyright") }}</p>
+        </footer>
+    </div>
+
+    <!-- index -->
+    <script type="text/html" id="content-index">
+        <section class="banner index">
+            <h1>{{ $t("page_content.index.banner.title") }}</h1>
+            <div class="subtitle-1">{{ $t("page_content.index.banner.subtitle_1") }}</div>
+            <div class="subtitle-2">{{ $t("page_content.index.banner.subtitle_2") }}</div>
+        </section>
+        
+        <section id="about-us" class="about-us">
+            <h2>{{ $t("page_content.index.about_us.title") }}</h2>
+            <p>{{ $t("page_content.index.about_us.content") }}</p>
+            <img src="../../src/images/introduction-for-good-technology/decoration-index-about-us.png" class="decoration" alt="decoration">
+        </section>
+
+        <section id="application-center" class="application-center">
+            <h2>{{ $t("page_content.index.application_center.title") }}</h2>
+            <ul>
+                <li v-for="(n, i) in 5">
+                    <h3>{{ $t(`page_content.index.application_center.card[${i}].title`) }}</h3>
+                    <p>{{ $t(`page_content.index.application_center.card[${i}].content`) }}</p>
+                </li>
+            </ul>
+        </section>
+    </script>
+
+    <!-- 風險聲明 -->
+    <script type="text/html" id="content-risk-disclosure-statement">
+        <section class="banner risk-disclosure-statement">
+            <h1>{{ $t("page_content.risk_disclosure_statement.banner.title") }}</h1>
+        </section>
+        <main class="risk-disclosure-statement">
+            <ul>
+                <li v-for="(n, i) in 5">
+                    <h3 v-html="$t(`page_content.risk_disclosure_statement.terms[${i}].title`)"></h3>
+                    <p v-html="$t(`page_content.risk_disclosure_statement.terms[${i}].content`)"></p>
+                </li>
+            </ul>
+        </main>
+    </script>
+
+    <!-- 免責聲明 -->
+    <script type="text/html" id="content-disclaimer">
+        <section class="banner disclaimer">
+            <h1>{{ $t("page_content.disclaimer.banner.title") }}</h1>
+        </section>
+        <main class="disclaimer">
+            <ol>
+                <li v-for="(n, i) in 7">
+                    <h3 v-html="$t(`page_content.disclaimer.terms[${i}].title`)"></h3>
+                    <p v-html="$t(`page_content.disclaimer.terms[${i}].content`)"></p>
+                </li>
+            </ol>
+        </main>
+    </script>
+
+    <!-- 隱私聲明 -->
+    <script type="text/html" id="content-privacy-policy">
+        <section class="banner privacy-policy">
+            <h1>{{ $t("page_content.privacy_policy.banner.title") }}</h1>
+        </section>
+        <main class="privacy-policy">
+            <ol>
+                <li v-for="(n, i) in 9">
+                    <h3 v-html="$t(`page_content.privacy_policy.terms[${i}].title`)"></h3>
+                    <p v-html="$t(`page_content.privacy_policy.terms[${i}].content`)"></p>
+                </li>
+            </ol>
+        </main>
+    </script>
+
+    <!-- 用戶協議 -->
+    <script type="text/html" id="content-customer-agreement">
+        <section class="banner customer-agreement">
+            <h1>{{ $t("page_content.customer_agreement.banner.title") }}</h1>
+        </section>
+        <main class="customer-agreement">
+            <ol>
+                <li v-for="(n, i) in 4">
+                    <h3 v-html="$t(`page_content.customer_agreement.terms[${i}].title`)"></h3>
+                    <p v-html="$t(`page_content.customer_agreement.terms[${i}].content`)"></p>
+                </li>
+            </ol>
+        </main>
+    </script>
+
+    <!-- 其餘 JS -->
+    <script>
+        /**
+         * i18n 多國語系
+         */
+        const messages = {
+            en: {
+                logo: "Good Technology Co. Ltd.",
+                nav: {
+                    home: "Home",
+                    risk_disclosure_statement: "Risk Disclosure Statement",
+                    disclaimer: "Disclaimer",
+                    privacy_policy: "Privacy Policy",
+                    customer_agreement: "Customer Agreement",
+                },
+                footer: {
+                    risk_warning: "Risk Warning: Investment is risky and financial management needs to be cautious",
+                    copyright: `Copyright © ${new Date().getFullYear()} Good Technology Company Limited all rights reserved`,
+                },
+                page_content: {
+                    index: {
+                        banner: {
+                            title: "Good Technology Company Limited",
+                            subtitle_1: "The world's leading provider of business and financial data information services",
+                            subtitle_2: "Leading commercial and financial information provider",
+                        },
+                        about_us: {
+                            title: "About Us",
+                            content: "Good Technology Company Limited is a professional precious metal commodity stock index market data information software, providing 24-hour precious metal,gold, silver, and other global financial product market data. Committed to providing high-quality customer service and leading platform technology to meet the different needs of global investors. Good Century gather the industry's top analysts to create a most professional all-round market data platform for global investors with a group operation model.",
+                        },
+                        application_center: {
+                            title: "Application Center",
+                            card: [
+                                {
+                                    title: "Application Introduction",
+                                    content: "Good Technology Company Limited is a professional data market information software, covering gold, silver, precious metals,and other products, providing investors with real-time market data!"
+                                }, {
+                                    title: "Market Information",
+                                    content: "Covers global mainstream product market data services such as precious metals, gold, silver."
+                                }, {
+                                    title: "Popular Products",
+                                    content: "Covers global mainstream product market data services such as gold, silver, precious metals."
+                                }, {
+                                    title: "Trading Straregy",
+                                    content: "Professional analysts sit around the clock, rich practical experience, provide professional and detailed mainstream product trading market analysis, and provide you with professional portable services."
+                                }, {
+                                    title: "Investment Exchange",
+                                    content: "The professional analysts of Good Technology Company Limited. sit around the clock, have rich practical experience, provide professional and meticulous market analysis, and provide you with professional portable services."
+                                },
+                            ],
+                        },
+                    },
+                    risk_disclosure_statement: {
+                        banner: {
+                            title: "Risk Disclosure Statement",
+                        },
+                        terms: [
+                            {
+                                title: "",
+                                content: "The company reminds you that there are high risks in margin trading and trading. Customers need to understand the risks they face in advance and should not rush into investment transactions. Customers should also carefully consider their own investment objectives, experience, financial status and risk tolerance, and evaluate whether it is suitable for investment by themselves.",
+                            }, {
+                                title: "",
+                                content: "Any margin transaction carries certain risks, including (but not limited to) leverage, credit reliability, limited legal protection, and market volatility that may significantly affect the price or volume of a currency or currency pair.",
+                            }, {
+                                title: "Margin and Leverage",
+                                content: `All products on this platform are traded on the basis of leveraged margin, which usually refers to a relatively small part of the total contract value. For example, a contract with a trading leverage ratio of 5:1 requires 20% of the contract value as a margin. It means that a small price change may lead to a large change in the value of your transaction contract, for which your investment may suffer a large loss or bring a large profit.<br />
+                                You could lose your initial capital and be required to make a margin call to maintain your position. If you fail to meet the margin requirements, your positions will be forcibly closed, and the resulting losses will be borne by you, please be informed.<br />
+                                The quotations of all products on this platform go up and down. Under certain circumstances, investing in these products may face huge risks. For investment, you can consult private legal, financial, tax, financial and other consultants to ensure that the investment decisions you make are suitable for the investor's personal situation and financial resources.`,
+                            }, {
+                                title: "Market risk",
+                                content: "Any opinions, news information, research analysis, prices and other information published on the website of this platform are general market comments, not investment advice. This platform has the right to disclaim liability for any losses that may be directly or indirectly caused by referring to such information, including (but not limited to) loss of profits.",
+                            }, {
+                                title: "Web page",
+                                content: "This platform has taken reasonable measures to ensure the correctness of such information on the website. The information content of the website may be changed at any time without notice.",
+                            },
+                        ],
+                    },
+                    disclaimer: {
+                        banner: {
+                            title: "Disclaimer",
+                        },
+                        terms: [
+                            {
+                                title: "",
+                                content: "The information of the company (hereinafter referred to as: this website) is only for general and illustrative purposes. The Company shall not be liable for any errors, omissions, or misstatements or misrepresentations (whether express or implied) in relation to such information. The company shall not be liable for any loss, destruction or damage (including but not limited to consequential loss, destruction or damage) arising out of or in connection with the use or misuse of or reliance on information contained in the company, liability or legal liability.",
+                            }, {
+                                title: "",
+                                content: "This website is not intended for use by any person in any jurisdiction that prohibits the publication or availability of this website (based on that person's nationality, residence or other reasons). Prohibited persons are not allowed to use this website. It is the responsibility of any person using the information contained in this website to comply with all applicable laws and regulations of their relevant jurisdiction. Your continued use of this website constitutes your representation and warranty that the applicable laws and regulations of your jurisdiction allow you to browse the relevant information.",
+                            }, {
+                                title: "",
+                                content: "All information provided by this website is the property of the company. Without the prior written authorization of the company, any person shall not distribute the text or image files or audio-visual files of this website for any reason or in any form, or reproduce, modify or reuse the text and image files of this system content in your server or audio files. You may print or save the information on your personal computer for personal use or reference purposes, provided you retain all copyright and other proprietary notices contained in the content.",
+                            }, {
+                                title: "",
+                                content: "In order to facilitate users to access information provided by or through other individuals/groups, this website may provide or assist in providing hyperlinks to external websites. Providing or assisting in providing such hyperlinks does not constitute any statement, representation or warranty, express or implied, that the company agrees or disapproves the content of such websites; The Company shall not be liable, responsible or liable for any loss, destruction or damage (including but not limited to consequential loss, destruction or damage) arising out of or in connection with the content of the external website provided by the website.",
+                            }, {
+                                title: "",
+                                content: "Margin trading and trading have certain risks. Prices can go up or down. Margin trading involves potential profits, and there is also a risk of loss. You need to know and understand the relevant risks and bear the risk of profit and loss by yourself.",
+                            }, {
+                                title: "",
+                                content: "This website should not be regarded as an offer or invitation to any person in any jurisdiction to buy or sell any product or service, even if these actions may be considered illegal in the relevant area.",
+                            }, {
+                                title: "",
+                                content: "Once you use this website, it means that you unconditionally accept the disclaimer clauses contained above and any amendments and/or amendments made by the company to the above clauses from time to time without prior notice to you. Please check this page regularly for any revisions and/or amendments.",
+                            },
+                        ],
+                    },
+                    privacy_policy: {
+                        banner: {
+                            title: "Privacy Policy",
+                        },
+                        terms: [
+                            {
+                                title: "Both parties",
+                                content: `1.1 The company is a contract for difference trading platform (hereinafter referred to as "the platform"), which is a platform for users to conduct precious metal CFD transactions and provide related services. For the convenience of users and website operations, and for the convenience of expressing this agreement, the company and this platform collectively use "we" or other first-person titles in this agreement.
+                                <br />
+                                1.2 As long as the natural person or other subject who logs into this platform is a user of this platform, for the convenience of expressing this agreement, "you" or other second person is used below.
+                                <br />
+                                1.3 For the convenience of expression in this agreement, we and you are collectively referred to as "the parties" in this agreement, and we or you are individually referred to as a "party".`,
+                            }, {
+                                title: "Purpose of Privacy Policy",
+                                content: "The Privacy Policy stipulates the types of information we collect from you only through your login to the platform, registration on the platform and/or use of the services we provide and how we use and protect such collected information.",
+                            }, {
+                                title: "Your consent",
+                                content: `In order to ensure that you have full confidence in our handling of personal data, you must read and understand the provisions of the Privacy Policy in detail. In particular, once you log in to this platform, regardless of whether you register on this platform, you indicate to us that you accept, agree, promise and confirm: User commitment: the user has full capacity for civil rights and conduct, or although he does not have full capacity for civil rights and Behavioral capacity, but click the agree to register button, this website is deemed to be approved by its legal representative and registered by its legal representative and apply the company's services.
+                                <br />
+                                3.1 You voluntarily agree to disclose personal data to us;
+                                <br />
+                                3.2 You will abide by all the terms and restrictions of this Privacy Policy;
+                                <br />
+                                3.3 You agree that we collect your information through your login to this platform, registration on this platform and/or use of the services we provide; you agree to any future amendments to our privacy policy;
+                                <br />
+                                3.4 You agree to our branches, affiliates, employees, to contact you about products and services that may be of interest to you (unless you have indicated that you do not want to receive such communications).`,
+                            }, {
+                                title: "Information collected",
+                                content: `4.1 When you use this platform, you agree that we start using cookies to track your every action, and collect and remember all the information you leave, including but not limited to your IP address, geographic location and other information.
+                                <br />
+                                4.2 If you are willing to use the services provided by this platform, you need to fill in and provide the following two types of information:
+                                <br />
+                                4.2.1 Identity Information. This information can help us verify whether you are eligible to register as a member of this platform, including but not limited to your name, your residential address, mailing address, and other different certificates issued by your country or government to prove your identity information As well as the numbers involved and all other information that can help us verify your identity (hereinafter collectively referred to as "identity information").
+                                <br />
+                                4.2.2 Service Information. This information helps us to contact you and provide services to you smoothly, including but not limited to your telephone number, fax number, valid email address, mailing address, and your debit card information and/or other account information (the following applicable referred to as "Service Information").
+                                <br />
+                                4.3 When you use the platform or the services it provides, we may improve the use of the platform, enhance your experience of using the platform and the services it provides and its security, or in accordance with the court or applicable laws and regulations Or orders from other government agencies with jurisdiction, collect more necessary information through our exclusive mailbox publicized on this platform or other methods we deem compliant.
+                                <br />
+                                4.4 If you visit any other third-party platform or cooperative third-party linked to this platform, you should agree to and abide by the separate and independent privacy policy of the third-party network. We are not responsible for the content and activities of these platforms or partners.`,
+                            }, {
+                                title: "Cookie",
+                                content: `5.1 When you visit our platform, we use GoogleStats through cookies to record our performance and check the effectiveness of online advertising. A cookie is a small amount of data that is sent to your browser and stored on your computer's hard drive. Cookies can only be sent to your computer hard drive when you use your computer to access our platform.
+                                <br />
+                                5.2 Cookies are often used to record the habits and preferences of visitors when browsing various items on our platform. The information collected by Cookies is anonymous collective statistical data and does not contain personal information.
+                                <br />
+                                5.3 Cookies cannot be used to obtain the data on your hard disk, your email address, and your private data, which can enable the platform or service provider system to recognize your browser and capture and remember information. Most browsers are preset to accept cookies. You can choose to set your browser not to accept cookies, or to notify you as soon as a cookie is installed. However, if it is set to prohibit Cookies, you may not be able to activate or use some functions of our platform.`,
+                            }, {
+                                title: "Use of information",
+                                content: `6.1 We use your information collected by us for the following purposes or in the following ways:
+                                <br />
+                                6.1.1 Provide you with our various services through our platform;
+                                <br />
+                                6.1.2 When you use our platform, you can identify and confirm your identity;
+                                <br />
+                                6.1.3 To improve and improve the platform and services (according to the information and feedback we receive from you, help us improve the services of the platform, so that we can respond to your service requests and support needs more effectively);
+                                <br />
+                                6.1.4 Statistics on the usage of our platform;
+                                <br />
+                                6.1.5 Personalize your experience (your information will help us better respond to your individual needs);
+                                <br />
+                                6.1.6 Processing transactions (your information, whether public or private, will not be sold, exchanged, transferred, or provided to any other company for any reason without your consent, except to complete the transaction requested by you express purpose);
+                                <br />
+                                6.1.7 To send emails regularly (the email address you provide for order processing can be used to send you information and update your order, except for occasional receipt of information about our related products or services, etc.);
+                                <br />
+                                6.1.8 Satisfy other purposes stipulated in the user agreement of this platform and all legal means to meet such purposes.
+                                <br />
+                                6.2 We will not sell, trade or otherwise transfer information to other parties. This does not include trusted third parties who help us operate our Platform, conduct our business, or provide services to you, so long as those parties agree to keep this information confidential. When we believe that the disclosure of information is appropriate to comply with laws, regulations, rules and regulations or orders from courts or other competent authorities, to implement our platform strategy, to properly operate the platform, or to protect our or others' rights and property or safe. However, your information may not be provided to other parties for marketing, advertising or other uses.`,
+                            }, {
+                                title: "Protection of personal data",
+                                content: `7.1 We implement appropriate physical, electronic, management and technical measures to protect and secure your personal data. We try our best to ensure that any personal information collected through our platform is free from interference by any third parties not related to us. The security measures we take include but are not limited to:
+                                <br />
+                                7.1.1 Physical measures: records containing your personal data will be stored in a locked place.
+                                <br />
+                                7.1.2 Electronic measures: The computer data containing your personal data will be stored on computer systems and storage media subject to strict login restrictions.
+                                <br />
+                                7.1.3 Management measures: Only our authorized staff can access your personal data, and these staff need to abide by our internal rules on the confidentiality of personal data.
+                                <br />
+                                7.1.4 Technical measures: Encryption technology such as SecureSocket Layer Encryption may be used to transmit your personal data.
+                                <br />
+                                7.1.5 Other measures: Our web servers are protected by a "firewall".
+                                <br />
+                                7.2 If you are aware of any security vulnerabilities on our platform, please do not hesitate to contact us so that we can take appropriate action as soon as possible.
+                                <br />
+                                7.3 Despite the implementation of the above-mentioned technical and security measures, we cannot guarantee the absolute security of data transmission on the Internet, so we cannot absolutely guarantee that the personal data you provide to us through our platform is safe at all times. We will not be liable for any incidents that occur due to unauthorized access to your personal data, nor will we be liable for any loss or damage incurred or caused in this regard.`,
+                            }, {
+                                title: "Amendments to the Privacy Policy",
+                                content: "We reserve the right to modify this Privacy Policy at any time. We will let you know that we have revised the Privacy Policy by updating and posting the effective date of the new version, highlighting the amendments, and sometimes we will post a notice telling you that the Privacy Policy has been revised, but this is not an obligation on us. You should regularly review the Privacy Policy and pay attention to its revisions. If you do not agree with the revised content, you should stop accessing this platform immediately. When an updated version of the Privacy Policy is released, your continued access to this platform will show and indicate that you agree to the updated content and agree to abide by the updated Privacy Policy.",
+                            }, {
+                                title: "Communication with us",
+                                content: `9.1 If you have any requirements and comments, you can use the contact information published on the platform (hereinafter referred to as "valid contact information"), which is the only valid and official email or phone number for us to communicate with you, so we are responsible for If you do not use valid contact information, you will not be held responsible for any actions or omissions.
+                                <br />
+                                9.2 We only publish announcements and information or post announcements on this platform through valid contact information on this platform, so we are not responsible for any losses caused by your trust in information not obtained through the above methods.
+                                <br />
+                                9.3 If you have any questions about our privacy policy, please feel free to contact us.`,
+                            },
+                        ],
+                    },
+                    customer_agreement: {
+                        banner: {
+                            title: "Customer Agreement",
+                        },
+                        overall: "The company agrees to the customer to open and hold a trading account, and may provide the customer with the relevant trading OTC (as defined in the above customer notice) through or through the customer's company account.",
+                        terms: [
+                            {
+                                title: "Terms and Titles",
+                                content: `The term "the Company" includes the Company, its divisions, successors and assigns. The term "Customer" means the party (or parties) entering into this Agreement. The term "agreement" includes all other agreements or authorizations entered into by the client at any time to maintain its account with the company. The paragraph headings of this agreement are included for convenience of reference and do not limit or affect the application and meaning of the provisions of the paragraphs.`,
+                            }, {
+                                title: "Binding effect",
+                                content: `This agreement (including the risk disclosure statement, customer warning, disclaimer, this customer agreement and account opening application form) will continue to be effective and cover all accounts opened or re-opened by the customer at any time with the company, regardless of any company or Personnel changes of other successors, transferors or affiliated institutions. In the event of a merger, merger or other change, this agreement (including any authorization) will adapt to the interests of the company or other successors or assignors, and will be indemnified to the customer and/or its heirs, trustees, administrators, legal representatives, successors binding on the assignor. The client may only trade with the Company after confirming this agreement and agrees that the client's rights or obligations in relation to this transaction are governed by the terms of this agreement.`,
+                            }, {
+                                title: "Agreement acceptance",
+                                content: "Only after confirmation and approval by the company, this agreement can be deemed to have been accepted by the company or become a binding contract between the customer and the company.",
+                            }, {
+                                title: "Transaction Authorization",
+                                content: `The company can match some or all of the customer's buying and selling orders and/or place them in the market. The Company is authorized to conduct OTC buys or sells for client accounts with counterparties such as banks, institutions or senior participants in accordance with the client's instructions. Unless the Client objects in writing, the Company is authorized to execute all orders with such counterparties as the Company deems appropriate, such as banks, financial institutions or senior participants. As long as the company does not receive a written notice from the client informing that the opposing authorizer (including the client's senior staff, partners, and legally responsible persons) has been authorized, the company will be deemed to have agreed that the company has the right to Indicates an OTC buy or sell.
+                                <br />
+                                Client Authorization The Company relies on and executes any instruction, authorization or information that appears to be obtained from an authorized person. The resulting method is by electronic transmission. Client therefore agrees to:
+                                <br />
+                                1) The company is authorized to execute the instructions, and does not need to consult the validity of the instructions and treat the instructions as instructions issued by the authorized person;
+                                <br />
+                                2) In any case, the company does not need to verify the validity of the instructions or the signature of any individual case;
+                                <br />
+                                3) In the case of the company acting in good faith and without negligence, the customer will bear the risk of all unapproved instructions issued by its representatives, employees, or agents, and the customer will be liable for any loss, expense, remuneration, damage , expenses, claims, suits or demands. The Client undertakes not to hold the Company liable or claim compensation for losses caused by improper, unauthorized or fraudulent instructions given by the Client's employees, agents or representatives.
+                                <br />
+                                4) The company has the right to limit the total number of orders placed by customers each time. The Company reserves the right to limit the amount and/or total number of positions acquired or held by clients. The Company will endeavor to execute orders it elects to accept as directed by the Client's computer. The Company reserves the right to refuse to accept any order or to guarantee market hedging. However, the company will not be liable for any loss or damage caused by any event, act or omission beyond the direct or indirect control of the company, including but not limited to any delay in the transmission of orders or information due to failure of transmission or communication facilities or inaccurate loss or damage.`,
+                            },
+                        ],
+                    },
+                },
+            },
+            cn: {
+                logo: "Good Technology Co. Ltd. - 谷德",
+                nav: {
+                    home: "首页",
+                    risk_disclosure_statement: "风险声明",
+                    disclaimer: "免责声明",
+                    privacy_policy: "隐私政策",
+                    customer_agreement: "客户协议",
+                },
+                footer: {
+                    risk_warning: "风险提示：投资有风险，理财需谨慎",
+                    copyright: `Copyright © ${new Date().getFullYear()} Good Technology Company Limited all rights reserved`,
+                },
+                page_content: {
+                    index: {
+                        banner: {
+                            title: "Good Technology Company Limited - 谷德",
+                            subtitle_1: "全球领先的商业和金融数据信息服务提供商",
+                            subtitle_2: "领先的商业金融信息服务商",
+                        },
+                        about_us: {
+                            title: "关于我们",
+                            content: "谷德科技有限公司是专业的贵金属商品股指行情数据资讯软件，提供24小时贵金属、黄金、白银、等全球金融产品行情数据。 致力于提供优质的客户服务和领先的平台技术，满足全球投资者的不同需求。 谷德汇聚行业顶尖分析师，以集团化运营模式为全球投资者打造最专业的全方位行情数据平台。",
+                        },
+                        application_center: {
+                            title: "应用中心",
+                            card: [
+                                {
+                                    title: "应用介绍",
+                                    content: "谷德科技有限公司是专业的数据行情资讯软件，涵盖黄金、白银、贵金属等产品，为投资者提供实时行情数据！"
+                                }, {
+                                    title: "市场资讯",
+                                    content: "涵盖贵金属、黄金、白银等全球主流产品行情数据服务。"
+                                }, {
+                                    title: "热门产品",
+                                    content: "涵盖黄金、白银、贵金属等全球主流产品行情数据服务。"
+                                }, {
+                                    title: "交易策略",
+                                    content: "专业分析师全天候坐镇，丰富实战经验，提供专业详尽的主流产品交易行情分析，为您提供专业的随身服务。"
+                                }, {
+                                    title: "投资交流",
+                                    content: "谷德科技有限公司专业分析师全天候坐镇，具有丰富的实战经验，提供专业细致的市场分析，为您提供专业的随身服务。"
+                                },
+                            ],
+                        },
+                    },
+                    risk_disclosure_statement: {
+                        banner: {
+                            title: "风险声明",
+                        },
+                        terms: [
+                            {
+                                title: "",
+                                content: "本公司提醒您，保证金交易及买卖存在高风险，客户需提前了解所面临的风险，不应该贸然进行投资交易。客户亦应该谨慎考虑自身的投资目标、经验、财务状况及风险承受能力，自行衡量是否适合进行投资。",
+                            }, {
+                                title: "",
+                                content: "任何保证金交易都具备一定风险，包括（但不限于）杠杆、信用可靠度、有限的法务保护，及可能很大程度影响到货币或货币对价格或交易量的市场动荡因素。",
+                            }, {
+                                title: "保证金及杠杆",
+                                content: `本平台所有产品均是以杠杆保证金为基础的交易，保证金通常指总合约价值的其中相对一小部分。比如交易杠杆比是 5:1的合约需要合约价值20%的资金作为保证金。即意味着一个较小的价格变动将可能导致您交易合约值的较大变化，为此您的投资可能遭受大额损失，亦或带来大额收益。<br />
+                                您可能会损失您的初始资金，并被要求追加保证金以维持您的头寸。如未能达到保证金要求，您的持仓头寸将被强制平仓，由此产生的损失将由您自己承担，望知悉。<br />
+                                本平台所有产品报价有升有跌，特定情况下投资这些产品可能面临巨大风险，投资可咨询私人法律、金融、税务、财务及其他顾问，保证所作投资决定适合投资者个人情况及财力。`,
+                            }, {
+                                title: "市场风险",
+                                content: "任何在本平台网站上发布的观点、新闻资讯、研究分析、价格及其他信息等，均为普通性市场评论，而非投资建议。由于参考此类信息而可能直接或间接导致的损失，包括（但不限于）利润损失，本平台具有免责权。",
+                            }, {
+                                title: "网页",
+                                content: "本平台已采取合理的措施以确保网站上此类信息的正确性。网站信息内容可能会在任何时间、在不被通知的情况下产生变动。",
+                            },
+                        ],
+                    },
+                    disclaimer: {
+                        banner: {
+                            title: "风险声明",
+                        },
+                        terms: [
+                            {
+                                title: "",
+                                content: "本公司（以下称：本网站）的资料，只作一般性质及说明用途。对该等资料 本公司不会就任何错误、遗漏、或错误陈述或失实陈述（不论明示或默示的）承担任何责任。对任何因使用或不当使用或依据 本公司所载的资料而引致或所涉及的损失、毁坏或损害（包括但不限于相应而生的损失、毁坏或损害）， 本公司概不承担任何义务、责任或法律责任。",
+                            }, {
+                                title: "",
+                                content: "本网站并非供禁止发布或提供本网站的任何司法管辖区内的任何人士使用（基于该名人士的国籍、居留地或其他原因）。有关禁制的人士不得使用本网站。使用本网站所载资料的任何人士有责任遵守其有关司法管辖区所有的适用法例及规例。阁下继续使用本网站，即代表阁下陈述及保证阁下的司法管辖区的适用法例及规例容许阁下浏览有关资料。",
+                            }, {
+                                title: "",
+                                content: "本网站所提供的所有资料均为 本公司之财产。任何人士如未经 本公司预先书面授权同意，不得以任何理由及形式散发此网站的文字或图档或音像档或在阁下之伺服器内重制、修改或重用此系统内容的文字及图档或音像档。阁下可以打印或储存有关资料于个人电脑内，以供个人使用或参考用途，但须同时保留内容所载的所有版权及其他专有通告。",
+                            }, {
+                                title: "",
+                                content: "为方便使用者查阅由其他人士/团体或通过其他人士/团体提供的资讯，本网站可能会提供或协助提供超链接至外界网站。提供或协助提供该等超链接，并不构成 本公司就赞同或不赞同该等网站之内容作出任何明示或暗示的声明、陈述或保证；对任何因使用或不当使用或依据通过 本公司网站传递或提供的外界网站的内容而引致或所涉及的损失、毁坏或损害（包括但不限于相应而生的损失、毁坏或损害）， 本公司概不承担任何义务、责任或法律责任。",
+                            }, {
+                                title: "",
+                                content: "保证金交易及买卖具一定风险，价格可升可跌，保证金交易涉及潜在的利润，同时也会有损失的风险，阁下需知悉并了解相关风险并自行承担盈亏风险。",
+                            }, {
+                                title: "",
+                                content: "本网站不应视为向任何司法管辖地区内的任何人士提出其进行买卖任何产品或服务的要约或邀请，即使这些行为可于相关地区被视为非法行为。",
+                            }, {
+                                title: "",
+                                content: "当阁下一旦使用本网站，即表示阁下无条件接受上述所载的免责条款以及任何 本公司不时在无须预先通知阁下的情况下而对上述条款所作出的修改及/或修订。请定期浏览此网页查阅任何修改及/或修订。",
+                            },
+                        ],
+                    },
+                    privacy_policy: {
+                        banner: {
+                            title: "隐私政策",
+                        },
+                        terms: [
+                            {
+                                title: "双方",
+                                content: `1.1 本公司是差价合约交易平台（以下称"本平台"），本平台是一个专门供用户进行贵金属差价合约交易和提供相关服务的平台。为了方便用户及网站运营，为了本协议表述之方便，故公司和本平台在本协议中合称使用"我们"或其他第一人称称呼。
+                                <br />
+                                1.2 只要登录本平台的自然人或其他主体均为本平台的用户，为本协议表述之便利，以下使用"您"或其他第二人称。
+                                <br />
+                                1.3 为了本协议表述之便利，我们和您在本协议中合称为"双方"，我们或您单称为"一方"。`,
+                            }, {
+                                title: "隐私政策制定的目的",
+                                content: "隐私政策规定了我们只通过您登录本平台、在本平台上注册和/或使用我们提供的服务采集您信息的类型以及我们如何使用和保护这些采集到的信息。",
+                            }, {
+                                title: "您的同意",
+                                content: `为确保您对我们在处理个人资料上有充分信心，您切要详细阅读及理解隐私政策的条文。特别是您一旦登录本平台不论您是否在本平台上注册，您均向我们表明您接受、同意、承诺和确认: 用户承诺：用户具有完全民事权利能力和行为能力，或虽不具有完全民事权利能力和行为能力，但点击同意注册按钮，本网即视为经其法定代理人同意并由其法定代理人代理注册及应用 本公司的服务。
+                                <br />
+                                3.1 您在自愿下同意向我们披露个人资料；
+                                <br />
+                                3.2 您会遵守本隐私政策的全部条款和限制；
+                                <br />
+                                3.3 您同意我们通过您登录本平台、在本平台上注册和/或使用我们提供的服务收集您的信息；您同意日后我们对隐私政策的任何修改；
+                                <br />
+                                3.4 您同意我们的分公司、附属公司、雇员、就您可能会感兴趣的产品和服务与您联络(除非您已经表示不想收到该等讯息)。`,
+                            }, {
+                                title: "收集的信息",
+                                content: `4.1 当您使用本平台时，您同意我们开始使用cookies来追踪您的每一个动作，并收集和记住你留下的所有信息，其中包括但不限于您的IP地址，地理位置及其他资料。
+                                <br />
+                                4.2 如果您愿意使用本平台提供的服务，您需要填写和提供以下两种信息：
+                                <br />
+                                4.2.1 身份信息。该信息可以帮助我们验证您是否有资格注册为本平台会员，包括但不限制你的名字，你的居住地址，邮寄地址，您所属国家或政府发签发的其他具有证明您身份信息的不同的证书以及涉及到的号码及所有其他可帮助我们验证您身份的信息（以下合称为"身份信息"）。
+                                <br />
+                                4.2.2 服务信息。该信息帮助我们与您联系并顺利为您提供服务，包括但不限制您的电话号码、传真号码、有效的电子邮件地址、邮寄地址以及您的借记卡信息和/或其他账户信息（以下合称为"服务信息"）。
+                                <br />
+                                4.3 在您使用本平台或其提供的服务时，我们可能会为了改进本平台的使用功能，提升您对使用本平台及其提供的服务及其安全性的体验或是根据法院或可适用法律法规或有管辖权的其他政府机构的命令，通过本平台公示的专属于我们的邮箱或其他我们认为合规的方式收集更多的必要的信息。
+                                <br />
+                                4.4 如果您访问了任何链接在本平台上的其他第三方平台或合作的第三方，您应同意并遵守该第三方网单独和独立的隐私政策。我们对这些平台或合作方的内容及活动不承担任何责任。`,
+                            },
+                            {
+                                title: "Cookie",
+                                content: `5.1 当您到访我们平台时，我们通过cookies使用GoogleStats去记录我们的业绩以及核对在线广告的效果。Cookie是发送到您的浏览器上并在您的电脑硬盘驱动器上存储的小量数据。只有当您使用您的电脑进入我们平台时，Cookie才能够被发送到您的电脑硬盘上。
+                                <br />
+                                5.2 Cookies常用于记录访问者浏览我们平台上的各个项目时的习惯以及偏好。Cookies所搜集的资料是不记名的集体统计数据，不载有个人资料。
+                                <br />
+                                5.3 Cookies不能用于取得您的硬盘上的数据、您的电邮地址、及您的私人数据其可使本平台或服务商系统识别到您的浏览器并捕捉和记忆信息。大多数浏览器都预设为可以接受Cookies。您可以选择将您的浏览器设定为不接受Cookies，或如果Cookies一被装上就通知您。不过， 若设定为禁止Cookies，您或许便不能启动或使用我们平台的某些功能。`,
+                            }, {
+                                title: "信息使用用途",
+                                content: `6.1 我们为了以下目的或以下列方式使用我们收集到的您的信息：
+                                <br />
+                                6.1.1 通过我们的平台向您提供我们的各项服务；
+                                <br />
+                                6.1.2 当您使用我们的平台时，能辨认及确认您的身份；
+                                <br />
+                                6.1.3 为了改善和提高平台和服务（根据我们收到的您的信息及反馈，帮助我们改善平台的服务，进而我们可以更有效地对您的服务请求和支持需求做出回应）；
+                                <br />
+                                6.1.4 统计我们平台使用量的数据；
+                                <br />
+                                6.1.5 个性化您的体验（您的信息将帮助我们更好地为您的个性化需求作出回应）；
+                                <br />
+                                6.1.6 处理交易（您的信息，无论是公共或私人的，未经您的同意不会以任何理由被出售、交换、转移，或提供给任何其他公司，但除了为完成您所要求的交易的明确目的）；
+                                <br />
+                                6.1.7 要定期发送电子邮件（您提供订单处理的电子邮件地址，除了偶尔接收我们相关产品或服务的信息等，可用来向您发送信息和更新有关您的订单）；
+                                <br />
+                                6.1.8 满足本平台用户协议规定的其他目的和为了满足该等目的的所有合法途径。
+                                <br />
+                                6.2 我们不会向其他方出售，交易或以其他方式转让信息。但不包括帮助我们经营我们的平台，开展业务，或者向您提供服务的受信任的第三方，只要这些当事方同意将这些信息保密。当我们相信披露信息是适当的，是遵守法律、法规、规章制度的或来自于法院或他主管当局的命令、执行我们的平台策略，正常运行平台所需要，或保护我们或他人的权利、财产或安全的。但是，您的信息不得提供给其他方进行营销，广告或其他用途。`,
+                            }, {
+                                title: "个人资料的保护",
+                                content: `7.1 我们实施妥善的实物、电子、管理及技术方面的措施来保护和保障您的个人资料的安全。我们尽力确保通过我们平台所搜集的任何个人资料皆免于任何与我们无关的第三者的滋扰。我们采取的安全措施包括但不限于：
+                                <br />
+                                7.1.1 实物措施：存有您个人资料的记录会被存放在有锁的地方。
+                                <br />
+                                7.1.2 电子措施：存有您个人资料的电脑数据会被存放在受严格登入限制的电脑系统和存储媒体上。
+                                <br />
+                                7.1.3 管理措施：只有经我们授权的职员才能接触到您的个人资料，这些职员需要遵守我们个人资料保密的内部守则。
+                                <br />
+                                7.1.4 技术措施：可能采用如SecureSocket Layer Encryption这种加密技术来输送您的个人资料。
+                                <br />
+                                7.1.5 其它措施：我们的网络服务器受到"防火墙"的保护。
+                                <br />
+                                7.2 若您知悉我们的平台上有任何安全方面的漏洞，请不要迟疑去联絡我们，使我们可以尽快采取妥适的行动。
+                                <br />
+                                7.3 尽管实施了上述技术和保安的措施，我们不能保证资料在互联网上的输送绝对安全，因此我们不能绝对保证您通过我们平台提供给我们的个人资料在一切时候都是安全的。对任何因未经授权而接触您个人资料所发生的事件我们一槪不承担责任，于这方面产生或导致的任何损失或损害，我们也不负责赔偿。`,
+                            }, {
+                                title: "隐私政策的修订",
+                                content: "我们保留随时修改该隐私政策的权利。我们通过更新和发布新版本的生效日期告诉您我们修订了隐私政策，并突出修订处，有时我们会发布通知告诉您隐私政策已修订，但这不是我们的一项义务。您应定期查看隐私政策并关注其修订情况，如果您不同意修订的内容，您应停止立即访问本平台。当隐私政策的更新版本发布，您持续访问本平台显示和表明您同意该更新的内容，并同意遵守该更新的隐私权政策。",
+                            },
+                            {
+                                title: "与我们的沟通",
+                                content: `9.1 如果您有任何要求和意见，您可以通过平台公示的联系方式（以下称为"有效的联系方式"），这是属于我们与您沟通的唯一有效和官方电子邮件或电话号码，所以我们对您未使用有效的联系方式，任何作为或不作为不承担责任。
+                                <br />
+                                9.2 我们只通过本平台上的有效的联系方式发布公告和信息或在本平台张贴公告，所以我们对由于您信任了未通过以上方式获得的信息而产生的任何损失不承担责任。
+                                <br />
+                                9.3 若您对我们的隐私政策有任何问题,欢迎随时联系我们。`,
+                            },
+                        ],
+                    },
+                    customer_agreement: {
+                        banner: {
+                            title: "客户协议",
+                        },
+                        overall: "本公司同意客户开立和持有一个交易账户，并可能通过或透过客户的 本公司账户向客户提供有关买卖 OTC（如上文客户告鉴里所界定）。",
+                        terms: [
+                            {
+                                title: "条款与标题",
+                                content: `"本公司"一词包括 本公司，其分部，继承人和转让人。"客户"一词乃指订立本协议的一方(或多方)。"协议书"一词包括所有客户在任何时候为维持其 本公司账户而订立的其他协议或给予的授权。本协议的段落标题是为查考便利而加入，并不限制或影响段落条文的应用与意义。`,
+                            }, {
+                                title: "约束效力",
+                                content: "本协议（包括风险披露声明、客户告鉴、免责声明、本客户协议以及开户申请表）将持续有效，并涵盖客户任何时候在 本公司开立或重新开立的所有账户，不论任何 本公司或其他继承人、转让人或关联机构的人事变动。如果发生合并、兼并或其他变动，本协议(包括任何授权)将适应 本公司或其他继承人或转让人的利益，并对客户及其/或其遗产继承人、委托人、管理人、法定代表、继承人和转让人具人约束力。客户只有在确认本协议之后才可在 本公司进行交易，并同意客户与此交易有关的权利或义务受本协议条款的管辖。",
+                            }, {
+                                title: "协议接受",
+                                content: "仅当 本公司确认及批核后，本协议方可被视作已为 本公司所接受或成为客户与 本公司之间具有约束力的合同。",
+                            }, {
+                                title: "交易授权",
+                                content: `本公司可以为客户部分或全部的买卖指令进行对盘及/或下达市场。 本公司获授权按照客户的指令向对手方如银行、机构或资深参与者为客户账户进行OTC 买或卖。除非客户以书面形式作出反对，否则 本公司获授权和 本公司认为适合之对手方如银行、金融机构或资深参与者执行所有订单。只要 本公司没有收到客户的书面通知告知反对授权人(包括客户的高级职员、合伙人、法定负责人)获得授权， 本公司将视作客户同意 本公司有权根据客户或其授权人发出的指示进行OTC 买或卖。
+                                <br />
+                                客户授权 本公司依据和执行似是从授权人所得来的任何指示、授权或信息。所得来的方法为通过电子方式传送。因此客户同意：
+                                <br />
+                                1）  本公司获授权执行指示，并且不需咨询有关指示的有效性而把指示当作确实是由授权人发出的指令； 
+                                <br />
+                                2） 在任何情况下， 本公司不需核实指示的有效性或任何个别情况的签名； 
+                                <br />
+                                3） 在 本公司以诚信处事和没有疏忽的情况下，客户将承担所有由其代表人、雇员、或代理人发出的未经批准的指示的风险，客户将为任何损失、费用、酬金、损毁、经费、索赔、诉讼或要求负责。如果是由客户的员工、代理人或代表发出的不当、未经授权或欺诈的指示而造成的损失，客户保证不向 本公司追究责任或要求赔偿。
+                                <br />
+                                4）  本公司有权制定限制客户每次下单的总数。 本公司有权限制客户获得或持有的头寸的金额及/或总数。 本公司将努力按照客户计算机的指示执行其选择接受的订单。 本公司有权拒绝接受任何订单或保证市场对冲。但是， 本公司将不对任何 本公司不可直接或间接控制的事件、行为或不行为造成的损失或损害负责，这种情况包括但不限于任何由于传输或通讯设施故障造成的订单或信息传输的延迟或不准确带来的损失或损害。`,
+                            },
+                        ],
+                    },
+                },
+            },
+        };
+        const i18n = VueI18n.createI18n({
+            legacy: false,
+            locale: "en",
+            fallbackLocale: "en",
+            messages,
+        });
+
+        const app = Vue.createApp({
+            setup() {
+                const { locale } = VueI18n.useI18n();
+                function handleChangeLanguage(e) {
+                    locale.value = e.target.value;
+                }
+                return {
+                    handleChangeLanguage
+                };
+            },
+        });
+
+        /**
+         * Vue Router
+         */
+        const Home = { template: "#content-index" };
+        const Risk_Disclosure_Statement = { template: "#content-risk-disclosure-statement" };
+        const Disclaimer = { template: "#content-disclaimer" };
+        const Privacy_Policy = { template: "#content-privacy-policy" };
+        const Customer_Agreement = { template: "#content-customer-agreement" };
+        const routes = [
+            { path: "/", component: Home },
+            { path: "/risk_disclosure_statement", component: Risk_Disclosure_Statement },
+            { path: "/disclaimer", component: Disclaimer },
+            { path: "/privacy_policy", component: Privacy_Policy },
+            { path: "/customer_agreement", component: Customer_Agreement },
+        ];
+        const router = VueRouter.createRouter({
+            history: VueRouter.createWebHashHistory(),
+            routes,
+            scrollBehavior(to, from, savedPosition) {
+                if (to.fullPath === from.fullPath) {
+                    return;
+                }
+                return { top: 0, behavior: "smooth", }
+            },
+        });
+
+        app.use(i18n);
+        app.use(router);
+        app.mount("#app");
+    </script>
+</body>
+
+</html>
