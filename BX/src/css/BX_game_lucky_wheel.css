@@ -1,0 +1,654 @@
+body {
+  max-width: 1920px;
+  margin: 0 auto;
+  font-size: 0;
+  font-family: "PingFang SC", "Hiragino Sans GB", arial, "Microsoft Yahei", sans-serif;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.pc {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+.banner {
+  position: relative;
+  z-index: 2;
+  height: 6.36rem;
+  background-image: url(../images/BX_game_lucky_wheel/bg-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 top;
+  overflow: hidden;
+}
+.banner .badge {
+  position: absolute;
+  top: 5.32rem;
+  left: calc(50% - 1.2rem);
+  z-index: 3;
+  width: 2.4rem;
+  height: 1.04rem;
+  background-image: url(../images/BX_game_lucky_wheel/sprite-badge.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  -webkit-animation-name: animation-badge-flash;
+          animation-name: animation-badge-flash;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  cursor: pointer;
+}
+.banner .badge:active {
+  background-position: top;
+}
+.banner .badge a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.banner .spotlight {
+  position: absolute;
+  width: 4rem;
+  height: 6.3rem;
+  background-image: url(../images/BX_game_lucky_wheel/spotlight.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  -webkit-transform: rotate(5deg);
+          transform: rotate(5deg);
+  -webkit-transform-origin: 2rem top;
+          transform-origin: 2rem top;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+.banner .spotlight-1 {
+  top: -0.5rem;
+  left: 3.9rem;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+  -webkit-animation-name: animation-spotlight-1;
+          animation-name: animation-spotlight-1;
+}
+.banner .spotlight-2 {
+  top: -0.5rem;
+  left: 12.16rem;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+  -webkit-animation-name: animation-spotlight-2;
+          animation-name: animation-spotlight-2;
+}
+.banner .dancer {
+  position: absolute;
+  width: 3.14rem;
+  height: 2.88rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+.banner .dancer-1 {
+  background-image: url(../images/BX_game_lucky_wheel/dancer-1.png);
+  -webkit-transform-origin: 1.2rem top;
+          transform-origin: 1.2rem top;
+  top: 0;
+  left: 3.9rem;
+  -webkit-animation-name: animation-dancer-1;
+          animation-name: animation-dancer-1;
+}
+.banner .dancer-2 {
+  background-image: url(../images/BX_game_lucky_wheel/dancer-2.png);
+  -webkit-transform-origin: 1.9rem top;
+          transform-origin: 1.9rem top;
+  top: 0;
+  left: 12.16rem;
+  -webkit-animation-name: animation-dancer-2;
+          animation-name: animation-dancer-2;
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+}
+
+.section-1 {
+  position: relative;
+  z-index: 1;
+  height: 14rem;
+  background-image: url(../images/BX_game_lucky_wheel/bg-section-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.section-1 .game-info {
+  position: absolute;
+  top: 0.8rem;
+  left: calc(50% - 5rem);
+  width: 10rem;
+  height: 1.84rem;
+  background-image: url(../images/BX_game_lucky_wheel/game-info.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.section-1 .game-info .light-bulb {
+  position: absolute;
+  top: -0.15rem;
+  left: -0.1rem;
+  width: 10.24rem;
+  height: 2.13rem;
+  background-image: url(../images/BX_game_lucky_wheel/sprite-bg-game-info-light-bulb.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  -webkit-animation-name: animation-badge-flash;
+          animation-name: animation-badge-flash;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+}
+.section-1 .wrapper-draw {
+  position: absolute;
+  top: 2.86rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+.section-1 .wrapper-draw .msg-draw-result {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  width: 6.4rem;
+  height: 6.4rem;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+.section-1 .wrapper-draw .msg-draw-result.msg-prize-again {
+  background-image: url(../images/BX_game_lucky_wheel/msg-prize-again.png);
+  pointer-events: auto;
+}
+.section-1 .wrapper-draw .msg-draw-result.msg-prize-thanks {
+  background-image: url(../images/BX_game_lucky_wheel/msg-prize-thanks.png);
+  pointer-events: auto;
+}
+.section-1 .wrapper-draw .msg-draw-result.msg-first-get-prize-gold {
+  background-image: url(../images/BX_game_lucky_wheel/msg-first-get-prize-gold.png);
+  pointer-events: auto;
+}
+.section-1 .wrapper-draw .msg-draw-result.msg-first-get-prize-index {
+  background-image: url(../images/BX_game_lucky_wheel/msg-first-get-prize-index.png);
+  pointer-events: auto;
+}
+.section-1 .wrapper-draw .msg-draw-result.msg-first-get-prize-crude-oil {
+  background-image: url(../images/BX_game_lucky_wheel/msg-first-get-prize-crude-oil.png);
+  pointer-events: auto;
+}
+.section-1 .wrapper-draw .msg-draw-result.msg-first-get-prize-us-dollar {
+  background-image: url(../images/BX_game_lucky_wheel/msg-first-get-prize-us-dollar.png);
+  pointer-events: auto;
+}
+
+.section-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 0.9rem;
+  height: 17.04rem;
+  background-color: #812516;
+}
+.section-2 .content-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.section-2 .content-wrapper:not(:first-of-type) {
+  margin-top: 0.4rem;
+}
+.section-2 .content-wrapper h3 {
+  width: 2.8rem;
+  height: 0.6rem;
+  font-size: 0.3rem;
+  line-height: 0.6rem;
+  text-align: center;
+  color: #812516;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff7bd), to(#fee366));
+  background-image: linear-gradient(to bottom, #fff7bd, #fee366);
+  border-radius: 0.35rem;
+  border: solid 2px #b25251;
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+}
+.section-2 .content-wrapper p {
+  margin-top: 0.2rem;
+  max-width: 6.86rem;
+  font-size: 0.28rem;
+  color: #fff;
+  text-align: center;
+}
+.section-2 .content-wrapper p.example {
+  margin-top: 0.4rem;
+  padding-left: 0.1rem;
+  text-align: left;
+}
+.section-2 .content-wrapper p.lot {
+  position: relative;
+  padding-left: 0.1rem;
+  text-align: left;
+}
+.section-2 .content-wrapper table {
+  margin-top: 0.2rem;
+  width: 6.7rem;
+  text-align: center;
+  color: #141818;
+  font-size: 0.24rem;
+}
+.section-2 .content-wrapper table .row-title {
+  font-weight: 600;
+}
+.section-2 .content-wrapper table thead tr {
+  height: 0.84rem;
+  background-color: #ffe16e;
+  font-weight: 600;
+  color: #980100;
+}
+.section-2 .content-wrapper table thead tr th:not(:first-of-type) div {
+  border-left: 0.02rem solid #980100;
+}
+.section-2 .content-wrapper table tbody tr,
+.section-2 .content-wrapper table tfoot tr {
+  border-top: 0.04rem solid #7d5aab;
+}
+.section-2 .content-wrapper table tbody tr:nth-of-type(odd) {
+  background-color: #d8d8d8;
+  height: 0.7rem;
+}
+.section-2 .content-wrapper table tbody tr:nth-of-type(even) {
+  background-color: #efefef;
+  height: 0.7rem;
+}
+.section-2 .content-wrapper table tfoot tr {
+  height: 0.74rem;
+  background-color: #f03258;
+  font-weight: 600;
+  color: #ffe16e;
+}
+.section-2 .content-wrapper table tfoot tr td {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.section-2 .content-wrapper table tr td {
+  border-top: 4px solid #812516;
+}
+.section-2 .content-wrapper table .border-top-left-radius {
+  border-top-left-radius: 10px;
+}
+.section-2 .content-wrapper table .border-top-right-radius {
+  border-top-right-radius: 10px;
+}
+.section-2 .content-wrapper button {
+  width: 2.5rem;
+  height: 0.5rem;
+  background-color: transparent;
+  background-image: url(../images/BX_game_lucky_wheel/btn-notice.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.pop-notice-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.72);
+}
+.pop-notice-wrapper .pop-notice-content-wrapper {
+  position: relative;
+  width: 7.2rem;
+  height: 6.7rem;
+}
+.pop-notice-wrapper .pop-notice-content-wrapper .close {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.47rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  background-image: url(../images/BX_game_lucky_wheel/close.svg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.pop-notice-wrapper .pop-notice-content-wrapper h3 {
+  width: 100%;
+  height: 1.3rem;
+  background-color: #3050aa;
+  font-size: 0.42rem;
+  font-weight: 300;
+  letter-spacing: 1.91px;
+  color: #fff;
+  text-align: center;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  line-height: 1.3rem;
+}
+.pop-notice-wrapper .pop-notice-content-wrapper .content {
+  padding: 0.4rem;
+  padding-left: 0.72rem;
+  background-color: #fff;
+  color: #000;
+  font-size: 0.26rem;
+  border: 1px solid #979797;
+  border-top: none;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  line-height: 1.77;
+}
+.pop-notice-wrapper .pop-notice-content-wrapper .content li {
+  list-style-type: decimal;
+}
+
+@media (max-width: 768px) {
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .banner {
+    height: 9.8rem;
+    background-image: url(../images/BX_game_lucky_wheel/bg-banner-m.jpg);
+  }
+  .banner .badge {
+    top: 8.3rem;
+    left: calc(50% - 1.5rem);
+    width: 3rem;
+    height: 1.3rem;
+    background-image: url(../images/BX_game_lucky_wheel/sprite-badge-m.png);
+  }
+  .banner .spotlight-1 {
+    left: 0.3rem;
+  }
+  .banner .spotlight-2 {
+    left: 4.06rem;
+  }
+  .banner .dancer-1 {
+    left: 0.3rem;
+  }
+  .banner .dancer-2 {
+    left: 4.06rem;
+  }
+  .section-1 {
+    height: 15.5rem;
+    background-image: url(../images/BX_game_lucky_wheel/bg-section-1-m.jpg);
+  }
+  .section-1 .game-info {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.26rem;
+    background-image: url(../images/BX_game_lucky_wheel/game-info-m.png);
+  }
+  .section-1 .game-info .light-bulb {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.26rem;
+    background-image: url(../images/BX_game_lucky_wheel/sprite-bg-game-info-light-bulb-m.png);
+  }
+  .section-1 .wrapper-draw {
+    top: 3.7rem;
+  }
+  .section-2 {
+    height: 17.5rem;
+  }
+  .section-2 .content-wrapper button {
+    width: 2.1rem;
+    height: 0.8rem;
+    background-image: url(../images/BX_game_lucky_wheel/btn-notice-m.png);
+  }
+}
+#preloader {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+}
+#preloader .preloader-1-1 {
+  background-image: url(../images/BX_game_lucky_wheel/msg-first-get-prize-gold.png);
+}
+#preloader .preloader-1-2 {
+  background-image: url(../images/BX_game_lucky_wheel/msg-first-get-prize-index.png);
+}
+#preloader .preloader-1-3 {
+  background-image: url(../images/BX_game_lucky_wheel/msg-first-get-prize-crude-oil.png);
+}
+#preloader .preloader-1-4 {
+  background-image: url(../images/BX_game_lucky_wheel/msg-first-get-prize-us-dollar.png);
+}
+#preloader .preloader-1-5 {
+  background-image: url(../images/BX_game_lucky_wheel/msg-prize-again.png);
+}
+#preloader .preloader-1-6 {
+  background-image: url(../images/BX_game_lucky_wheel/msg-prize-thanks.png);
+}
+
+@-webkit-keyframes animation-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes animation-badge-flash {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}
+@keyframes animation-badge-flash {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}
+@-webkit-keyframes animation-spotlight-1 {
+  0% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  50% {
+    -webkit-transform: rotate(-95deg);
+            transform: rotate(-95deg);
+  }
+  100% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+@keyframes animation-spotlight-1 {
+  0% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  50% {
+    -webkit-transform: rotate(-95deg);
+            transform: rotate(-95deg);
+  }
+  100% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+@-webkit-keyframes animation-spotlight-2 {
+  0% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(95deg);
+            transform: rotate(95deg);
+  }
+  100% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+}
+@keyframes animation-spotlight-2 {
+  0% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(95deg);
+            transform: rotate(95deg);
+  }
+  100% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+}
+@-webkit-keyframes animation-dancer-1 {
+  0% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+  50% {
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+  }
+  100% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+}
+@keyframes animation-dancer-1 {
+  0% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+  50% {
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+  }
+  100% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+}
+@-webkit-keyframes animation-dancer-2 {
+  0% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  50% {
+    -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+  }
+  100% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+}
+@keyframes animation-dancer-2 {
+  0% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  50% {
+    -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+  }
+  100% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+}

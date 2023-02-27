@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BX 小遊戲 輪盤抽獎</title>
+    <link rel="stylesheet" href="../src/common/css/BX_reset.css">
+    <link rel="stylesheet" href="../src/common/css/BX_common.css">
+    <link rel="stylesheet" href="../src/common/css/toast.css">
+    <link rel="stylesheet" href="../src/css/BX_game_lucky_wheel.css">
+</head>
+
+<body>
+    <h1>BX 小遊戲 輪盤抽獎</h1>
+    <div class="wrapper">
+        <div class="banner">
+            <!-- "遊戲通關入口" -->
+            <button type="button" class="badge"></button>
+            <div>
+                <div class="spotlight spotlight-1"></div>
+                <div class="spotlight spotlight-2"></div>
+                <div class="dancer dancer-1"></div>
+                <div class="dancer dancer-2"></div>
+            </div>
+        </div>
+
+        <div class="section-1">
+            <!-- 遊戲規則 -->
+            <div class="game-info">
+                <div class="light-bulb"></div>
+            </div>
+            <!-- 抽獎轉盤相關 -->
+            <div class="wrapper-draw">
+                <!-- 提示訊息圖片 -->
+                <div class="msg-draw-result"></div>
+                <!-- 轉盤抽獎套件　掛載　根元素 -->
+                <div id="my-lucky-wheel"></div>
+            </div>
+        </div>
+
+        <div class="section-2">
+            <div class="content-wrapper">
+                <h3>活动时间</h3>
+                <p class="pc">2023/03/01 00:00:00-2023/03/31 23:59:59</p>
+                <p class="mobile">
+                    2023/03/01 00:00:00-<br>
+                    2023/03/31 23:59:59
+                </p>
+            </div>
+            <div class="content-wrapper">
+                <h3>手数计算时间</h3>
+                <p class="pc">客户领取奖励即开始计算手数至03/31 23:59:59</p>
+                <p class="mobile">
+                    客户领取奖励即开始计算手数至<br>
+                    03/31 23:59:59
+                </p>
+            </div>
+            <div class="content-wrapper">
+                <h3>参予用户类型</h3>
+                <p>标准、专业、尊贵账户</p>
+            </div>
+            <div class="content-wrapper">
+                <h3>奖励规则</h3>
+                <p>交易满足手即可获得后赠；请参照表格</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="border-top-left-radius">
+                                <div>奖励商品</div>
+                            </th>
+                            <th>
+                                <div>每手返还</div>
+                            </th>
+                            <th class="border-top-right-radius">
+                                <div>奖励上限</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="row-title">黄金</td>
+                            <td>US$1</td>
+                            <td>US$100</td>
+                        </tr>
+                        <tr>
+                            <td class="row-title">指数</td>
+                            <td>US$2</td>
+                            <td>US$200</td>
+                        </tr>
+                        <tr>
+                            <td class="row-title">原油</td>
+                            <td>US$3</td>
+                            <td>US$300</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">先赠3美元交易0.01手可提取</th>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="border-bottom-radius">
+                            <td colspan="3">* 全部收集还有隐藏版奖励！</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p class="example">
+                    举例：陈先生转到黄金奖励，即可享1美元/手黄金后赠，最高奖励100美元；若陈先生收集了黄金、原油奖励，即享有相对应奖励返还；若完成10手黄金5手指数与3手原油，共可获取
+                    10x1+3x3=19美元，奖励实时到账。
+                </p>
+                <p class="lot">
+                    完成手数定义：报名后开仓1手且平仓1手即为<br class="mobile">完成1手。
+                    <br class="pc">
+                    活动期间客户享自由出入金特权。
+                </p>
+            </div>
+            <div class="content-wrapper">
+                <button type="button" class="js-open-pop-notice"></button>
+            </div>
+        </div>
+
+        <div id="pop-notice" class="pop-notice-wrapper">
+            <div class="pop-notice-content-wrapper">
+                <button type="button" class="close js-close-pop-notice"></button>
+                <h3>注意事项</h3>
+                <ol class="content">
+                    <li>本公司员工不适合此活动；</li>
+                    <li>本活动可与其他活动一同参与</li>
+                    <li>如果本公司怀疑客户滥用、企图滥用、以其他方式滥用优惠，或怀疑客户使用内部交易账户，外挂操作软件或其他经纪商或个人进行对冲，本公司有权停止客户新交易及要求客户取消账户所获投资资金及取消所有交易，并视情况扣除账户结余
+                        6%至 10%作行政费用；</li>
+                    <li>本公司保留随时修订、暂停、终止本活动及任何相关规则条款之权利及其解释权。</li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="preloader">
+            <div class="preloader-1-1"></div>
+            <div class="preloader-1-2"></div>
+            <div class="preloader-1-3"></div>
+            <div class="preloader-1-4"></div>
+            <div class="preloader-1-5"></div>
+            <div class="preloader-1-6"></div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"
+        integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+    <!-- dayjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"
+        integrity="sha512-hcV6DX35BKgiTiWYrJgPbu3FxS6CsCjKgmrsPRpUPkXWbvPiKxvSVSdhWX0yXcPctOI2FJ4WP6N1zH+17B/sAA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- dayjs isBetween -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/plugin/isBetween.min.js"
+        integrity="sha512-4O7lZ6x+QKo/JjmkakvxxSbfE24FnUbwNTz5b6KqBCgn7zF9Rwcse2V8B/F+iOLXfFOpfvt7jng5WzMqZD/MYA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- 抽獎 輪盤 套件 -->
+    <script src="https://cdn.jsdelivr.net/npm/lucky-canvas@1.7.27/dist/index.umd.min.js"></script>
+    <!-- 自適應換算比例 -->
+    <script src="../src/common/js/set_rem_1920_and_768.js"></script>
+    <!-- toast -->
+    <script src="../src/common/js/toast.js"></script>
+    <!-- 小遊戲的邏輯寫在 index.js 裡面 -->
+    <script src="../src/js/BX_game_lucky_wheel/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,538 @@
+$file-path: "../images/BX_game_lucky_wheel";
+
+body {
+    max-width: 1920px;
+    margin: 0 auto;
+    font-size: 0;
+    font-family: "PingFang SC", "Hiragino Sans GB", arial, "Microsoft Yahei", sans-serif;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.pc {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+.banner {
+    position: relative;
+    z-index: 2;
+    height: 6.36rem;
+    background-image: url(#{$file-path}/bg-banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 top;
+    overflow: hidden;
+    .badge {
+        position: absolute;
+        top: 5.32rem;
+        left: calc(50% - (2.4rem / 2));
+        z-index: 3;
+        width: 2.4rem;
+        height: 1.04rem;
+        background-image: url(#{$file-path}/sprite-badge.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        animation-name: animation-badge-flash;
+        animation-timing-function: step-end;
+        animation-iteration-count: infinite;
+        animation-duration: 1.2s;
+        cursor: pointer;
+        &:active {
+            background-position: top;
+        }
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .spotlight {
+        position: absolute;
+        width: 4rem;
+        height: 6.3rem;
+        background-image: url(#{$file-path}/spotlight.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transform: rotate(5deg);
+        transform-origin: calc(4rem / 2) top;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    .spotlight-1 {
+        top: -0.5rem;
+        left: 3.9rem;
+        transform: rotate(10deg);
+        animation-name: animation-spotlight-1;
+    }
+    .spotlight-2 {
+        top: -0.5rem;
+        left: 12.16rem;
+        transform: rotate(-10deg);
+        animation-name: animation-spotlight-2;
+    }
+    .dancer {
+        position: absolute;
+        width: 3.14rem;
+        height: 2.88rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transform: rotate(-20deg);
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    .dancer-1 {
+        background-image: url(#{$file-path}/dancer-1.png);
+        transform-origin: 1.2rem top;
+        top: 0;
+        left: 3.9rem;
+        animation-name: animation-dancer-1;
+    }
+    .dancer-2 {
+        background-image: url(#{$file-path}/dancer-2.png);
+        transform-origin: 1.9rem top;
+        top: 0;
+        left: 12.16rem;
+        animation-name: animation-dancer-2;
+        transform: rotate(20deg);
+    }
+}
+
+.section-1 {
+    position: relative;
+    z-index: 1;
+    height: 14rem;
+    background-image: url(#{$file-path}/bg-section-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .game-info {
+        position: absolute;
+        top: 0.8rem;
+        left: calc(50% - (10rem) / 2); // 50% 減去 元素寬度的一半
+        width: 10rem;
+        height: 1.84rem;
+        background-image: url(#{$file-path}/game-info.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        .light-bulb {
+            position: absolute;
+            top: -0.15rem;
+            left: -0.1rem;
+            width: 10.24rem;
+            height: 2.13rem;
+            background-image: url(#{$file-path}/sprite-bg-game-info-light-bulb.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top;
+            animation-name: animation-badge-flash;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: step-end;
+        }
+    }
+    .wrapper-draw {
+        position: absolute;
+        top: 2.86rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        .msg-draw-result {
+            position: absolute;
+            z-index: 3;
+            top: 0;
+            width: 6.4rem;
+            height: 6.4rem;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            // 再接再勵
+            &.msg-prize-again {
+                background-image: url(#{$file-path}/msg-prize-again.png);
+                pointer-events: auto;
+            }
+            // 銘謝惠顧
+            &.msg-prize-thanks {
+                background-image: url(#{$file-path}/msg-prize-thanks.png);
+                pointer-events: auto;
+            }
+
+            // 首次抽中黃金
+            &.msg-first-get-prize-gold {
+                background-image: url(#{$file-path}/msg-first-get-prize-gold.png);
+                pointer-events: auto;
+            }
+            // 首次抽中指數
+            &.msg-first-get-prize-index {
+                background-image: url(#{$file-path}/msg-first-get-prize-index.png);
+                pointer-events: auto;
+            }
+            // 首次抽中原油
+            &.msg-first-get-prize-crude-oil {
+                background-image: url(#{$file-path}/msg-first-get-prize-crude-oil.png);
+                pointer-events: auto;
+            }
+            // 首次抽中3美金
+            &.msg-first-get-prize-us-dollar {
+                background-image: url(#{$file-path}/msg-first-get-prize-us-dollar.png);
+                pointer-events: auto;
+            }
+        }
+    }
+}
+
+.section-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.9rem;
+    height: 17.04rem;
+    background-color: #812516;
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &:not(:first-of-type) {
+            margin-top: 0.4rem;
+        }
+        h3 {
+            width: 2.8rem;
+            height: 0.6rem;
+            font-size: 0.3rem;
+            line-height: 0.6rem;
+            text-align: center;
+            color: #812516;
+            background-image: linear-gradient(to bottom, #fff7bd, #fee366);
+            border-radius: 0.35rem;
+            border: solid 2px #b25251;
+            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+        }
+        p {
+            margin-top: 0.2rem;
+            max-width: 6.86rem;
+            font-size: 0.28rem;
+            color: #fff;
+            text-align: center;
+            &.example {
+                margin-top: 0.4rem;
+                padding-left: 0.1rem;
+                text-align: left;
+            }
+            &.lot {
+                position: relative;
+                padding-left: 0.1rem;
+                text-align: left;
+            }
+        }
+        table {
+            margin-top: 0.2rem;
+            width: 6.7rem;
+            text-align: center;
+            color: #141818;
+            font-size: 0.24rem;
+            .row-title {
+                font-weight: 600;
+            }
+            thead {
+                tr {
+                    height: 0.84rem;
+                    background-color: #ffe16e;
+                    font-weight: 600;
+                    color: #980100;
+                    th:not(:first-of-type) {
+                        div {
+                            border-left: 0.02rem solid #980100;
+                        }
+                    }
+                }
+            }
+            tbody,
+            tfoot {
+                tr {
+                    border-top: 0.04rem solid #7d5aab;
+                }
+            }
+            tbody {
+                tr {
+                    &:nth-of-type(odd) {
+                        background-color: #d8d8d8;
+                        height: 0.7rem;
+                    }
+                    &:nth-of-type(even) {
+                        background-color: #efefef;
+                        height: 0.7rem;
+                    }
+                }
+            }
+            tfoot {
+                tr {
+                    height: 0.74rem;
+                    background-color: #f03258;
+                    font-weight: 600;
+                    color: #ffe16e;
+                    td {
+                        border-bottom-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                    }
+                }
+            }
+            tr td {
+                border-top: 4px solid #812516;
+            }
+            .border-top-left-radius {
+                border-top-left-radius: 10px;
+            }
+            .border-top-right-radius {
+                border-top-right-radius: 10px;
+            }
+        }
+        button {
+            width: 2.5rem;
+            height: 0.5rem;
+            background-color: transparent;
+            background-image: url(#{$file-path}/btn-notice.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+}
+
+.pop-notice-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.72);
+    .pop-notice-content-wrapper {
+        position: relative;
+        width: 7.2rem;
+        height: 6.7rem;
+        .close {
+            position: absolute;
+            top: 0.3rem;
+            right: calc(0.3rem + 0.17rem);
+            width: 0.7rem;
+            height: 0.7rem;
+            background-image: url(#{$file-path}/close.svg);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        h3 {
+            width: 100%;
+            height: 1.3rem;
+            background-color: #3050aa;
+            font-size: 0.42rem;
+            font-weight: 300;
+            letter-spacing: 1.91px;
+            color: #fff;
+            text-align: center;
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+            line-height: 1.3rem;
+        }
+        .content {
+            padding: 0.4rem;
+            padding-left: 0.72rem;
+            background-color: #fff;
+            color: #000;
+            font-size: 0.26rem;
+            border: 1px solid #979797;
+            border-top: none;
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+            line-height: 1.77;
+            li {
+                list-style-type: decimal;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .pc {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+    .banner {
+        height: 9.8rem;
+        background-image: url(#{$file-path}/bg-banner-m.jpg);
+        .badge {
+            top: 8.3rem;
+            left: calc(50% - (3rem / 2));
+            width: 3rem;
+            height: 1.3rem;
+            background-image: url(#{$file-path}/sprite-badge-m.png);
+        }
+        .spotlight-1 {
+            left: 0.3rem;
+        }
+        .spotlight-2 {
+            left: 4.06rem;
+        }
+        .dancer-1 {
+            left: 0.3rem;
+        }
+        .dancer-2 {
+            left: 4.06rem;
+        }
+    }
+    .section-1 {
+        height: 15.5rem;
+        background-image: url(#{$file-path}/bg-section-1-m.jpg);
+        .game-info {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3.26rem;
+            background-image: url(#{$file-path}/game-info-m.png);
+            .light-bulb {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 3.26rem;
+                background-image: url(#{$file-path}/sprite-bg-game-info-light-bulb-m.png);
+            }
+        }
+        .wrapper-draw {
+            top: 3.7rem;
+        }
+    }
+    .section-2 {
+        height: 17.5rem;
+        .content-wrapper {
+            button {
+                width: 2.1rem;
+                height: 0.8rem;
+                background-image: url(#{$file-path}/btn-notice-m.png);
+            }
+        }
+    }
+}
+
+// 要預先載入的內容 // 只是為了先載入而已，並沒有要真的顯示
+#preloader {
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    .preloader-1-1 {
+        background-image: url(#{$file-path}/msg-first-get-prize-gold.png);
+    }
+    .preloader-1-2 {
+        background-image: url(#{$file-path}/msg-first-get-prize-index.png);
+    }
+    .preloader-1-3 {
+        background-image: url(#{$file-path}/msg-first-get-prize-crude-oil.png);
+    }
+    .preloader-1-4 {
+        background-image: url(#{$file-path}/msg-first-get-prize-us-dollar.png);
+    }
+    .preloader-1-5 {
+        background-image: url(#{$file-path}/msg-prize-again.png);
+    }
+    .preloader-1-6 {
+        background-image: url(#{$file-path}/msg-prize-thanks.png);
+    }
+}
+
+@keyframes animation-fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+// 遊戲通關入口 閃爍
+@keyframes animation-badge-flash {
+    0% {
+        background-position: top;
+    }
+    50% {
+        background-position: bottom;
+    }
+    100% {
+        background-position: top;
+    }
+}
+
+@keyframes animation-spotlight-1 {
+    0% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-95deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+@keyframes animation-spotlight-2 {
+    0% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(95deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes animation-dancer-1 {
+    0% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(60deg);
+    }
+    100% {
+        transform: rotate(-20deg);
+    }
+}
+@keyframes animation-dancer-2 {
+    0% {
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(-60deg);
+    }
+    100% {
+        transform: rotate(20deg);
+    }
+}
