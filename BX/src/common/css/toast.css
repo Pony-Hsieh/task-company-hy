@@ -1,0 +1,78 @@
+.wrapper-toast-msg {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.wrapper-toast-msg .toast-msg {
+  pointer-events: auto;
+  position: relative;
+  padding: 0.4rem;
+  width: 30%;
+  overflow-wrap: break-word;
+  -webkit-animation-name: animation-fade-in-up;
+          animation-name: animation-fade-in-up;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+.wrapper-toast-msg .toast-msg .content {
+  font-size: 0.32rem;
+  color: #fff;
+  line-height: 1.5;
+  opacity: 1;
+}
+.wrapper-toast-msg .toast-msg .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.8;
+  border-radius: 0.16rem;
+}
+
+@media (max-width: 768px) {
+  .wrapper-toast-msg .toast-msg {
+    width: 80%;
+  }
+}
+@-webkit-keyframes animation-fade-in-up {
+  0% {
+    -webkit-transform: translate(0, 0.4rem);
+            transform: translate(0, 0.4rem);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes animation-fade-in-up {
+  0% {
+    -webkit-transform: translate(0, 0.4rem);
+            transform: translate(0, 0.4rem);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 1;
+  }
+}
