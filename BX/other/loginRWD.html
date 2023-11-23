@@ -1,0 +1,284 @@
+<!--#config errmsg="" -->
+<!--# if expr="${SERVER_SOFTWARE}!=/^Apache*/" -->
+<!--#include file="/include/config.html"-->
+<!--# else -->
+<!--#include virtual="/include/config.html"-->
+<!--# endif -->
+
+<link
+  rel="stylesheet"
+  href="<!--#echo var='HXFX_NEW_IMG_HOST'-->/styles/jquery.modal.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="<!--#echo var='HXFX_NEW_IMG_HOST'-->/styles/loginRWD.min.css"
+/>
+
+<body>
+  <div class="modalWrap">
+    <div id="alertDialog" class="modal">
+      <div class="topImageWrapper">
+        <img
+          class="topImage"
+          src="<!--#echo var='HXFX_NEW_IMG_HOST'-->/activity/alertbox/top.png"
+          alt=""
+        />
+      </div>
+      <div id="dialogContent"></div>
+    </div>
+    <div id="loginRWDDialog" class="modal">
+      <div class="head">登录</div>
+      <div class="formBlock">
+        <input
+          id="account"
+          maxlength="10"
+          type="text"
+          placeholder="请输入交易账户"
+          onkeyup="value=value.replace(/[^0-9]/g,'');"
+        />
+        <input
+          id="password"
+          maxlength="16"
+          type="password"
+          placeholder="请输入密码"
+        />
+        <input id="captcha" type="text" placeholder="请输入验证码" />
+        <div id="captchaBlock" onclick="LoginComponent.getCaptchaImage()">
+          <img
+            src="<!--#echo var='HXFX_MYID_HOST'-->/captcha"
+            alt="captcha image"
+          />
+        </div>
+        <div id="errorAlert"></div>
+      </div>
+      <div id="submit">登录</div>
+      <div class="buttonWrap">
+        <a
+          href="<!--#echo var='HXFX_MYID_HOST'-->/cn/newAccount.html?action=0"
+          data-stat="click,account,login"
+          id="createAccount"
+          target="_blank"
+          rel="noreferrer noopener"
+          title="免费真实账户"
+          onClick="ga('send', 'event', 'account', 'real_account', 'goldexpert');"
+          >开立账户</a
+        >
+        <a
+          href="<!--#echo var='HXFX_GTS2ADMIN_HOST'-->/forgetPwd.do"
+          data-stat="click,forgetpwd,login"
+          id="forgetPassword"
+          target="_blank"
+          rel="noreferrer noopener"
+          >忘记密码</a
+        >
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="<!--#echo var='HXFX_NEW_IMG_HOST'-->/scripts/jquery.modal.min.js"></script>
+<script>
+  /**
+   * 須一併引入 debounce
+   * images.hxfx.com/scripts/lodash.debounce@4.0.8.min.js
+   *
+   * - [jquery modal 套件文檔](https://www.npmjs.com/package/jquery-modal)
+   */
+
+  // 取得網址中的 param
+  const query = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+
+  /** LoginComponent 須透過 SSI 的方式引入後再實例化
+    - Step: 引入
+      可參考 hd.hxfx.com/activity/2023/hd_2311_xkh_2.html
+
+    - Step: 實例化
+      例如：
+      const lc = LoginComponent.getInstance();
+
+    - 新增登入後要執行的 function 使用範例
+
+      async function afterLoginCb() {
+        console.log('1');
+        const res = await axios.get('https://randomuser.me/api/');
+        console.log(res);
+        console.log('2');
+      }
+
+      const lc = LoginComponent.getInstance();
+      lc.addAfterSuccessLoginCb(afterLoginCb);
+   */
+  class LoginComponent {
+    apiData = {
+      type: "GET",
+      dataType: "jsonp",
+    };
+    appAccount = query["loginName"];
+    pcAccount = sessionStorage.getItem("account");
+    // 點擊後要停止觸發 1.5 秒才能再次觸發，中途只要有點擊，就會重新計時 1.5 秒
+    checkSubmitDebounceCb = debounce(this.checkSubmitData.bind(this), 1500, {
+      leading: true,
+      trailing: false,
+    });
+    // 成功登入後要執行的函式
+    afterSuccessLoginCbs = new Set();
+
+    constructor() {
+      this.listenClick();
+    }
+
+    /** 顯示彈窗 */
+    showDialog(modalSelector) {
+      $(`${modalSelector}`).modal({
+        escapeClose: true,
+        fadeDuration: 250,
+        closeExisting: false,
+      });
+    }
+
+    /** 顯示登入彈窗 */
+    showLoginDialog() {
+      this.showDialog("#loginRWDDialog");
+    }
+
+    /** 取得帳戶名稱
+     * 若沒有取得帳戶名稱，則回傳空字串
+     */
+    getAccount() {
+      if (this.appAccount && this.appAccount !== "@loginName@") {
+        return this.appAccount;
+      }
+      if (this.pcAccount) {
+        return this.pcAccount;
+      }
+      return "";
+    }
+
+    /** 新增成功登入後要執行的 function */
+    addAfterSuccessLoginCb(cb) {
+      if (typeof cb !== "function") {
+        throw new Error("請傳入 function 作為參數");
+      }
+      this.afterSuccessLoginCbs.add(cb);
+    }
+
+    /** 移除成功登入後要執行的 function */
+    deleteAfterSuccessLoginCb(cb) {
+      if (typeof cb !== "function") {
+        throw new Error("請傳入 function 作為參數");
+      }
+      this.afterSuccessLoginCbs.delete(cb);
+    }
+
+    /** 登入表格錯誤資訊
+     * 如果想要不顯示錯誤提示，請傳入空字串
+     */
+    loginFormErrorMessage(message) {
+      if (message === "") {
+        $("#errorAlert").html("");
+        return;
+      }
+      if (!message) {
+        throw new Error("請輸入錯誤提示訊息");
+      }
+      $("#errorAlert").html(`
+        <i>
+          <img src="<!--#echo var='HXFX_NEW_IMG_HOST'-->/public/notice_no.png" alt="">
+        </i>&nbsp
+        <span id="errorMsg">
+          ${message}
+        </span>`);
+    }
+
+    /** 檢查登入表格 */
+    checkSubmitData() {
+      const loginData = {
+        url: `<!--#echo var='HXFX_MYID_HOST'-->/members/userLogin?jsoncallback=?`,
+        data: {
+          login: $("#loginRWDDialog #account").val(),
+          passwd: $("#loginRWDDialog #password").val(),
+          captcha_img: $("#loginRWDDialog #captcha").val(),
+        },
+      };
+
+      if (!loginData.data.login) {
+        this.loginFormErrorMessage("请输入交易账户");
+        return;
+      }
+      if (!loginData.data.passwd) {
+        this.loginFormErrorMessage("请输入密码");
+        return;
+      }
+      if (!loginData.data.captcha_img) {
+        this.loginFormErrorMessage("请输入验证码");
+        return;
+      }
+
+      this.loginFormErrorMessage("");
+      this.submitLogin(loginData);
+    }
+
+    /** 送出登入資訊 */
+    async submitLogin(loginData) {
+      this.apiData = { ...this.apiData, ...loginData };
+      const response = await $.ajax(this.apiData);
+
+      // Condition: 登入失敗
+      if (response.msg) {
+        this.loginFormErrorMessage(response.msg);
+        return;
+      }
+
+      // Condition: 登入成功
+      // Step: 將帳戶紀錄至 session storage 及模組變數內
+      const account = this.apiData.data.login;
+      sessionStorage.setItem("account", account);
+      this.pcAccount = account;
+
+      // Step: 關閉 modal
+      $.modal.close();
+
+      // Step: 逐一執行 afterSuccessLoginCbs 內的函式
+      this.afterSuccessLoginCbs.forEach((cb) => {
+        // 避免未設定 cb 時執行 undefined 導致出錯
+        if (cb) {
+          cb();
+        }
+      });
+    }
+
+    /** 監聽 click 事件統一寫在這 */
+    listenClick() {
+      $("#loginRWDDialog #submit").click(this.checkSubmitDebounceCb);
+
+      $(
+        "#loginRWDDialog #account, #loginRWDDialog #password, #loginRWDDialog #captcha"
+      ).keyup((e) => {
+        if (e.which === 13) {
+          $("#submit").click();
+        }
+      });
+    }
+
+    static getInstance() {
+      // 使用設計模式中的 Singleton Pattern
+      // 判斷是否已經 new 過唯一的實例
+
+      // 若這個唯一的實例不存在，則先創建它
+      if (!LoginComponent.instance) {
+        LoginComponent.instance = new LoginComponent();
+      }
+
+      // return 這個唯一的實例
+      return LoginComponent.instance;
+    }
+
+    static getCaptchaImage = async () => {
+      $("#captchaBlock").html(
+        `<img src="<!--#echo var='HXFX_MYID_HOST'-->/captcha/index/${Math.random()}">`
+      );
+    };
+  }
+</script>

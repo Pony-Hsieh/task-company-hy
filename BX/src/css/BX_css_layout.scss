@@ -2,6 +2,244 @@
 
 $file-path: "../images";
 
+%all-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.mDevice {
+  display: none;
+}
+@media (width <= 768px) {
+  .pcDevice {
+    display: none !important;
+  }
+  .mDevice {
+    display: block;
+  }
+}
+
+/* 2023 10 體驗金 */
+.hd_2310_emy {
+  .section2 {
+    position: relative;
+    z-index: 5;
+    height: 14.08rem;
+    text-align: center;
+    background: url(#{$file-path}/hd_2310_emy/bgSection2.jpg) no-repeat
+      center/cover;
+    .highlight {
+      color: #feed0a;
+    }
+    .section2Title1 {
+      position: relative;
+      z-index: 6;
+      width: 3.44rem;
+      height: 1.73rem;
+      margin: 0 auto;
+      background: url(#{$file-path}/hd_2310_emy/section2Title1.png) no-repeat
+        center/contain;
+    }
+    .wrapper {
+      position: relative;
+      z-index: 5;
+      width: 11.9rem;
+      height: 13.08rem;
+      margin: 0 auto;
+      margin-top: -0.73rem;
+      background: url(#{$file-path}/hd_2310_emy/bgSection2Wrapper.png) no-repeat
+        center/contain;
+    }
+    .tableWrapperPC {
+      padding-top: 0.91rem;
+      font-size: 0.24rem;
+      color: #fff;
+      table {
+        margin: 0 auto;
+        border-spacing: 0.16rem;
+        border-collapse: separate;
+      }
+      td {
+        width: 1.57rem;
+        height: 0.62rem;
+        background: #230f3e;
+      }
+      thead {
+        th {
+          height: 0.72rem;
+          &:nth-of-type(1) {
+            width: 1.88rem;
+            background: url(#{$file-path}/hd_2310_emy/theadRank.png) no-repeat
+              center/cover;
+          }
+          &:nth-of-type(2) {
+            width: 1.57rem;
+            background: url(#{$file-path}/hd_2310_emy/theadAccount.png)
+              no-repeat center/cover;
+          }
+          &:nth-of-type(3) {
+            width: 1.57rem;
+            background: url(#{$file-path}/hd_2310_emy/theadName.png) no-repeat
+              center/cover;
+          }
+          &:nth-of-type(4) {
+            width: 1.57rem;
+            background: url(#{$file-path}/hd_2310_emy/theadNetWorth.png)
+              no-repeat center/cover;
+          }
+          &:nth-of-type(5) {
+            width: 3.48rem;
+            background: url(#{$file-path}/hd_2310_emy/theadReward.png) no-repeat
+              center/cover;
+          }
+        }
+      }
+      tfoot {
+        td {
+          padding-left: 0.17rem;
+          padding-top: 0.4rem;
+          text-align: left;
+          background: transparent;
+        }
+      }
+    }
+    .cellCenterWrapper {
+      @extend %all-flex-center;
+    }
+    .rank {
+      .image {
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-left: 0.1rem;
+      }
+    }
+    @for $i from 1 through 3 {
+      .rank#{$i} {
+        .image {
+          background: url(#{$file-path}/hd_2310_emy/rank#{$i}.png)
+            no-repeat
+            center/contain;
+        }
+      }
+    }
+    .emoji {
+      .image {
+        width: 0.34rem;
+        height: 0.34rem;
+      }
+    }
+    @for $i from 1 through 3 {
+      .emoji#{$i} {
+        .image {
+          background: url(#{$file-path}/hd_2310_emy/emoji#{$i}.png)
+            no-repeat
+            center/contain;
+        }
+      }
+    }
+    .statisticsInfo {
+      font-size: 0.24rem;
+      line-height: 1.33;
+      color: #fff;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .hd_2310_emy {
+    .section2 {
+      height: 16.59rem;
+      color: #fff;
+      background-image: url(#{$file-path}/hd_2310_emy/bgSection2M.jpg);
+      .wrapper {
+        margin: 0 auto;
+        margin-top: -0.73rem;
+        width: 6.95rem;
+        height: 14.78rem;
+        background-image: url(#{$file-path}/hd_2310_emy/bgSection2WrapperM.png);
+      }
+      .tableWrapperM {
+        padding-top: 1.14rem;
+        font-size: 0.24rem;
+        text-align: center;
+        table {
+          border-spacing: 0.06rem;
+          border-collapse: separate;
+        }
+        .table1,
+        .table2 {
+          margin: 0 auto;
+        }
+        .table1 {
+          thead {
+            th {
+              .cellCenterWrapper {
+                padding-bottom: 0.1rem;
+                > div {
+                  width: 5.17rem;
+                  height: 0.72rem;
+                  background: url(#{$file-path}/hd_2310_emy/theadRewardM.png)
+                    no-repeat center/contain;
+                }
+              }
+            }
+          }
+          td {
+            width: 2.03rem;
+            height: 0.54rem;
+            background: #230f3e;
+          }
+        }
+        .table2 {
+          margin-top: 0.4rem;
+          td {
+            width: 1.45rem;
+            height: 0.54rem;
+            background: #230f3e;
+          }
+          thead {
+            th {
+              height: 0.72rem;
+              &:nth-of-type(1) {
+                width: 1.7rem;
+                background: url(#{$file-path}/hd_2310_emy/theadRankM.png)
+                  no-repeat center/cover;
+              }
+              &:nth-of-type(2) {
+                width: 1.45rem;
+                background: url(#{$file-path}/hd_2310_emy/theadAccountM.png)
+                  no-repeat center/cover;
+              }
+              &:nth-of-type(3) {
+                width: 1.45rem;
+                background: url(#{$file-path}/hd_2310_emy/theadNameM.png)
+                  no-repeat center/cover;
+              }
+              &:nth-of-type(4) {
+                width: 1.45rem;
+                background: url(#{$file-path}/hd_2310_emy/theadNetWorthM.png)
+                  no-repeat center/cover;
+              }
+            }
+          }
+          tfoot {
+            td {
+              padding-top: 0.34rem;
+              padding-left: 0.2rem;
+              text-align: left;
+              background: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 /* 2022 7~9 好友推薦 */
 .section3 {
   padding-top: 0.9rem;

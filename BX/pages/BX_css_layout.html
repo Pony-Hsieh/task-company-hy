@@ -11,6 +11,182 @@
 
   <body>
     <h1>BX CSS 排版 整理</h1>
+    <h3 class="task-title">HXFX 2023/10 體驗金</h3>
+    <div class="hd_2310_emy">
+      <section class="section2">
+        <h2 class="section2Title1"></h2>
+        <div id="rankInfo" class="wrapper" v-cloak>
+          <!-- PC 版表格 -->
+          <div class="tableWrapperPC pcDevice">
+            <table>
+              <thead>
+                <tr>
+                  <!-- 排名、帳號、姓名、淨值、獎勵 -->
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th colspan="2"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(person, index) in list">
+                  <td v-if="index === 0" class="top3 rank rank1">
+                    <div class="cellCenterWrapper">
+                      <div>犀牛国王</div>
+                      <div class="image"></div>
+                    </div>
+                  </td>
+                  <td v-else-if="index === 1" class="top3 rank rank2">
+                    <div class="cellCenterWrapper">
+                      <div>犀牛大将</div>
+                      <div class="image"></div>
+                    </div>
+                  </td>
+                  <td v-else-if="index === 2" class="top3 rank rank3">
+                    <div class="cellCenterWrapper">
+                      <div>犀牛勇士</div>
+                      <div class="image"></div>
+                    </div>
+                  </td>
+                  <td v-else>第 {{ index + 1 }} 名</td>
+
+                  <td v-for="eachFieldData in person">{{ eachFieldData }}</td>
+
+                  <td v-if="index === 0" class="highlight">$ 50 红包</td>
+                  <td v-else-if="index === 1" rowspan="9">$25 红包</td>
+
+                  <td v-if="index === 0" rowspan="11">
+                    提取盈利金额5% (上限1000)
+                  </td>
+                </tr>
+                <tr>
+                  <td>第11~100名</td>
+                  <td class="emoji emoji1">
+                    <div class="cellCenterWrapper">
+                      <div class="image"></div>
+                    </div>
+                  </td>
+                  <td class="emoji emoji2">
+                    <div class="cellCenterWrapper">
+                      <div class="image"></div>
+                    </div>
+                  </td>
+                  <td class="emoji emoji3">
+                    <div class="cellCenterWrapper">
+                      <div class="image"></div>
+                    </div>
+                  </td>
+                  <td>$5 红包</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="6">
+                    当前统计时间：{{ lastUpdateTime }}
+                    <br />
+                    最后统计时间：2023/10/31 18:00:00
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!-- M 版表格 -->
+          <div class="tableWrapperM mDevice">
+            <table class="table1">
+              <thead>
+                <tr>
+                  <!-- 獎勵 -->
+                  <th colspan="3">
+                    <div class="cellCenterWrapper">
+                      <div></div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>第1名</td>
+                  <td>第2-10名</td>
+                  <td>第11-100名</td>
+                </tr>
+                <tr>
+                  <td class="highlight">$50红包</td>
+                  <td>$25红包</td>
+                  <td>$5红包</td>
+                </tr>
+                <tr>
+                  <td colspan="3">提取盈利金额5%(上限1000)</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table2">
+              <thead>
+                <tr>
+                  <!-- 排名、帳號、姓名、淨值 -->
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(person, index) in list">
+                  <td v-if="index === 0" class="top3 rank rank1">
+                    <div class="cellCenterWrapper">
+                      <div>犀牛国王</div>
+                      <div class="image"></div>
+                    </div>
+                  </td>
+                  <td v-else-if="index === 1" class="top3 rank rank2">
+                    <div class="cellCenterWrapper">
+                      <div>犀牛大将</div>
+                      <div class="image"></div>
+                    </div>
+                  </td>
+                  <td v-else-if="index === 2" class="top3 rank rank3">
+                    <div class="cellCenterWrapper">
+                      <div>犀牛勇士</div>
+                      <div class="image"></div>
+                    </div>
+                  </td>
+                  <td v-else>第 {{ index + 1 }} 名</td>
+
+                  <td v-for="eachFieldData in person">{{ eachFieldData }}</td>
+                </tr>
+                <tr>
+                  <td>第11~100名</td>
+                  <td class="emoji emoji1">
+                    <div class="cellCenterWrapper">
+                      <div class="image"></div>
+                    </div>
+                  </td>
+                  <td class="emoji emoji2">
+                    <div class="cellCenterWrapper">
+                      <div class="image"></div>
+                    </div>
+                  </td>
+                  <td class="emoji emoji3">
+                    <div class="cellCenterWrapper">
+                      <div class="image"></div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4">
+                    当前统计时间：{{ lastUpdateTime }}
+                    <br />
+                    最后统计时间：2023/10/31 18:00:00
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <h3 class="task-title">2022 7~9 好友推薦</h3>
     <p>
@@ -361,6 +537,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
 
     <!-- 自適應換算比例 -->
     <script>
@@ -394,6 +571,33 @@
     </script>
 
     <!-- 其他 JS -->
+    <!-- hd_2310_emy -->
+    <script>
+      new Vue({
+        el: "#rankInfo",
+        data: {
+          list: [],
+          lastUpdateTime: "2023/09/11 23:59:59",
+        },
+        mounted() {
+          const reg = /\s/g;
+          const res1 =
+            "<p>丹尼, 9000121, 500、<br />肉羹, 9000122, 500、<br />蛋餅, 9000123, 500、<br />旅館, 9000124, 500、<br />車輪餅, 9000125, 500、<br />臭豆腐, 9000126, 500、<br />棺材板, 9000127, 500、<br />扁食, 9000128, 500、<br />飲料, 9000129, 500、<br />包子, 9000130, 500、</p>"
+              .replace("<p>", "")
+              .replace("</p>", "")
+              .replace(reg, "")
+              .split("、<br/>");
+          this.list = res1.map((el, i) => {
+            // 如果是最後一項的話，需要另外處理資料格式(需要將最後一項的頓號移除)
+            if (i === res1.length - 1) {
+              return el.slice(0, -1).split(",");
+            }
+            return el.split(",");
+          });
+        },
+      });
+    </script>
+
     <!-- lp_40000hydg -->
     <script>
       /* 推薦人獎勵試算 start */
