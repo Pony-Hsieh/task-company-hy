@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "PingFang SC", "Hiragino Sans GB", arial, sans-serif;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.hide-info {
+  color: transparent;
+  user-select: none;
+}
+
+.click-btn {
+  transition: 0.3s;
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.08);
+  }
+}
