@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta content="email=no" name="format-detection" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,viewport-fit=cover"
+    />
+    <meta name="renderer" content="webkit" />
+    <meta
+      name="keywords"
+      content="外汇交易平台_外汇开户_外汇交易_外汇投资_股票CFD_原油交易"
+    />
+    <meta name="description" content="外汇投资_炒外汇_充值赠金活动_尊享客户" />
+    <title>炒外汇选_专业外汇投资平台_外汇_黄金_股票CFD_原油</title>
+    <link
+      rel="shortcut icon"
+      href="../../images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="../../styles/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../styles/common.min.css"
+    />
+    <script src="../../utils/setRemToFixedPx.js"></script>
+    <!-- modal css -->
+    <link
+    rel="stylesheet"
+    href="../../components/Modal.min.css"
+    />
+    <!-- countdown timer css -->
+    <link
+      rel="stylesheet"
+      href="../../components/CountdownTimer.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./style.min.css"
+    />
+  </head>
+
+  <body>
+    <main>
+      <section class="banner">
+        <h1 class="title hide-info">新户双倍起航 首充200%赠金</h1>
+        <div class="decoration"></div>
+        <div class="button-wrapper">
+          <button
+            type="button"
+            class="open-account"
+            onclick="btnClickHandler.handleOpenAccountClick()"
+          >
+            开设真实帐户
+          </button>
+          <button
+            type="button"
+            class="get-bonus"
+            onclick="btnClickHandler.handleDepositClick()"
+          >
+            充值领赠金
+          </button>
+        </div>
+        <div class="text text-1">还剩下</div>
+        <div class="countdown-timer-wrapper">
+          <div id="countdownTimer"></div>
+        </div>
+        <div class="text text-2">
+          每天<span class="highlight">前50名</span
+          >首充客户可享新客福利，剩余<span class="highlight highlight-2"
+            >10个</span
+          >名额
+        </div>
+      </section>
+
+      <!-- 贈金領取攻略 -->
+      <section class="section-1 bg-gradient wrapper-content">
+        <h2 class="title">赠金领取攻略</h2>
+        <div class="step-wrapper">
+          <div class="step step-1"></div>
+          <div class="step step-2"></div>
+          <div class="step step-3"></div>
+        </div>
+      </section>
+
+      <!-- 體驗真實交易 -->
+      <section class="section-2">
+        <h2 class="title title-with-decoration">体验真实交易</h2>
+        <div class="card-wrapper bg-gradient wrapper-content">
+          <div class="card card-1">
+            <div class="number">01</div>
+            <div class="card-content">进入卡券中心</div>
+          </div>
+          <div class="line"></div>
+          <div class="card card-2">
+            <div class="number">02</div>
+            <div class="card-content">领取$200体验金</div>
+          </div>
+          <div class="line"></div>
+          <div class="card card-3">
+            <div class="number">03</div>
+            <div class="card-content">约5-10分入账</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 首充即享200%贈金 -->
+      <section class="section-3">
+        <h2 class="title title-with-decoration">首充即享200%赠金</h2>
+        <div class="wrapper-1 bg-gradient wrapper-content">
+          <div class="subtitle-wrapper">
+            <div class="decoration"></div>
+            <h3 class="subtitle">
+              金油指数单手返<span class="highlight">$10</span>美
+            </h3>
+          </div>
+          <div class="card-wrapper">
+            <div class="card card-1">
+              <div class="card-header">
+                <div class="title-1">首充$200</div>
+                <div class="title-2">总赠金$400</div>
+              </div>
+              <div class="card-content">
+                先赠$100
+                <br />
+                +
+                <br />
+                后赠$300
+                <button
+                  type="button"
+                  onclick="btnClickHandler.handleDepositClick()"
+                >
+                  领取
+                </button>
+              </div>
+            </div>
+            <div class="card card-2">
+              <div class="card-header">
+                <div class="title-1">首充$500</div>
+                <div class="title-2">总赠金$1,000</div>
+              </div>
+              <div class="card-content">
+                先赠$200
+                <br />
+                +
+                <br />
+                后赠$800
+                <button
+                  type="button"
+                  onclick="btnClickHandler.handleDepositClick()"
+                >
+                  领取
+                </button>
+              </div>
+            </div>
+            <div class="card card-3">
+              <div class="card-header">
+                <div class="title-1">首充$1,000</div>
+                <div class="title-2">总赠金$2,000</div>
+              </div>
+              <div class="card-content">
+                先赠$300
+                <br />
+                +
+                <br />
+                后赠$1,700
+                <button
+                  type="button"
+                  onclick="btnClickHandler.handleDepositClick()"
+                >
+                  领取
+                </button>
+              </div>
+            </div>
+            <div class="card card-4">
+              <div class="card-header">
+                <div class="title-1">首充$2,000</div>
+                <div class="title-2">总赠金$4,000</div>
+              </div>
+              <div class="card-content">
+                先赠$800
+                <br />
+                +
+                <br />
+                后赠$3,200
+                <button
+                  type="button"
+                  onclick="btnClickHandler.handleDepositClick()"
+                >
+                  领取
+                </button>
+              </div>
+            </div>
+            <div class="card card-5">
+              <div class="card-header">
+                <div class="title-1">首充$3,000</div>
+                <div class="title-2">总赠金$6,000</div>
+              </div>
+              <div class="card-content">
+                先赠$1,500
+                <br />
+                +
+                <br />
+                后赠$4,500
+                <button
+                  type="button"
+                  onclick="btnClickHandler.handleDepositClick()"
+                >
+                  领取
+                </button>
+              </div>
+            </div>
+            <div class="card card-6">
+              <div class="card-header">
+                <div class="title-1">首充$5,000</div>
+                <div class="title-2">总赠金$10,000</div>
+              </div>
+              <div class="card-content">
+                先赠$2,800
+                <br />
+                +
+                <br />
+                后赠$7,200
+                <button
+                  type="button"
+                  onclick="btnClickHandler.handleDepositClick()"
+                >
+                  领取
+                </button>
+              </div>
+            </div>
+            <div class="card card-7">
+              <div class="card-header">
+                <div class="title-1">首充$10,000</div>
+                <div class="title-2">总赠金$20,000</div>
+              </div>
+              <div class="card-content">
+                先赠$5,800
+                <br />
+                +
+                <br />
+                后赠$14,200
+                <button
+                  type="button"
+                  onclick="btnClickHandler.handleDepositClick()"
+                >
+                  领取
+                </button>
+              </div>
+            </div>
+            <div class="card card-8">
+              <div class="card-header">
+                <div class="title-1">首充$15,000</div>
+                <div class="title-2">总赠金$30,000</div>
+              </div>
+              <div class="card-content">
+                先赠$8,800
+                <br />
+                +
+                <br />
+                后赠$21,000
+                <button
+                  type="button"
+                  onclick="btnClickHandler.handleDepositClick()"
+                >
+                  领取
+                </button>
+              </div>
+            </div>
+            <div class="card card-9">
+              <div class="card-header">
+                <div class="title-1">首充$20,000</div>
+                <div class="title-2">总赠金$40,000</div>
+              </div>
+              <div class="card-content">
+                先赠$12,800
+                <br />
+                +
+                <br />
+                后赠$27,200
+                <button
+                  type="button"
+                  onclick="btnClickHandler.handleDepositClick()"
+                >
+                  领取
+                </button>
+              </div>
+            </div>
+            <div class="card card-10">
+              <div class="card-header">
+                <div class="title-1">首充$30,000</div>
+                <div class="title-2">总赠金$60,000</div>
+              </div>
+              <div class="card-content">
+                先赠$18,800
+                <br />
+                +
+                <br />
+                后赠$41,200
+                <button
+                  type="button"
+                  onclick="btnClickHandler.handleDepositClick()"
+                >
+                  领取
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 成立好友團隊 -->
+      <section class="section-4">
+        <h2 class="title"></h2>
+        <p class="text">
+          最高可获得 <span class="highlight">50%</span> 返佣让您轻松实现月入
+          <span class="highlight">10</span> 万
+        </p>
+        <button
+          type="button"
+          class="invite-friend"
+          onclick="btnClickHandler.handleInviteFriendsClick()"
+        >
+          立即邀請好友
+          <div class="arrow-wrapper">
+            <span class="arrow">></span>
+          </div>
+        </button>
+        <div class="feature-wrapper bg-gradient wrapper-content">
+          <div class="feature feature-1">
+            <div class="icon-wrapper">
+              <div class="icon"></div>
+            </div>
+            <p class="content">0佣金<br />0手续费</p>
+          </div>
+          <div class="feature feature-2">
+            <div class="icon-wrapper">
+              <div class="icon"></div>
+            </div>
+            <p class="content">国际权威<br />监管资质</p>
+          </div>
+          <div class="feature feature-3">
+            <div class="icon-wrapper">
+              <div class="icon"></div>
+            </div>
+            <p class="content">专属顾问<br />7x24小时排忧解难</p>
+          </div>
+          <div class="feature feature-4">
+            <div class="icon-wrapper">
+              <div class="icon"></div>
+            </div>
+            <p class="content">多空双向<br />T+0交易</p>
+          </div>
+          <div class="feature feature-5">
+            <div class="icon-wrapper">
+              <div class="icon"></div>
+            </div>
+            <p class="content">每口订单报价<br />公开透明</p>
+          </div>
+          <div class="feature feature-6">
+            <div class="icon-wrapper">
+              <div class="icon"></div>
+            </div>
+            <p class="content">平台安全稳定<br />技术团队<br />深耕十年</p>
+          </div>
+          <div class="feature feature-7">
+            <div class="icon-wrapper">
+              <div class="icon"></div>
+            </div>
+            <p class="content">提供交易服务<br />全球100+<br />热门交易品种</p>
+          </div>
+          <div class="feature feature-8">
+            <div class="icon-wrapper">
+              <div class="icon"></div>
+            </div>
+            <p class="content">低点差<br />降低交易成本</p>
+          </div>
+          <div class="feature feature-9">
+            <div class="icon-wrapper">
+              <div class="icon"></div>
+            </div>
+            <p class="content">免费教育资源<br />提供交易<br />策略指导</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <button
+          type="button"
+          class="contact-cs"
+          onclick="btnClickHandler.handleCsClick()"
+        >
+          联系客服
+        </button>
+        <button
+          type="button"
+          class="open-account"
+          onclick="btnClickHandler.handleOpenAccountClick()"
+        >
+          立即开户
+        </button>
+        <button
+          type="button"
+          class="download-app"
+          onclick="btnClickHandler.handleDownloadClick()"
+        >
+          下载App
+        </button>
+      </footer>
+
+      <aside>
+        <button
+          type="button"
+          id="showRulesModalBtn"
+          class="show-rules-modal-btn"
+        >
+          <div>活动<br />详情</div>
+          <div class="triangle"></div>
+        </button>
+      </aside>
+    </main>
+
+    <div class="modal" id="rulesModal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">活动规则</h2>
+          <button class="modal-close-btn" aria-label="Close modal">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3 class="rules-title">活动奖励：</h3>
+          <ol class="rules-list">
+            <li>
+              开户体验金(新客限定)：注册即赠$200体验金，客户可以透由体验金交易的手数领取每手2美元的交易返赠，并且于账户完成首次充值激活后即可提取。
+            </li>
+            <li>
+              先赠结返：成功参加活动，赠送对应美元，完成手数将以一手5美元转为可提取，直到先赠结返赠金全部转为可提取
+            </li>
+            <li>
+              后赠每手：每完成1手可再获得额外5美元的奖励，最多领到奖励上限。
+              <div class="table-wrapper">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>净入金<br />(美元)</th>
+                      <th>先赠<br />(美元)</th>
+                      <th>后赠<br />上限</th>
+                      <th>总赠金</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>200</td>
+                      <td>100</td>
+                      <td>300</td>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <td>500</td>
+                      <td>200</td>
+                      <td>800</td>
+                      <td>1,000</td>
+                    </tr>
+                    <tr>
+                      <td>1,000</td>
+                      <td>300</td>
+                      <td>1,700</td>
+                      <td>2,000</td>
+                    </tr>
+                    <tr>
+                      <td>2,000</td>
+                      <td>800</td>
+                      <td>3,200</td>
+                      <td>4,000</td>
+                    </tr>
+                    <tr>
+                      <td>3,000</td>
+                      <td>1,500</td>
+                      <td>4,500</td>
+                      <td>6,000</td>
+                    </tr>
+                    <tr>
+                      <td>5,000</td>
+                      <td>2,800</td>
+                      <td>7,200</td>
+                      <td>10,000</td>
+                    </tr>
+                    <tr>
+                      <td>10,000</td>
+                      <td>5,800</td>
+                      <td>14,200</td>
+                      <td>20,000</td>
+                    </tr>
+                    <tr>
+                      <td>15,000</td>
+                      <td>8,800</td>
+                      <td>21,200</td>
+                      <td>30,000</td>
+                    </tr>
+                    <tr>
+                      <td>20,000</td>
+                      <td>12,800</td>
+                      <td>27,200</td>
+                      <td>40,000</td>
+                    </tr>
+                    <tr>
+                      <td>30,000</td>
+                      <td>18,800</td>
+                      <td>41,200</td>
+                      <td>60,000</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="10">注：参与产品－商品、指数</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </li>
+          </ol>
+
+          <h3 class="rules-title">活动规则：</h3>
+          <ol class="rules-list">
+            <li>报名时间： 即日起至<span class="jsLastDay">2024/9/30</span></li>
+            <li>
+              净入金与奖励计算时间：报名后30天(参加后净入金会持续计算，层级可以跃迁)
+            </li>
+            <li>适用客户类型：在活动期间全新注册并激活的客户</li>
+            <li>参与活动期间取款结算</li>
+          </ol>
+
+          <h3 class="rules-title">注意事项：</h3>
+          <ol class="rules-list">
+            <li>
+              体验金(新客限定)：将兑换美元添加到账户中，体验金以及交易的盈利固定扣回，客户可以按照交易手数领取每手2美元的返赠。
+            </li>
+            <li>
+              体验金(新客限定)：每天最多可以累计10手的交易量，开仓一手加平仓一手合计一手。
+            </li>
+            <li>
+              体验金(新客限定)：客户结算时需先清零账户后，再依照交易量添加每手2美元的交易赠金到账户中，贈金保留7天时间，並且激活账户才可以提现，逾期视同放弃。
+            </li>
+            <li>
+              🔸举例:客户参与体验金，账户完成60手交易量，账户余额为 800
+              USD，此时会先清零账户以后，重新添加60*2=120 USD的交易返赠。
+            </li>
+            <li>
+              先赠结返：交易累计1手则赠金有5美元转为可提取，活动过程中取款，活动自动中止，剩余未能转为可提取赠金将会扣回。赠金扣除可能导致订单因保证金不足而被强制平仓，客户应确保在没有赠金的情况下，账户可用保证金仍然充足。
+            </li>
+            <li>
+              后赠每手：在赠金有效期内若取款，活动即时中止，未领完的交易赠金将不再享受每手返现；
+            </li>
+            <li>
+              活动过程领完全部的赠金后，活动自动结束，赠金可用于交易或取款；
+            </li>
+            <li>
+              充值先赠：交易手数计算定义：客户开仓1手，然后再行平仓1手，则整个交易来回算1手。
+            </li>
+            <li>
+              本活动仅能参与一次，每组交易账号/每组IP
+              都视为同一人操作，并且不可有任何异常的交易行为，例如订单做对冲（AB仓）。如客户未符合以上规定，我司有权冻结客户的交易账户，仅能平仓不得开立新的仓位。
+              并且扣除所有该活动的赠金以及取消参与活动期间的所有订单，视情况扣除该笔活动存款金额20%做为行政处理费用。
+            </li>
+            <li>请谨慎了解活动相关办法，报名成功后视同同意以上规范。</li>
+            <li>
+              平台保留随时修订、暂停、终止本活动及任何相关规则条款之权利及其解释权。
+            </li>
+          </ol>
+        </div>
+        <div class="modal-footer">
+          <div class="bottom-chat">
+            <a class="btn-chat" href="javascript:;" onclick="chat.cs()">
+              咨询客服
+            </a>
+            ，快速了解更多优惠及奖励领取规则。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 客服 -->
+    <script src="../../utils/utils.js"></script>
+    <script src="../../utils/ButtonClickHandler.js"></script>
+    <script src="../../utils/chat.js"></script>
+    <!-- modal js -->
+    <script src="../../components/Modal.js"></script>
+    <!-- countdown js -->
+    <script src="../../components/CountdownTimer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
