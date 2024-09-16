@@ -1,0 +1,24 @@
+.countdown-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 2.8rem;
+  color: #1e1e1e;
+  .countdown-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .day,
+  .hour,
+  .minute,
+  .second {
+    padding: 0.8rem;
+    background: #fff;
+    border-radius: 0.8rem;
+  }
+  .separator {
+    margin: 0 0.8rem;
+  }
+}
