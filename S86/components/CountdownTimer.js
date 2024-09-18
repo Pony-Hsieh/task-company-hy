@@ -16,6 +16,7 @@ class CountdownTimer {
       throw new Error('請傳入 endTime');
     }
     this.target = target;
+    endTime = endTime.replace(/-/g, "/"); // 處理 iOS 日期格式
     this.endTime = new Date(endTime);
     this.alwaysShow = alwaysShow;
     this.startTime = new Date();
